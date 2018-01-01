@@ -209,7 +209,7 @@ conn = pymysql.Connect(
      host='localhost',
      port=3306,
      user='root',
-     passwd='123456'
+     passwd=''
  )
 cursor = conn.cursor()
 sql="select * from test.qq"
