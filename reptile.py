@@ -193,12 +193,18 @@ def getname(n,name):
     print('content'+str(n)+'=soup.find_all(id="'+name+'\")')
     print(name+'=content'+str(n)+'[0].string.strip()')
 '''    
-    
+
+'''在将数据写入数据库之前,需要在数据库中建立相关的表,然后再将数据导入到数据库中,
+
+
+
+
+'''  
     
     
 #下面的函数是为了进行数据的写入,将数据写入到数据库中
 import pymysql
-
+import pandas as pd
 conn = pymysql.Connect(
      host='localhost',
      port=3306,
@@ -206,3 +212,6 @@ conn = pymysql.Connect(
      passwd='123456'
  )
 cursor = conn.cursor()
+sql="select * from test.qq"
+
+df=pd.read_sql(sql,conn)
