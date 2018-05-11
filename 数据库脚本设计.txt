@@ -3,16 +3,24 @@
 1.教师表
 create table teacher(
 id	int(11) primary key auto_increment,
-bgdd	varchar(100),
+xingming	varchar(20),
+zhicheng	varchar(20),
+zhiwu	varchar(20),
+danwei	varchar(100),
+danwei2	varchar(100),
+lxdh	varchar(100),
 bgsj	varchar(100),
 cz	varchar(100),
-danwei varchar(100),
-danwei2	varchar(100),
+zywz	varchar(100),
+bgdd	varchar(100),
 dzyx	varchar(100),
-lxdh	varchar(100),
-txdz	varchar(100),
-xingming	varchar(50),
-zhicheng	varchar(40),
-zhiwu	varchar(40),
- zywz	varchar(100)
+txdz	varchar(100)
  );
+
+＃脚本插入数据的操作
+
+insert into teacher(xingming,zhicheng,zhiwu,danwei,danwei2,lxdh,bgsj,cz,zywz,bgdd,dzyx,txdz) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+
+
+
+insert into tb7(user,pass,licnese)values(%s,%s,%s)
