@@ -187,6 +187,8 @@ def teacherinfo(url):
 url1='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=59'
 url2='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=12'
     
+
+teacherinfo(url1)
     
 '''
 def getname(n,name):
@@ -200,7 +202,8 @@ def getname(n,name):
 
 
 '''  
-    
+
+'''
     
 #下面的函数是为了进行数据的写入,将数据写入到数据库中
 import pymysql
@@ -209,9 +212,11 @@ conn = pymysql.Connect(
      host='localhost',
      port=3306,
      user='root',
-     passwd=''
+     passwd='123456'
  )
 cursor = conn.cursor()
 sql="select * from test.qq"
 
 df=pd.read_sql(sql,conn)
+
+'''
