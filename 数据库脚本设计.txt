@@ -1,0 +1,18 @@
+＃数据库脚本设计
+＃现在需要的是将院士的数据存储到数据库中,从而进行数据库操作,这里新建表同时进行数据相关的操作
+1.教师表
+create table teacher(
+id	int(11) primary key auto_increment,
+bgdd	varchar(100),
+bgsj	varchar(100),
+cz	varchar(100),
+danwei varchar(100),
+danwei2	varchar(100),
+dzyx	varchar(100),
+lxdh	varchar(100),
+txdz	varchar(100),
+xingming	varchar(50),
+zhicheng	varchar(40),
+zhiwu	varchar(40),
+ zywz	varchar(100)
+ );
