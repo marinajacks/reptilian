@@ -291,6 +291,9 @@ for url in urls2:
     a=teacherinfo(url)
     print(len(a))
     writebase(a)
+    
+    
+
 
 
 
