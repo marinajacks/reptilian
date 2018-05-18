@@ -8,7 +8,9 @@ Created on Thu May 17 15:13:12 2018
 """
 
 import requests
+
 from selenium import webdriver
+
 from bs4 import BeautifulSoup  
 import time
 
@@ -25,10 +27,12 @@ def test(n,m):
     
     for i in range(n):
         m0[0].click()
+       # print('click it')
         #time.sleep(1) #休眠一次
     
     for j in range(m):
         m0[1].click()
+        #print('click it')
         #time.sleep(1) #休眠一次
     #使用find_elements_by_xpath这个方法显然可以按照地址获取到更详细的信息
     href=driver.find_elements_by_xpath("//*[@href]")
@@ -41,11 +45,12 @@ def test(n,m):
         and 'list_alphabet' not in i.get_attribute('href').split('/')):
             #print(i.get_attribute('href'))
             hrefs.append(i.get_attribute('href'))
-            
+          #  print('write one')
     #这个代码主要是为了将重复的部分去除掉
     for i in hrefs:
          if i not in hrefss:
              hrefss.append(i)
+            # print('get it')
  
     driver.quit()
     return hrefss
@@ -72,7 +77,6 @@ def main(driver,n):
 
 #获取运动员的相关信息
 def athlete(url):
-    url=urls1
     res=requests.get(url)
     soup=BeautifulSoup(res.text,'html.parser')
     content=soup.find_all(class_='table')
@@ -85,7 +89,7 @@ def athlete(url):
     for name in b:
        # info.append(name.getText())
         infos.append(name.getText())
-        print(name.getText())
+       # print(name.getText())
     #这里主要是为了使得海外的运动的信息也能够保持完整,对于最后一个籍贯也补充完整
     if(len(infos)<9):
         infos.append('籍贯：')
@@ -94,40 +98,56 @@ def athlete(url):
 
 #这个函数主要是为了讲数据写入到数据库中
 def writebase(a):
-   
     b=[]
+   
     for i in a:
         b.append(i.split('：')[1])
   
-   import pymysql
-   conn = pymysql.Connect(
+    import pymysql
+    conn = pymysql.Connect(
         host='localhost',
         port=3306,
         user='root',
         passwd='123456',
         db='ecnu',
         charset='utf8'
-    )
-   cursor = conn.cursor()
-   
-   cursor.executemany("insert into athlete(name,spell,gender,nation,birthday,height,weight,item,province) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                                   ,[(b[0],b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8])])
-   conn.commit()
-   cursor.close()
-   conn.close()
-
+     )
+    cursor = conn.cursor()
     
+    cursor.executemany("insert into athlete(name,spell,gender,nation,birthday,height,weight,item,province) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                                   ,[(b[0],b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8])])
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+def compus():
+    url='https://portal1.ecnu.edu.cn/cas/login?service=http%3A%2F%2Fportal.ecnu.edu.cn%2Fneusoftcas.jsp'
+    path='/Users/macbook/downloads/geckodriver'
+    
+    driver = webdriver.Firefox(executable_path =path)
+    
+    
+    driver.get(url)
+    
+    driver.find_element_by_id('un').send_keys('51174500004')
+        
+    driver.find_element_by_id('pd').send_keys('han1990yan')
+    
+    driver.find_element_by_class_name('ide_code_input').send_keys('3003')
+
+    driver.find_element_by_id('index_login_btn').click()
+
 
 if __name__ == "__main__":
     
-   # hrefs=test(49,612)
-   wrong=0
+    hrefs=test(5,5)
+    wrong=0
     for i in hrefs:
         if(len(athlete(i))<9):
-            wrong++;
+            wrong+=1
             pass
         else:
-            writebase(athlete(i))
+           # writebase(athlete(i))
             print(athlete(i))
         
     

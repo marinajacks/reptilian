@@ -11,6 +11,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+
+'''
 url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
 res=requests.get(url)
 res.status_code
@@ -30,9 +32,9 @@ for k in content:
     teacherurls.append(teacherurl)
 
 
+'''
 
-
-url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
+#url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
 '''这个函数是根据学校的教师信息的主页获取的各院系的url,但是现在有一个问题是有可能地址下面还存
 在二级子目录,这需要进一步的处理'''
 def academyurl(url):
@@ -52,7 +54,6 @@ def academyurl(url):
     return academys
     
     
-academyurls = academyurl(url)
 
 
 #院系的主页url
@@ -71,21 +72,10 @@ def teacherurl(url):
     return urls
 
 
-#teacherurl(url)
-teacheradds=[]
-for url in academyurls:
-    if(len(teacherurl(url))==0):
-        urls=academyurl(url)
-        for url1 in urls:
-            teacheradds.append(teacherurl(url1))
-    else:
-        teacheradds.append(teacherurl(url))
-        
-    
 
 #这个函数是为了获取老师的信息
 
-url='http://faculty.ecnu.edu.cn/s/920/main.jspy'
+#url='http://faculty.ecnu.edu.cn/s/920/main.jspy'
 
 #url='http://faculty.ecnu.edu.cn/s/2673/main.jspy'
 '''teacherinfo函数是为了获取老师的个人信息,输入的信息是老师的个人主页url'''
@@ -201,6 +191,7 @@ def teacherinfo(url):
     return teacher2
     
 #测试给出教师的信息.
+'''
 a=teacherinfo(url)
 
 
@@ -208,7 +199,7 @@ url1='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nod
 url2='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=12'
     
 
-    
+    '''
 '''
 def getname(n,name):
     print('content'+str(n)+'=soup.find_all(id="'+name+'\")')
@@ -216,7 +207,7 @@ def getname(n,name):
 '''    
 
 '''在将数据写入数据库之前,需要在数据库中建立相关的表,然后再将数据导入到数据库中,'''  
-
+''' #其实,这里有有一点需要
 #下面的函数是为了进行数据的写入,将数据写入到数据库中
 import pymysql
 conn = pymysql.Connect(
@@ -234,7 +225,7 @@ effect_row = cursor.executemany("insert into teacher(id,xingming,zhicheng,zhiwu,
 conn.commit()
 cursor.close()
 conn.close()
-
+'''
 #下面测测试如何把数据写入到数据库中,这里构造一个函数
 def writebase(a):
     import pymysql
@@ -258,6 +249,7 @@ def writebase(a):
     
 '''这个用来单独的处理一些数据的情况
 ''' 
+'''
 url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=41'
 teacherurls=teacherurl(url)
 for url in teacherurls:
@@ -294,6 +286,32 @@ for url in urls2:
     
     
 
+'''
+#这个函数用来获取每条员工的url信息,是详细的信息
+def getteachres(url):
+    
+    academyurls = academyurl(url)
 
+    teacheradds=[]
+    for url in academyurls:
+        if(len(teacherurl(url))==0):
+            urls=academyurl(url)
+            for url1 in urls:
+                teacheradds.append(teacherurl(url1))
+        else:
+            teacheradds.append(teacherurl(url))
+    urls1=[]
+    for urls in teacheradds:
+        for url in urls:
+            urls1.append(url) 
+    return urls1
 
+if __name__ == "__main__":
+    #teacherurl(url)
+    url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
 
+    u=getteachres(url)
+            
+    
+
+    

@@ -290,6 +290,6 @@ s1.id
 driver.current_url #获取当前的
 
 
-if __name__ == '__main__': 
+if __name__ == "__main__": 
     test(3)
     
