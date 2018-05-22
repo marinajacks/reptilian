@@ -12,5 +12,20 @@
 数据库设计:
 
 create table athlete(
+id	int(11) primary key auto_increment,
+name	varchar(50),
+spell	varchar(50),
+gender	varchar(30),
+nation	varchar(30),
+birthday	varchar(50),
+height	varchar(30),
+weight	varchar(30),
+item	varchar(50),
+province	varchar(30)
 
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='运动员信息表';
+
+#脚本插入数据的操作
+insert into athlete
+(name,spell,gender,nation,birthday,height,weight,item,province) 
+values(%s,%s,%s,%s,%s,%s,%s,%s,%s)
