@@ -33,3 +33,9 @@ def test():
 if __name__ == "main":
     test()
     
+    import requests 
+    url='https://kyfw.12306.cn/otn/resources/js/query/train_list.js?scriptVersion=1.0'
+    s=requests.get(url)
+    path='/Users/macbook/downloads/test.txt'
+    f=open(path,encoding='utf-8')
+    f.write(str(s))
