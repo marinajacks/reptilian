@@ -157,16 +157,17 @@ f.write(values)
 
 
 if __name__=="__main__":
-    local='/Users/macbook/documents/project/reptilian/house3.txt'
+    local='/home/macbook/project/reptilian/house3.txt'
     city=input('输入城市编码')
+    city1=city+'1'
     urls=getall(city)
-    local=local.replace('house3',city)
+    local=local.replace('house3',city1)
     for url in urls:
         clears=getinfo(url)
         values=test(clears)
         print(values)
-        #writelocal(local,values)
-        writebase(city,values)
+        writelocal(local,values)
+       # writebase(city,values)
     print("over")
         
  

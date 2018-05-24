@@ -28,7 +28,14 @@ unitprice	varchar(100)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='房价信息表';
 
 数据的插入脚本
+<<<<<<< HEAD
 insert into teacher(city,village,rooms,area,orientation,lift,floor,address,totalprice,unitprice) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
 
 
 下面还可以设计一个伪表,用于存储城市的编码信息.然后可以用来进行数据的关联.
+=======
+insert into teacher(xingming,zhicheng,zhiwu,danwei,danwei2,lxdh,bgsj,cz,zywz,bgdd,dzyx,txdz) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+
+
+
+>>>>>>> a21ac308e62c1829ae63426096fc036eb7f7e4c9
