@@ -4,6 +4,8 @@
 Created on Mon May 21 21:50:52 2018
 
 @author: macbook
+这个项目是特定的对于链家数据库的操作,特定的爬取链家数据库,不能直接爬取其他的
+数据库的信息.
 """
 from bs4 import BeautifulSoup
 
@@ -120,7 +122,8 @@ def writelocal(local,text):
     f.close()
   
 city='sh'
-#将数据写入到数据库中
+#将数据写入到数据库中,这个函数主要是使用pymysql的方法来进行数据的写入操作,
+#把数据写入到数据库中.
 def writebase(city,values):
     conn = pymysql.Connect(
          host='localhost',
