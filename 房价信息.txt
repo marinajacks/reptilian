@@ -29,3 +29,6 @@ unitprice	varchar(100)
 
 数据的插入脚本
 insert into teacher(xingming,zhicheng,zhiwu,danwei,danwei2,lxdh,bgsj,cz,zywz,bgdd,dzyx,txdz) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+
+
+
