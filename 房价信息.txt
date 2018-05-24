@@ -34,4 +34,21 @@ insert into house(city,village,rooms,area,orientation,lift,floor,address,totalpr
 下面还可以设计一个伪表,用于存储城市的编码信息.然后可以用来进行数据的关联.
 
 
+另外,为了进行hive的使用,这里进行hive的建表语句的开发
+
+create table house(
+city	STRING,
+village	STRING,
+rooms	STRING,
+area	STRING,
+orientation	STRING,
+lift	STRING,
+floor	STRING,
+address	STRING,
+totalprice	STRING,
+unitprice	STRING
+)
+
+下面是数据的加载:
+ LOAD DATA LOCAL INPATH './test/sh.txt' OVERWRITE INTO TABLE house;
 
