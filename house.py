@@ -166,8 +166,8 @@ if __name__=="__main__":
         clears=getinfo(url)
         values=test(clears)
         print(values)
-        #writelocal(local,values)
-        writebase(city,values)
+        #lswritelocal(local,values)
+        #writebase(city,values)
     print("over")
         
  

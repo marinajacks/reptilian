@@ -23,6 +23,7 @@ unitprice	varchar(100)
 
 
 #下面的程序主要是为了获取到每个城市的房价单价信息
+/*
 SELECT 
     city,
     CONCAT(areas, '平米') AS areas,
@@ -33,10 +34,17 @@ FROM
     (SELECT 
         city,
             SUM(CAST(TRIM(REPLACE(area, '平米', '')) AS SIGNED)) AS areas,
-			SUM(CAST(TRIM(REPLACE(area, '平米', '')) AS SIGNED)) AS areas1,
+            SUM(CAST(TRIM(REPLACE(area, '平米', '')) AS SIGNED)) AS areas1,
             SUM(CAST(TRIM(REPLACE(totalprice, '元/平米', ''))
                 AS SIGNED)) AS total
     FROM
         house
     GROUP BY city) a
-ORDER BY areas1 DESC
+ORDER BY areas1 DESC;
+
+*/
+##SELECT * FROM HOUSE;
+
+select * from house
+
+
