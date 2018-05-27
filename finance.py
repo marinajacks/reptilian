@@ -17,12 +17,21 @@ import time
 def test():
     url='http://fund.eastmoney.com/data/hbxfundranking.html#t;c0;r;s1yzf;ddesc;pn50;mg;os1;'
     
+    url="https://www.anjuke.com/ks/cm608524-p2/#filtersort"
+
+
     path='/Users/macbook/downloads/geckodriver'
         
     driver = webdriver.Firefox(executable_path =path)
         
     driver.get(url)
        
+    
+    s1=driver.find_elements_by_class_name('infos')
+    s2=driver.find_elements_by_class_name('cbook-price')
+
+    
+    
     s=driver.find_element_by_id("pagebar").find_element_by_class_name('end')
     
     driver.find_element_by_class_name('end')
