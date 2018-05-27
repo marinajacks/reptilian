@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+git#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Fri May 18 15:22:34 2018
@@ -26,10 +26,6 @@ def test():
         
     driver.get(url)
        
-    
-    s1=driver.find_elements_by_class_name('infos')
-    s2=driver.find_elements_by_class_name('cbook-price')
-
     
     
     s=driver.find_element_by_id("pagebar").find_element_by_class_name('end')
