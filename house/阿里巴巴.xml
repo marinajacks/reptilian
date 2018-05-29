@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">id</Data></Cell>
+			<Cell><Data ss:Type="String">notes</Data></Cell>
+			<Cell><Data ss:Type="String">area</Data></Cell>
+			<Cell><Data ss:Type="String">rooms</Data></Cell>
+			<Cell><Data ss:Type="String">unitprice</Data></Cell>
+			<Cell><Data ss:Type="String">floor</Data></Cell>
+			<Cell><Data ss:Type="String">year</Data></Cell>
+			<Cell><Data ss:Type="String">totalprice</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="Number">650</Data></Cell>
+			<Cell><Data ss:Type="String">不限购！外地人可买，精装复式小两房，配套成熟~月租金2500多图</Data></Cell>
+			<Cell><Data ss:Type="String">48平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">6250元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共23层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">30万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">573</Data></Cell>
+			<Cell><Data ss:Type="String">急，急，精装小户型，送家具家电，低总价高收租，月收租2500多图</Data></Cell>
+			<Cell><Data ss:Type="String">40平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8750元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共21层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">35万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">576</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰地铁口200米，48平只要40万，房东急卖！！！多图</Data></Cell>
+			<Cell><Data ss:Type="String">48平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8333元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">40万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">622</Data></Cell>
+			<Cell><Data ss:Type="String">地铁11号线精装全配拎包入住层高3.7家具家电全多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">6896元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共23层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">40万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">595</Data></Cell>
+			<Cell><Data ss:Type="String">精装修地铁口150米，不买地铁口何必花桥，单价不过万随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">7241元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">42万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">623</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，房东置换，看房有钥匙，11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">52平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8076元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共22层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">42万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">654</Data></Cell>
+			<Cell><Data ss:Type="String">精装修地铁口150米，不买地铁口何必花桥，单价不过万随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">53平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">7924元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">42万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">661</Data></Cell>
+			<Cell><Data ss:Type="String">精装修地铁口150米，不买地铁口何必花桥，单价不过万随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">7241元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">42万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">630</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装修单身公寓，阿里巴巴，离地铁口只有89米，超实惠多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">7741元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">44.9万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">667</Data></Cell>
+			<Cell><Data ss:Type="String">急，精装阿里巴巴，送家具家电，低总价高收租，到地铁口81米多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">7603元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">44.1万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">600</Data></Cell>
+			<Cell><Data ss:Type="String">精装修房，地铁口采光好，租金高。拎包入住。多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">7758元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">601</Data></Cell>
+			<Cell><Data ss:Type="String">房东挂牌总价45万，地铁口，有钥匙随时看房，交通方便配套成熟多图</Data></Cell>
+			<Cell><Data ss:Type="String">48平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9375元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">606</Data></Cell>
+			<Cell><Data ss:Type="String">11号线地铁口3百米，二手现房，精装修，肯德基，星巴克20米多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">7758元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">619</Data></Cell>
+			<Cell><Data ss:Type="String">11号线轻轨口送10万装修 ，首付15万，包租2千/月多图</Data></Cell>
+			<Cell><Data ss:Type="String">55平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8181元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共15层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">629</Data></Cell>
+			<Cell><Data ss:Type="String">太湖边+国家三A级景点+精装景观房+送大露台+可包租15年多图</Data></Cell>
+			<Cell><Data ss:Type="String">53平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8490元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">632</Data></Cell>
+			<Cell><Data ss:Type="String">真实报价！真实报价！精装公寓房只要五十万不到，税少，随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">51平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8823元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">639</Data></Cell>
+			<Cell><Data ss:Type="String">真实报价！真实报价！精装公寓房只要五十万不到，税少，随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">51平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8823元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">645</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口200米，阿里巴巴大楼，楼下肯德基，星巴克，拎包入住。多图</Data></Cell>
+			<Cell><Data ss:Type="String">52平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8653元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">660</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴房东置换，低于市场价精装修，11号线兆丰路口，不限购多图</Data></Cell>
+			<Cell><Data ss:Type="String">52平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8653元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共22层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">45万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">621</Data></Cell>
+			<Cell><Data ss:Type="String">11号线地铁上房，精装高档公寓，阿里巴巴不限购，可贷款有钥匙多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">7931元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">46万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">657</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 送精装15万不需社保 房东等用钱 急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">60平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">7666元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">46万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">572</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰地铁口200米，58平只要47万，房东急卖！！！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共22层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">578</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，房东置换，看房有钥匙，11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">636</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，房东置换，看房有钥匙，11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">637</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，房东置换，看房有钥匙，11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">640</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，房东置换，看房有钥匙，11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">643</Data></Cell>
+			<Cell><Data ss:Type="String">房东急售！急！急！ 阿里巴巴47万 仅此一套，一周必卖。多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8103元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">664</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴好楼层，好朝向，好业主，诚心卖！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8071元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共24层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">47万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">570</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 地铁口的《精装房，单价只要9000》离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">52平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9230元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">574</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴与四十八万价格不得不说的故事，之吉售篇多图</Data></Cell>
+			<Cell><Data ss:Type="String">52平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9230元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">577</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁口150米下楼肯德基 星巴克+交通方便+精装修多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">579</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口有故事的房子，花心思的家, 精致户型享受无限阳光生活多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">582</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 地铁口的《精装房，单价只要9000》离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">590</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路地铁口200M，精装修，不限购不限贷。欲购从速！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共22层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">591</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装公寓，亏本急售，58平48万，错过这村再无此店多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">592</Data></Cell>
+			<Cell><Data ss:Type="String">11号线兆丰路站，精装全配环境舒适，看房方便，楼下肯德基多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">598</Data></Cell>
+			<Cell><Data ss:Type="String">有家才有福，先成家后立业。精英商务房只要五十万不到，随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">51平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9411元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">604</Data></Cell>
+			<Cell><Data ss:Type="String">11号地铁兆丰路站精装房，离上海一路之隔.生活配套成熟.急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">607</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 精装房源 兆丰地铁百米即到 配套成熟交通方便多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">624</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装公寓，亏本急售，58平48万，错过这村再无此店多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">626</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装修两室户 不限购不限贷 好房子你值得拥有 房东急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">50平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9600元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">633</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口《58平48万》房东急售，低于市场3万出售，看房有钥匙多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">634</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装公寓，亏本急售，58平48万，错过这村再无此店多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">653</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴精装房源，兆丰地铁百米即到！配套成熟交通方便！！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">656</Data></Cell>
+			<Cell><Data ss:Type="String">九千的地铁口房哪里买，请来花桥11号线兆丰站，即买即赚到多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8275元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">48万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">569</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴地铁口81米精装高档公寓，低于市场价急售，不到50万多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8603元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49.9万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">575</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴公寓就是你的梦中情人，赶快和她一起成个家吧！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">580</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口  阿里巴巴还犹豫什么？赶紧进来看看吧！四十六万吉售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">596</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴商务楼 地铁口40年产权 精装 办公自住皆可！多图</Data></Cell>
+			<Cell><Data ss:Type="String">42平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">11666元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共24层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">597</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 地铁口的《精装房，单价只要9000》离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">609</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，紧邻兆丰站200米，精装全配，拎包即住，只需49w多图</Data></Cell>
+			<Cell><Data ss:Type="String">48平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">10208元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共28层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">614</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口  阿里巴巴还犹豫什么？赶紧进来看看吧！四十六万吉售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">625</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路地铁口旁边精装小公寓，出行方便，房东急售，欲购从速多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">628</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口  阿里巴巴还犹豫什么？赶紧进来看看吧！四十六万吉售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">635</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口  阿里巴巴还犹豫什么？赶紧进来看看吧！四十六万吉售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">644</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口  阿里巴巴还犹豫什么？赶紧进来看看吧！四十六万急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">646</Data></Cell>
+			<Cell><Data ss:Type="String">马云旗下阿里巴巴商务楼，地铁口40年产权精装办公自住皆可！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8448元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共24层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">662</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰地铁口 阿里巴巴 总价低，无社保可买！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8494元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共24层)</Data></Cell>
+			<Cell><Data ss:Type="String">2010年建造</Data></Cell>
+			<Cell><Data ss:Type="String">49.5万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">568</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口150米，有钥匙随时看房，精装修拎包入住，交通方便。多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">571</Data></Cell>
+			<Cell><Data ss:Type="String">房子着急卖+地铁口500米的地段+和肯德基比邻+信息真实可靠多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">584</Data></Cell>
+			<Cell><Data ss:Type="String">单价9000买地铁口精装房，即买即住（租），欢迎看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">586</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口150米下楼肯德基 星巴克+交通方便+精装+拎包入住多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">587</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 花桥兆丰路11号线200米+房东亏本卖+信息真实！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">588</Data></Cell>
+			<Cell><Data ss:Type="String">11号线地铁口3百米，二手现房，精装修，肯德基，星巴克20米多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">589</Data></Cell>
+			<Cell><Data ss:Type="String">房子着急卖+地铁口500米的地段+和肯德基比邻+信息真实可靠多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">593</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口150米下楼肯德基 星巴克+交通方便+精装+拎包入住多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">599</Data></Cell>
+			<Cell><Data ss:Type="String">11号线兆丰路站，精装全配环境舒适，看房方便，楼下肯德基多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">602</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 地铁口的《精装房，单价只要9000》离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">603</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴《地铁口精装公寓+带独立卫生间+可做饭+全景落地窗》多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8591元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">605</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴精装公寓急售，拎包入住多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">608</Data></Cell>
+			<Cell><Data ss:Type="String">11号线地铁口3百米，二手现房，精装修，肯德基，星巴克20米多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">610</Data></Cell>
+			<Cell><Data ss:Type="String">11号地铁兆丰路站精装房，离上海一路之隔.生活配套成熟.急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">611</Data></Cell>
+			<Cell><Data ss:Type="String">睡在地铁旁的房子 精装 阳光房 朝东 落地窗 诚售多图</Data></Cell>
+			<Cell><Data ss:Type="String">49平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">10204元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">612</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路500米+肯德基100米+性价比房子 急卖 出售！！！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">616</Data></Cell>
+			<Cell><Data ss:Type="String">上海11号线兆丰站1百米，出门金拱门星巴克，一级资质物业多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2008年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">617</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路地铁口的精装房，单价不到一万，离上海一路之隔，欲购从速多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">618</Data></Cell>
+			<Cell><Data ss:Type="String">价问世！红本在手！如果你还在等那肯定买不到了！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">631</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 地铁口的《精装房，单价只要9000》离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">638</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路地铁口200米 精装修 不限购 总价低多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">641</Data></Cell>
+			<Cell><Data ss:Type="String">兆丰路地铁口，精装修二房，急降10万，投栥自住兼得，随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">65平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">7692元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">642</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装修公寓，阿里巴巴电子商务大厦，离地铁口只有200米多图</Data></Cell>
+			<Cell><Data ss:Type="String">55平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">9090元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共24层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">647</Data></Cell>
+			<Cell><Data ss:Type="String">11号线兆丰路地铁口三百米精装公寓，低总价，单价不到一万！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">648</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 花桥兆丰路11号线200米+房东亏本卖+信息真实！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">651</Data></Cell>
+			<Cell><Data ss:Type="String">11号地铁兆丰路站精装房，单价只要9000。离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">655</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴 花桥兆丰路11号线200米+房东亏本卖+信息真实！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共25层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">658</Data></Cell>
+			<Cell><Data ss:Type="String">精装修地铁口150米，不买地铁口何必花桥，单价不过万随时看房多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">659</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁口的精装房，单价只要9000，离上海一路之隔多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">666</Data></Cell>
+			<Cell><Data ss:Type="String">不住地铁口，何必买花桥，精装地铁口200米，看房有钥匙多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8620元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">50万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">583</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁150米总价52万，楼下全家肯德基生活配套全多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8965元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">585</Data></Cell>
+			<Cell><Data ss:Type="String">强强联手，阿里巴巴11号线地铁旁 ，精装修， 不限购不限贷多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8965元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">613</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁150米总价52万，楼下全家肯德基生活配套全多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8965元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">620</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁150米总价52万，楼下全家肯德基生活配套全多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8965元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">627</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴，地铁150米总价52万，楼下全家肯德基生活配套全多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8965元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共27层)</Data></Cell>
+			<Cell><Data ss:Type="String">2013年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">663</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴紧邻兆丰站 精装全配52万 好楼层，采光好，房东急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">60平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8666元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">低层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2015年建造</Data></Cell>
+			<Cell><Data ss:Type="String">52万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">615</Data></Cell>
+			<Cell><Data ss:Type="String">房东置换，精装修，家电家具全配，S11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9482元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共33层)</Data></Cell>
+			<Cell><Data ss:Type="String">2016年建造</Data></Cell>
+			<Cell><Data ss:Type="String">55万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">649</Data></Cell>
+			<Cell><Data ss:Type="String">地铁口精装修两室户 不限购不限贷 好房子你值得拥有 房东急售多图</Data></Cell>
+			<Cell><Data ss:Type="String">50平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">11000元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">55万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">652</Data></Cell>
+			<Cell><Data ss:Type="String">房东置换，精装修，家电家具全配，S11号线兆丰路口，不限购！多图</Data></Cell>
+			<Cell><Data ss:Type="String">58平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">9482元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共33层)</Data></Cell>
+			<Cell><Data ss:Type="String">2016年建造</Data></Cell>
+			<Cell><Data ss:Type="String">55万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">665</Data></Cell>
+			<Cell><Data ss:Type="String">11号线地铁口3百米,二手现房,精装修,肯德基,星巴克20米多图</Data></Cell>
+			<Cell><Data ss:Type="String">62平米</Data></Cell>
+			<Cell><Data ss:Type="String">2室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">8870元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">高层(共22层)</Data></Cell>
+			<Cell><Data ss:Type="String">2012年建造</Data></Cell>
+			<Cell><Data ss:Type="String">55万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">594</Data></Cell>
+			<Cell><Data ss:Type="String">阿里巴巴精装修公寓，拎包入住，出门就是地铁，楼下KFC星巴克多图</Data></Cell>
+			<Cell><Data ss:Type="String">51平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室1厅</Data></Cell>
+			<Cell><Data ss:Type="String">11764元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共26层)</Data></Cell>
+			<Cell><Data ss:Type="String">2011年建造</Data></Cell>
+			<Cell><Data ss:Type="String">60万元</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">581</Data></Cell>
+			<Cell><Data ss:Type="String">上海产权+首付30万+单价1万8+外地人可买好多套+地铁口上多图</Data></Cell>
+			<Cell><Data ss:Type="String">100平米</Data></Cell>
+			<Cell><Data ss:Type="String">1室2厅</Data></Cell>
+			<Cell><Data ss:Type="String">10000元/㎡</Data></Cell>
+			<Cell><Data ss:Type="String">中层(共20层)</Data></Cell>
+			<Cell><Data ss:Type="String">2014年建造</Data></Cell>
+			<Cell><Data ss:Type="String">100万元</Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

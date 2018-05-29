@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec 28 22:53:36 2017
@@ -11,28 +12,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-
-'''
-url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
-res=requests.get(url)
-res.status_code
-res.encoding='utf-8'
-
-
-soup=BeautifulSoup(res.text,'html.parser')
-
-content=soup.find_all(href=re.compile("teacherList"))
-
-teacherurls=[]
-for k in content:
-    teacherurl=[]
-    teacherurl.append(url[:url.find('/search')]+k.get('href'))
-    print(k.get('href'))  #获取对应的地址
-    print(k.string)
-    teacherurls.append(teacherurl)
-
-
-'''
 
 #url='http://faculty.ecnu.edu.cn/search/teacherMain.faces?siteId=10&pageId=0'
 '''这个函数是根据学校的教师信息的主页获取的各院系的url,但是现在有一个问题是有可能地址下面还存
@@ -58,7 +37,7 @@ def academyurl(url):
 
 #院系的主页url
 '''
-
+url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=18'
 url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=41'
 '''
 '''这个函数是根据院系的主网URL,获取到教师的个人主页url'''
@@ -183,7 +162,6 @@ def teacherinfo(url):
              'bgsj':[bgsj],'cz':[cz],'zywz':[zywz],'bgdd':[bgdd],'dzyx':[dzyx],
              'txdz':[txdz],'yjfx':[yjfx],'shjz':[shjz],'xscg':[xscg]}
     
-
     teacher1={'xingming':xingming,'zhicheng':zhicheng,'zhiwu':zhiwu,  ＃这里是用了数据字典的方式,这里是有一定的问题的.
               'danwei':danwei,'danwei2':danwei2,'lxdh':lxdh,'bgsj':bgsj,
               'cz':cz,'zywz':zywz,'bgdd':bgdd,'dzyx':dzyx,'txdz':txdz}
@@ -191,43 +169,7 @@ def teacherinfo(url):
     teacher2=[xingming,zhicheng,zhiwu,danwei,danwei2,lxdh,bgsj,cz,zywz,bgdd,dzyx,txdz]
     return teacher2
     
-#测试给出教师的信息.
-'''
-a=teacherinfo(url)
 
-
-url1='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=59'
-url2='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=12'
-    
-
-    '''
-'''
-def getname(n,name):
-    print('content'+str(n)+'=soup.find_all(id="'+name+'\")')
-    print(name+'=content'+str(n)+'[0].string.strip()')
-'''    
-
-
-'''在将数据写入数据库之前,需要在数据库中建立相关的表,然后再将数据导入到数据库中,'''  
-''' #其实,这里有有一点需要
-#下面的函数是为了进行数据的写入,将数据写入到数据库中
-import pymysql
-conn = pymysql.Connect(
-     host='localhost',
-     port=3306,
-     user='root',
-     passwd='123456',
-     db='ecnu',
-     charset='utf8'
- )
-cursor = conn.cursor()
-
-effect_row = cursor.executemany("insert into teacher(id,xingming,zhicheng,zhiwu,danwei,danwei2,lxdh,bgsj,cz,zywz,bgdd,dzyx,txdz) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                                ,[(1,a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],a[10],a[11])])
-conn.commit()
-cursor.close()
-conn.close()
-'''
 #下面测测试如何把数据写入到数据库中,这里构造一个函数
 def writebase(a):
     import pymysql
@@ -247,6 +189,30 @@ def writebase(a):
     cursor.close()
     conn.close()
         
+
+#这个函数用来获取每条员工的url信息,是详细的信息
+def getteachres(url):
+    
+    academyurls = academyurl(url)
+
+    teacheradds=[]
+    for url in academyurls:
+        if(len(teacherurl(url))==0):
+            urls=academyurl(url)
+            for url1 in urls:
+                teacheradds.append(teacherurl(url1))
+        else:
+            teacheradds.append(teacherurl(url))
+    urls1=[]
+    for urls in teacheradds:
+        for url in urls:
+            urls1.append(url) 
+    return urls1
+  
+#这个函数用来判断是否需要写入到数据库
+def YorN():
+    y=True
+    
     
     
 '''这个用来单独的处理一些数据的情况
@@ -289,24 +255,6 @@ for url in urls2:
     
 
 '''
-#这个函数用来获取每条员工的url信息,是详细的信息
-def getteachres(url):
-    
-    academyurls = academyurl(url)
-
-    teacheradds=[]
-    for url in academyurls:
-        if(len(teacherurl(url))==0):
-            urls=academyurl(url)
-            for url1 in urls:
-                teacheradds.append(teacherurl(url1))
-        else:
-            teacheradds.append(teacherurl(url))
-    urls1=[]
-    for urls in teacheradds:
-        for url in urls:
-            urls1.append(url) 
-    return urls1
 
 if __name__ == "__main__":
     #teacherurl(url)
