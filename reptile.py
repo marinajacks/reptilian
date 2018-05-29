@@ -55,6 +55,7 @@ def academyurl(url):
 #院系的主页url
 url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=18'
 
+url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=41'
 '''这个函数是根据院系的主网URL,获取到教师的个人主页url'''
 def teacherurl(url):
     res=requests.get(url)
@@ -180,6 +181,15 @@ def teacherinfo(url):
     
     
    
+#这是一个入口的主函数,现在的处理思路是暂时的给定学院的URL
+#获取到学院的教室的信息    
+def main(url):
+    teacherurls=teacherurl(url)
+    
+    for urls in teacherurls:
+        print(teacherinfo(urls))
+        print()
+        
     
 
 
@@ -199,6 +209,8 @@ def getname(n,name):
 
 
 
+
+
 '''  
     
     
@@ -209,7 +221,7 @@ conn = pymysql.Connect(
      host='localhost',
      port=3306,
      user='root',
-     passwd=''
+     passwd='123456'
  )
 cursor = conn.cursor()
 sql="select * from test.qq"
