@@ -58,7 +58,7 @@ def academyurl(url):
 
 #院系的主页url
 '''
-url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=18'
+
 url='http://faculty.ecnu.edu.cn/search/teacherList.faces?siteId=10&pageId=0&nodeId=41'
 '''
 '''这个函数是根据院系的主网URL,获取到教师的个人主页url'''
@@ -183,6 +183,7 @@ def teacherinfo(url):
              'bgsj':[bgsj],'cz':[cz],'zywz':[zywz],'bgdd':[bgdd],'dzyx':[dzyx],
              'txdz':[txdz],'yjfx':[yjfx],'shjz':[shjz],'xscg':[xscg]}
     
+
     teacher1={'xingming':xingming,'zhicheng':zhicheng,'zhiwu':zhiwu,  ＃这里是用了数据字典的方式,这里是有一定的问题的.
               'danwei':danwei,'danwei2':danwei2,'lxdh':lxdh,'bgsj':bgsj,
               'cz':cz,'zywz':zywz,'bgdd':bgdd,'dzyx':dzyx,'txdz':txdz}
@@ -205,6 +206,7 @@ def getname(n,name):
     print('content'+str(n)+'=soup.find_all(id="'+name+'\")')
     print(name+'=content'+str(n)+'[0].string.strip()')
 '''    
+
 
 '''在将数据写入数据库之前,需要在数据库中建立相关的表,然后再将数据导入到数据库中,'''  
 ''' #其实,这里有有一点需要
