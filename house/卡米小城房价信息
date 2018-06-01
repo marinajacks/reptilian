@@ -1,0 +1,49 @@
+房价信息数据库
+这里使用了链家的数据库信息,从房价数据库中找出了想要的数据,这里根据房价数据只给出想要的数据,现在的数据
+的字段分别为:
+id	int(11),
+notes	varchar(1000),
+area	varchar(100),
+rooms	varchar(100),
+unitprice	varchar(100),
+floor	varchar(200),
+year    varchar(100),
+totalprice	varchar(100),
+
+下面根据这个数据建立数据插入模型:
+create table kami(
+id	int(11) primary key auto_increment,
+notes	varchar(1000),
+area	varchar(100),
+rooms	varchar(100),
+unitprice	varchar(100),
+floor	varchar(200),
+year    varchar(100),
+totalprice	varchar(100)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='卡米小城房价信息表';
+
+数据的插入脚本
+insert into kami(notes,area,rooms,unitprice,floor,year,totalprice) values(%s,%s,%s,%s,%s,%s,%s)
+
+
+下面还可以设计一个伪表,用于存储城市的编码信息.然后可以用来进行数据的关联.
+
+
+另外,为了进行hive的使用,这里进行hive的建表语句的开发
+
+create table house(
+city	STRING,
+village	STRING,
+rooms	STRING,
+area	STRING,
+orientation	STRING,
+lift	STRING,
+floor	STRING,
+address	STRING,
+totalprice	STRING,
+unitprice	STRING
+)
+
+下面是数据的加载:
+ LOAD DATA LOCAL INPATH './test/sh.txt' OVERWRITE INTO TABLE house;
+
