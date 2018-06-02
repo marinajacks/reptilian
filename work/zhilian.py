@@ -96,13 +96,18 @@ def getvalue(url,path):
     res=requests.get(url,headers=headers)
     soup=BeautifulSoup(res.text,'html.parser')
     jobinfo=[]
-    info=soup.find(class_='terminal-ul clearfix').get_text().split('\n')
-    for i in info:
-        if(i==''):
-            pass
-        else:
-            jobinfo.append(i.strip())
-    #这部分主要是为了写入到文本
+    info1=soup.find(class_='terminal-ul clearfix')
+    if(info1 is None):
+        pass
+    else:
+        info=info1.get_text().split('\n')
+        
+        for i in info:
+            if(i==''):
+                pass
+            else:
+                jobinfo.append(i.strip())
+        #这部分主要是为了写入到文本
     values=''
     for i in jobinfo:
         values+=i
@@ -122,8 +127,9 @@ def getvalue(url,path):
 
 if __name__ == "__main__":
     #url0='http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E%2B%E4%B8%8A%E6%B5%B7&kw=%E6%9C%8D%E8%A3%85%E5%88%B6%E7%89%88%E5%B8%88&p=1&isadv='
-    url0='http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E%2B%E4%B8%8A%E6%B5%B7&kw=%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88&p=1&isadv='
+    #url0='http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E%2B%E4%B8%8A%E6%B5%B7&kw=%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88&p=1&isadv='
+    url0='http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%e4%b8%8a%e6%b5%b7&kw=%e4%bc%9a%e8%ae%a1&sm=0&isfilter=0&fl=538&isadv=50&sg=b87d570b3d724bc6ae3759fca4c2b509&p='
     urls=geturl(url0,90)
-    path='/Users/macbook/documents/project/reptilian/work/job3.txt'
+    path='/Users/macbook/documents/project/reptilian/work/job4.txt'
     for url in urls:
         getvalue(url,path)

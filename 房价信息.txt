@@ -36,19 +36,16 @@ insert into house(city,village,rooms,area,orientation,lift,floor,address,totalpr
 
 另外,为了进行hive的使用,这里进行hive的建表语句的开发
 
-create table house(
-city	STRING,
-village	STRING,
-rooms	STRING,
-area	STRING,
-orientation	STRING,
-lift	STRING,
-floor	STRING,
-address	STRING,
-totalprice	STRING,
-unitprice	STRING
-)
+create table house(city STRING,village STRING,rooms STRING,area STRING,orientation STRING,lift string,address string,totalprice string,unitprice string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
 
-下面是数据的加载:
- LOAD DATA LOCAL INPATH './test/sh.txt' OVERWRITE INTO TABLE house;
+正常情况下,hive的数据类型都是string,这是由于hive主要是为了进行日志等文本的操作,但是这个实际上是不影响的。然后就是字段的拆分和每行数据的拆分.
 
+下面是数据的加载,注意到这里加载数据的时候是从linux本地的文件加载上去的,主要的目的是为了数据上传的方便.
+
+load data local inpath '/home/hduser/marina/sh.txt' overwrite into TABLE house;
+
+这里如果是本地的数据但不是hdfs里边的数据的话,需要使用LOCAL,表明是本地数据.有LOCAL表示从本地文件系统加载（文件会被拷贝到HDFS中）
+
+无LOCAL表示从HDFS中加载数据（注意：文件直接被移动！！！而不是拷贝！！！ 并且。。文件名都不带改的。。）
+
+OVERWRITE  表示是否覆盖表中数据（或指定分区的数据）（没有OVERWRITE  会直接APPEND，而不会滤重!）
