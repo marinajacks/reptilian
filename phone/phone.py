@@ -108,6 +108,8 @@ def login():
     res=requests.get(url,headers=headers)
     res.encoding='utf-8'
     soup=BeautifulSoup(res.text,'html.parser')
+    
+    product=soup.find_all(class_='gl-item')
    
     
     
