@@ -103,14 +103,16 @@ def writebase(infos):
 
 if __name__ == "__main__":
     #url="https://www.anjuke.com/ks/cm608524/"
-    url='https://www.anjuke.com/ks/cm656247/#filtersort'
-    u='https://www.anjuke.com/ks/cm656247-p'
+    #url='https://www.anjuke.com/ks/cm656247/#filtersort'
+    url='https://www.anjuke.com/hangzhou/cm619140-p2/#filtersort'
+    u='https://www.anjuke.com/hangzhou/cm619140-p'
     urls=[]
     urls.append(url)
-    for i in range(1,2):
+    for i in range(1,11):
         urls.append(u+str(i+1)+'/#filtersort')
     for url in urls:
         s=getitems(url)
         for i in s:
             a=getvalues(i)
-            writebase(a)
+            print(a)
+            #writebase(a)
