@@ -63,8 +63,9 @@ def getdurg(drugname,p,n):
      
     table = driver.find_element_by_class_name('newform')
     table_rows = table.find_elements_by_tag_name('tr')
-    for i in table_rows[0].find_elements_by_tag_name('td'):
-           names.append(i.text)
+    tds=table_rows[0].find_elements_by_tag_name('td')
+    for i in range(1,len(tds)):
+           names.append(tds[i].text)
     drugs.append(names)
         
     for cl in range(1,n):
@@ -73,9 +74,10 @@ def getdurg(drugname,p,n):
     
        for i in range(1,len(table_rows)):
            drug=[]
-           for j in table_rows[i].find_elements_by_tag_name('td'):
-               drug.append(j.text)
-               print(j.text)
+           tds=table_rows[i].find_elements_by_tag_name('td')
+           for j in range(1,len(tds)):
+               drug.append(tds[j].text)
+               print(tds[j].text)
            drugs.append(drug)
            print(table_rows[i].text)
             
@@ -85,19 +87,23 @@ def getdurg(drugname,p,n):
     table_rows = table.find_elements_by_tag_name('tr')
     
     for i in range(1,len(table_rows)):
-          drug=[]
-          for j in table_rows[i].find_elements_by_tag_name('td'):
-              drug.append(j.text)
-              print(j.text)
-          drugs.append(drug)
-          print(table_rows[i].text)
+           drug=[]
+           tds=table_rows[i].find_elements_by_tag_name('td')
+           for j in range(1,len(tds)):
+               drug.append(tds[j].text)
+               print(tds[j].text)
+           drugs.append(drug)
+           print(table_rows[i].text)
            
         
     df=pd.DataFrame(drugs)
     
     df.to_excel(p)
     
+def getimage():
     
+    
+    return 0
     
     
     
@@ -138,6 +144,8 @@ def test():
 
 if __name__=="__main__":
     print('hello world!')
-    p='/Users/macbook/documents/project/reptilian/medicine/1.xlsx'
+    p='/Users/macbook/documents/project/reptilian/medicine/6.xlsx'
     name=input('中药名称')
-    getdurg(name,p,4)
+    num=input('页面数')
+    num=int(num)
+    getdurg(name,p,num)
