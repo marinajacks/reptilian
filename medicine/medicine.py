@@ -19,7 +19,8 @@ def getdurg(drugname,p,n):
     #response=requests.get(url,headers=headers)
     #现在我们发现为什么在使用编码的时候出现原始的代码的问题,主要就是原始的代码出现父编码与本层的编码
     #格式出现不一致的问题.另外,从这里可以看到,实际上我们需要使用到动态的网页爬虫技术来进行网页的登陆
-    path='/Users/macbook/downloads/geckodriver'
+   #path='/Users/macbook/downloads/geckodriver'
+    path='D:\project\selenium\geckodriver'
     driver = webdriver.Firefox(executable_path =path)
     url1='http://www.chemcpd.csdb.cn/cmpref/main/tcm_introduce.asp?n%20Count=6077992'
     driver.get(url1)

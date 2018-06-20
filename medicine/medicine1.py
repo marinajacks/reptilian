@@ -9,6 +9,47 @@ Created on Fri Jun 15 15:38:22 2018
 
 import requests 
 from bs4 import BeautifulSoup
+from selenium import webdriver
+import pandas as pd
+from selenium.webdriver.common.keys import Keys  
+import urllib.request
+import time
+
+
+
+    path='D:\project\selenium\geckodriver'
+    driver = webdriver.Firefox(executable_path=path)
+    url='http://lsp.nwu.edu.cn/tcmsp.php'
+    driver.get(url)
+    #模拟查询药物的相关操作
+    driver.find_element_by_name("q").clear()
+    driver.find_element_by_name("q").send_keys("浙贝母")
+    driver.find_element_by_id('searchBtTcm').click()
+    
+    
+    #定位查找药品信息
+    s=driver.find_elements_by_class_name('k-grid-content')
+    trs = s[0].find_elements_by_tag_name('tr')
+    tds=trs[0].find_elements_by_tag_name('td')
+    #定位到对应的药品的链接信息
+    print(tds[2].find_element_by_tag_name("a").get_attribute('href'))
+    
+    
+    
+    driver.find_element_by_link_text('Search').click()
+    driver.find_element_by_id('Channel12').click()
+    driver.find_element_by_id('id_chinese_Name').clear()
+    driver.find_element_by_id('id_chinese_Name').send_keys(drugname)
+    driver.current_window_handle #页面会发生跳转,这个命令用来将driver页面转换
+    time.sleep(1)
+    driver.find_element_by_id('id_chinese_Name').send_keys(Keys.ENTER)
+    time.sleep(1)
+    driver.switch_to_window(driver.window_handles[1])
+    url1=driver.current_url
+
+
+
+
 
 def test(url):
     #url='http://lsp.nwu.edu.cn/tcmspsearch.php?qr=Fritillariae%20Thunbrgii%20Bulbus&qsr=herb_en_name&token=77088eff74d45b12d933c73b1ce1a00a'
