@@ -71,7 +71,8 @@ def durginfo(url):
 
 def getdrug(drugname):
     #这个是通过模拟人的行为找到对应的药物的网页
-    path='D:\project\selenium\geckodriver'
+    #path='D:\project\selenium\geckodriver'
+    path='/Users/macbook/downloads/geckodriver'
     driver = webdriver.Firefox(executable_path=path)
     url='http://www.megabionet.org/tcmid/'
     driver.get(url)
@@ -93,7 +94,9 @@ if __name__=='__main__':
     drugname=input('请输入中药名称:')
     url=getdrug(drugname)
     num=input('输入页面个数:')
-    p=r'D:\project\reptilian\medicine'
+    p='/Users/macbook/documents/project/reptilian/medicine'
+    #p=r'D:\project\reptilian\medicine'
+    
     urls=geturls(url)
     drugs=[]
     drugs.append(['titles','formula','pubchemid','smile'])
