@@ -110,7 +110,7 @@ def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
     print('抓取完成')  
     
 if __name__=='__main__':
-    drugname=input('请输入中药名称:')
+    drugname=input('请输入中药名称(拼音大写):')
     url=getdrug(drugname)
    # num=input('输入页面个数:')
     p='/Users/macbook/documents/project/reptilian/medicine/'

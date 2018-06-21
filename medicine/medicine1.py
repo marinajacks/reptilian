@@ -124,9 +124,14 @@ def imgsdownloads(folder,chems):
 
 if __name__=='__main__':
     herb=input('输入药品名称(中文):')
-    id=input('次数')
+    #ids=input('次数')
     urls=getdrugurl(herb)
     p='/Users/macbook/documents/project/reptilian/medicine/'
+    if os.path.exists(p+herb):
+        pass
+    else:
+        os.makedirs(p+herb) 
+    p=p+herb+'/'
     chems=[]
     chems.append(['Molecule ID','Molecule name','imgs'])
     for url in urls:
@@ -138,7 +143,7 @@ if __name__=='__main__':
         chems.append(value)
         #chems.append(test(url))
     df=pd.DataFrame(chems)
-    p=p+herb+id+'.xlsx'
-    df.to_excel(p,sheet_name=herb,header=False)
-    folder='/Users/macbook/documents/project/reptilian/medicine/imgs/'
-    imgsdownloads(folder,chems)
+    p1=p+herb+'.xlsx'
+    df.to_excel(p1,sheet_name=herb,header=False)
+    
+    imgsdownloads(p,chems)
