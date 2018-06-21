@@ -28,7 +28,7 @@ def getdrugurl(herb):
     driver.find_element_by_name("q").clear()
     driver.find_element_by_name("q").send_keys(herb)
     driver.find_element_by_id('searchBtTcm').click()
-    time.sleep(1)
+    time.sleep(2)
     
     #定位查找药品信息
     s=driver.find_elements_by_class_name('k-grid-content')
@@ -36,7 +36,7 @@ def getdrugurl(herb):
     tds=trs[0].find_elements_by_tag_name('td')
     #定位到对应的药品的链接信息
     #print(tds[2].find_element_by_tag_name("a").get_attribute('href'))
-    time.sleep(1)
+    time.sleep(2)
     url1=tds[2].find_element_by_tag_name("a").get_attribute('href')
     driver.get(url1)
     
@@ -98,16 +98,37 @@ def test(url):
             #print(trs[i].find('th').getText()+':'+trs[i].find('td').getText())
             info.append(trs[i].find('th').getText()+':'+trs[i].find('td').getText())
     return info
-    
-    
+
+
+def imgsdownloads(folder,chems):
+    #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
+    for i in range(1,len(chems)):
+        url=chems[i][2]
+        name=chems[i][1]
+        types=chems[i][2].split('/')[-1].split('.')[-1]
+        
+        adds='http://'+url
+        path=folder+name+'.'+types
+        
+        html=requests.get(adds)
+        with open(path,'wb') as f:
+            f.write(html.content)
+            f.flush()
+        f.close()
+        time.sleep(1)
+        print('下载完成第'+str(i)+'图片')
+    print('抓取完成')  
+
+
     
 
 if __name__=='__main__':
     herb=input('输入药品名称(中文):')
-    id=int(input('次数'))
+    id=input('次数')
     urls=getdrugurl(herb)
     p='/Users/macbook/documents/project/reptilian/medicine/'
     chems=[]
+    chems.append(['Molecule ID','Molecule name','imgs'])
     for url in urls:
         print(test(url))
         name=test(url)
@@ -117,6 +138,7 @@ if __name__=='__main__':
         chems.append(value)
         #chems.append(test(url))
     df=pd.DataFrame(chems)
-    p=p+herb+'.xlsx'
-    df.to_excel(p,sheet_name=herb)
-    
+    p=p+herb+id+'.xlsx'
+    df.to_excel(p,sheet_name=herb,header=False)
+    folder='/Users/macbook/documents/project/reptilian/medicine/imgs/'
+    imgsdownloads(folder,chems)

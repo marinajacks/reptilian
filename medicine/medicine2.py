@@ -4,7 +4,8 @@
 Created on Mon Jun 18 22:55:08 2018
 
 @author: macbook
-这个部分主要是为了进行模拟登陆的操作,然后进行模拟控制的操作.
+这个部分主要是为了进行模拟登陆的操作,然后进行模拟控制的操作
+这个部分的数据主要是TCMID里边的数据,后边的
 """
 
 import requests 
@@ -14,6 +15,7 @@ import pandas as pd
 from selenium.webdriver.common.keys import Keys  
 import urllib.request
 import time
+import os
 
 def geturls(url):
     #下面的数据主要是为了获取到页面的药品链接信息
@@ -57,15 +59,14 @@ def durginfo(url):
     formula=soup.find_all(class_='section-text text-font')[0].string.strip()
     pubchemid=soup.find_all(class_='section-text text-font')[2].string.strip()
     smile=soup.find_all(class_='section-text text-font')[3].string.strip()
-    #structure=url.split('//')[1].split('/')[0]+soup.find_all(class_='section-text text-font')[4].find("img").get('src')
-    #imgs=title.split('--')[1].strip()+"."+structure.split('/')[-1].split('.')[1]
-    #paths=path+'\\'+imgs
+    structure=url.split('//')[1].split('/')[0]+soup.find_all(class_='section-text text-font')[4].find("img").get('src')  #页面地址
     
     info=[]
     info.append(titles)
     info.append(formula)
     info.append(pubchemid)
     info.append(smile)
+    info.append(structure)
     return info
 
 
@@ -89,21 +90,49 @@ def getdrug(drugname):
     url1=driver.current_url
     return url1
 
-
+def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
+    #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
+    for i in range(1,len(chems)):
+        url=chems[i][4]
+        name=chems[i][0]
+        types=chems[i][4].split('/')[-1].split('.')[-1]
+        
+        adds='http://'+url
+        path=folder+name+'.'+types
+        
+        html=requests.get(adds)
+        with open(path,'wb') as f:
+            f.write(html.content)
+            f.flush()
+        f.close()
+        time.sleep(1)
+        print('下载完成第'+str(i)+'图片')
+    print('抓取完成')  
+    
 if __name__=='__main__':
     drugname=input('请输入中药名称:')
     url=getdrug(drugname)
-    num=input('输入页面个数:')
-    p='/Users/macbook/documents/project/reptilian/medicine'
-    #p=r'D:\project\reptilian\medicine'
+   # num=input('输入页面个数:')
+    p='/Users/macbook/documents/project/reptilian/medicine/'
+    if os.path.exists(p+drugname):
+        pass
+    else:
+        os.makedirs(p+drugname) 
+    #p=r'D:\project\reptilian\medicine\'
+    p=p+drugname+'/'
     
     urls=geturls(url)
     drugs=[]
-    drugs.append(['titles','formula','pubchemid','smile'])
+    drugs.append(['titles','formula','pubchemid','smile','structure'])
     for url0 in urls:
         print(durginfo(url0))
         drugs.append(durginfo(url0))
     drug=pd.DataFrame(drugs)
-    p=p+'\\'+drugname+num+'.xlsx'
-    drug.to_excel(p,sheet_name=drugname,header =False)
-        
+    #p=p+'\\'+drugname+num+'.xlsx' 这个地址是在win下使用的
+    p1=p+drugname+'.xlsx'
+    drug.to_excel(p1,sheet_name=drugname,header =False) #将数据写入到对应的excel中
+    
+    #下面的操作是进行图片写入的操作.           
+    #folder='/Users/macbook/documents/project/reptilian/medicine/'
+    #判断文件夹是否存在,如果不存在就新建,否则就不改变
+    imgsdownloads(p,drugs)
