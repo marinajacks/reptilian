@@ -72,8 +72,8 @@ def durginfo(url):
 
 def getdrug(drugname):
     #这个是通过模拟人的行为找到对应的药物的网页
-    #path='D:\project\selenium\geckodriver'
-    path='/Users/macbook/downloads/geckodriver'
+    path='D:\project\selenium\geckodriver'
+    #path='/Users/macbook/downloads/geckodriver'
     driver = webdriver.Firefox(executable_path=path)
     url='http://www.megabionet.org/tcmid/'
     driver.get(url)
@@ -93,6 +93,12 @@ def getdrug(drugname):
 
 def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
     #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
+    folder=folder+'imags/'
+    if os.path.exists(folder):
+        pass
+    else:
+        os.makedirs(folder) 
+        
     for i in range(1,len(chems)):
         url=chems[i][4]
         name=chems[i][0]
@@ -115,15 +121,17 @@ def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
     
 if __name__=='__main__':
     drugname=input('请输入中药名称(拼音大写):')
-    url=getdrug(drugname)
    # num=input('输入页面个数:')
-    p='/Users/macbook/documents/project/reptilian/medicine/'
+    #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/'
+    p='D:/project/reptilian/medicine/中药数据/TCMID/'
     if os.path.exists(p+drugname):
         pass
     else:
         os.makedirs(p+drugname) 
     #p=r'D:\project\reptilian\medicine\'
     p=p+drugname+'/'
+    
+    url=getdrug(drugname)
     
     urls=geturls(url)
     drugs=[]
