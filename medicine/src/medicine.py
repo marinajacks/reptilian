@@ -151,12 +151,12 @@ if __name__=="__main__":
     print('hello world!')
     herb=input('中药名称(中文)')
     #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/上海有机/'
-    p=r'D:\project\reptilian\medicine\中药数据\上海有机'+'\\'+herb
-    if os.path.exists(p):
+    p1=r'D:\project\reptilian\medicine\中药数据\上海有机'+'\\'+herb
+    if os.path.exists(p1):
         pass
     else:
-        os.makedirs(p) 
+        os.makedirs(p1) 
     #p1=p+herb+'/'+herb+'.xlsx' win下的设计
-    p1=p+'\\'+herb+'.xlsx'
+    p=p1+'\\'+herb+'.xlsx'
     
     getdurg(herb,p1)
