@@ -19,8 +19,8 @@ import os
 
 
 def getdrugurl(herb):
-    #path='D:\project\selenium\geckodriver'      #win环境下驱动地址
-    path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
     url='http://lsp.nwu.edu.cn/tcmsp.php'
     driver.get(url)
@@ -38,6 +38,7 @@ def getdrugurl(herb):
     #print(tds[2].find_element_by_tag_name("a").get_attribute('href'))
     time.sleep(2)
     url1=tds[2].find_element_by_tag_name("a").get_attribute('href')
+    url1=driver.current_url
     driver.get(url1)
     
     n=int(driver.find_element_by_link_text("Go to the last page").get_attribute('data-page')) #获取到点击的次数信息    
@@ -102,10 +103,19 @@ def test(url):
 
 def imgsdownloads(folder,chems):
     #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
+    folder=folder+'imags/'
+    if os.path.exists(folder):
+        pass
+    else:
+        os.makedirs(folder) 
+        
     for i in range(1,len(chems)):
         url=chems[i][2]
         name=chems[i][1]
         types=chems[i][2].split('/')[-1].split('.')[-1]
+        
+        if(len(name)>32):
+            name=name[:32]
         
         adds='http://'+url
         path=folder+name+'.'+types
@@ -126,7 +136,8 @@ if __name__=='__main__':
     herb=input('输入药品名称(中文):')
     #ids=input('次数')
     urls=getdrugurl(herb)
-    p='/Users/macbook/documents/project/reptilian/medicine/'
+    
+    p='D:/project/reptilian/medicine/中药数据/TCMID/'
     if os.path.exists(p+herb):
         pass
     else:
