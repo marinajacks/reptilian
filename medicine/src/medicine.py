@@ -10,17 +10,18 @@ import requests as res
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
+import time
+import os
 
 
-
-def getdurg(drugname,p,n):
+def getdurg(drugname,p):
     #url='http://www.chemcpd.csdb.cn/cmpref/Tcm_Multi/R_tcd_Comp.asp'
     #headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
     #response=requests.get(url,headers=headers)
     #现在我们发现为什么在使用编码的时候出现原始的代码的问题,主要就是原始的代码出现父编码与本层的编码
     #格式出现不一致的问题.另外,从这里可以看到,实际上我们需要使用到动态的网页爬虫技术来进行网页的登陆
-    path='/Users/macbook/downloads/geckodriver'
-   # path='D:\project\selenium\geckodriver'
+   # path='/Users/macbook/downloads/geckodriver'
+    path='D:\project\selenium\geckodriver'
     driver = webdriver.Firefox(executable_path =path)
     url1='http://www.chemcpd.csdb.cn/cmpref/main/tcm_introduce.asp?n%20Count=6077992'
     driver.get(url1)
@@ -41,6 +42,8 @@ def getdurg(drugname,p,n):
     driver.find_element_by_id('submit1').click()
     driver.find_element_by_name('FID').click()
     driver.find_element_by_name('Tcd_Comp_ID').click()
+    n=int((driver.find_elements_by_tag_name('font')[-1]).find_element_by_tag_name('b').text)
+
     '''
     drugs=[]
     #这里使用表格的数据查询方式,给出数据的处理方式
@@ -100,6 +103,7 @@ def getdurg(drugname,p,n):
     df=pd.DataFrame(drugs)
     
     df.to_excel(p)
+    driver.quit()
     
 def getimage():
     
@@ -145,8 +149,14 @@ def test():
 
 if __name__=="__main__":
     print('hello world!')
-    name=input('中药名称')
-    num=input('页面数')
-    p='/Users/macbook/documents/project/reptilian/medicine/浙贝母1/'+name+'.xlsx'
-    num=int(num)
-    getdurg(name,p,num)
+    herb=input('中药名称(中文)')
+    #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/上海有机/'
+    p=r'D:\project\reptilian\medicine\中药数据\上海有机'+'\\'+herb
+    if os.path.exists(p):
+        pass
+    else:
+        os.makedirs(p) 
+    #p1=p+herb+'/'+herb+'.xlsx' win下的设计
+    p1=p+'\\'+herb+'.xlsx'
+    
+    getdurg(herb,p1)
