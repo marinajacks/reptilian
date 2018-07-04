@@ -137,7 +137,7 @@ if __name__=='__main__':
     #ids=input('次数')
     urls=getdrugurl(herb)
     
-    p='D:/project/reptilian/medicine/中药数据/TCMID/'
+    p='D:/project/reptilian/medicine/中药数据/TCMSP/'
     if os.path.exists(p+herb):
         pass
     else:
