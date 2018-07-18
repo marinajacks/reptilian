@@ -42,6 +42,7 @@ def getdrugurl(herb):
     
     #链接的信息数据首次获取到
     hrefs=[]
+    hrefs.append(['modid','molname','targetname','targeturl','targetid'])
     s1=driver.find_elements_by_class_name('k-grid-content')
     tbodys=s1[1].find_elements_by_tag_name("tbody")
     trs=tbodys[0].find_elements_by_tag_name("tr")
@@ -56,7 +57,7 @@ def getdrugurl(herb):
     #动态的点击获取到对应的数据,首次获取到的情况在后边是不需要在点击的.
     for i in range(n-1):
         driver.find_element_by_link_text("Go to the next page").click()
-        time.sleep(1)
+        time.sleep(0.1)
         s1=driver.find_elements_by_class_name('k-grid-content')
         tbodys=s1[1].find_elements_by_tag_name("tbody")
         trs=tbodys[0].find_elements_by_tag_name("tr")
@@ -69,8 +70,8 @@ def getdrugurl(herb):
             hrefs.append([modid,molname,targetname,targeturl])
    # driver.quit()
    #这部分获取到对应的药品靶点数据targetid,并将数据添加到对应的地址上
-    for i in range(len(hrefs)):
-        time.sleep(0.5)
+    for i in range(1,len(hrefs)):
+        time.sleep(0.1)
         url0=hrefs[i][3]
         driver.get(url0)
         s10=driver.find_element_by_class_name("tableRst2")
@@ -81,14 +82,21 @@ def getdrugurl(herb):
         hrefs[i].append(targetid)
     return hrefs
        
-
-
+def writelocal0(path,hrefs):
+    df=pd.DataFrame(hrefs)
+    df.to_excel(path)
 
 
 
 if __name__=="__main__":
     herb="浙贝母"
+    herb=input('输入药品名称(中文):')
     hrefs=getdrugurl(herb)
+    path=input('输入文件路径:')
+    
+    writelocal0(path,hrefs)
+    
+    
  
         
     
