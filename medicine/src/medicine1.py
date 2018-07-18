@@ -30,7 +30,7 @@ def getdrugurl(herb):
     driver.find_element_by_id('searchBtTcm').click()
     time.sleep(2)
     
-    #定位查找药品信息
+    #定位查找药品信息,这里值得注意的是,不能直接找到对应的药品数据,
     s=driver.find_elements_by_class_name('k-grid-content')
     trs = s[0].find_elements_by_tag_name('tr')
     tds=trs[0].find_elements_by_tag_name('td')
@@ -38,7 +38,6 @@ def getdrugurl(herb):
     #print(tds[2].find_element_by_tag_name("a").get_attribute('href'))
     time.sleep(2)
     url1=tds[2].find_element_by_tag_name("a").get_attribute('href')
-    url1=driver.current_url
     driver.get(url1)
     
     n=int(driver.find_element_by_link_text("Go to the last page").get_attribute('data-page')) #获取到点击的次数信息    
@@ -65,9 +64,31 @@ def getdrugurl(herb):
     driver.quit()
     return hrefs
        
+def test1(herbs):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='http://lsp.nwu.edu.cn/tcmsp.php'
+    driver.get(url)
+    #模拟查询药物的相关操作
+    for herb in herbs:
+        driver.find_element_by_name("q").clear()
+        driver.find_element_by_name("q").send_keys(herb)
+        driver.find_element_by_id('searchBtTcm').click()
+        time.sleep(2)
+    driver.quit()
     
-
-
+def test2(herb):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='http://lsp.nwu.edu.cn/tcmsp.php'
+    driver.get(url)
+    #模拟查询药物的相关操作
+    driver.find_element_by_name("q").clear()
+    driver.find_element_by_name("q").send_keys(herb)
+    driver.find_element_by_id('searchBtTcm').click()
+    time.sleep(2)
 
 
 def test(url):
@@ -130,8 +151,37 @@ def imgsdownloads(folder,chems):
     print('抓取完成')  
 
 
-    
 
+if __name__=='__main__':
+    herbs=['Dragon’s blood',
+ 'Resina Draconis',
+ 'Dracaena cochinchinesisS.C.Chen',
+ 'Sanguis Draconis']
+    test1(herbs)
+    
+    herbs1=['Panax notoginseng',
+'Radix notoginseng',
+'Sanchi',
+'Panax quinquefoljus',
+'pseudo-ginseng'
+]
+    test1(herbs1)
+    herbs2=['Fritillaria thunbergii Miq',
+'Thunberg Fritillary Bulb',
+'bulbus fritillariae thunbergii',
+'Fritillaria thunbergii',
+'blachberrylily rhizome',
+]
+    test1(herbs2)
+    herbs3=['Coix Seed',
+'semen coicis',
+'Jobstears Seed',
+'Coicis Semen',
+'Adlay'
+]
+    test1(herbs3)
+    
+'''
 if __name__=='__main__':
     herb=input('输入药品名称(中文):')
     #ids=input('次数')
@@ -158,4 +208,5 @@ if __name__=='__main__':
     df.to_excel(p1,sheet_name=herb,header=False)
     
     imgsdownloads(p,chems)
+'''
     
