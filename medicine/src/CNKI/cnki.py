@@ -33,7 +33,13 @@ driver.find_element_by_id("txt_SearchText").send_keys("浙贝母")
 
 driver.find_element_by_id("txt_SearchText").send_keys(Keys.ENTER)
 
-'''
+
+
+s1=driver.find_element_by_tag_name('table')
+s2=s1.find_element_by_tag_name('tbody')
+s3=s2.find_elements_by_tag_name('tr')
+
+
 s1 = Select(driver.find_element_by_id('DBFieldList').find_elements_by_tag_name('a'))
 
 
@@ -45,4 +51,7 @@ for i in s.find_elements_by_tag_name('a'):
     print(i.get_attribute("text"))
     if('关键词' in i.get_attribute("text")):
         i.click()
-'''
+        
+        
+url='http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2016&filename=ZZXJ201512023&uid=WEEvREcwSlJHSldRa1FhdkJkVWI3Nkh2d3FyQVJqWWpNUmtSZm5tSWNmND0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE2Mjk5VE5yWTlIWjRSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMS2ZZT1JwRnlqbFZyckFQemZUWkxHNEg='
+res=requests.get(url)

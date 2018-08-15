@@ -4277,3 +4277,24 @@ JavaScript error: http://lsp.nwu.edu.cn/target.php?qt=731, line 31: ReferenceErr
 [GFX1-]: Receive IPC close with reason=AbnormalShutdown
 [Child 24220, ImageBridgeChild] WARNING: failed to create pipe: 2: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 221
 [Parent 19952, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1532093494408	geckodriver	INFO	geckodriver 0.21.0
+1532093494427	geckodriver	INFO	Listening on 127.0.0.1:60404
+1532093497175	mozrunner::runner	INFO	Running command: "D:\\Program Files\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Iris\\AppData\\Local\\Temp\\rust_mozprofile.fvcXodRhJH0n"
+Unable to read VR Path Registry from C:\Users\Iris\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Iris\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Iris\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Iris\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Iris\AppData\Local\openvr\openvrpaths.vrpath
+1532093502076	Marionette	INFO	Listening on port 60412
+1532093502116	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://lsp.nwu.edu.cn/tcmsp.php, line 31: ReferenceError: clickclose is not defined
+JavaScript error: http://lsp.nwu.edu.cn/tcmspsearch.php?qs=herb_all_name&q=%E6%B5%99%E8%B4%9D%E6%AF%8D&token=d89f2e025542216fa46de2208d587567, line 31: ReferenceError: clickclose is not defined
+JavaScript error: http://lsp.nwu.edu.cn/tcmspsearch.php?qr=Fritillariae%20Thunbrgii%20Bulbus&qsr=herb_en_name&token=d89f2e025542216fa46de2208d587567, line 31: ReferenceError: clickclose is not defined
+JavaScript error: http://lsp.nwu.edu.cn/target.php?qt=3, line 31: ReferenceError: clickclose is not defined
+[Child 12480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 12480, Chrome_C[Child 14800, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 14800, Chrome_C[Parent 14500, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+[GPU 9836, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

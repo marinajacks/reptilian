@@ -32,7 +32,7 @@ if __name__=="__main__":
     url='http://search.cnki.net/'
     driver.get(url)
     driver.find_element_by_id("txtSearchKey").clear()
-    driver.find_element_by_id("txtSearchKey").send_keys("浙贝母")
+    driver.find_element_by_id("txtSearchKey").send_keys("三七")
     driver.find_element_by_id("btntijiao").click()
  
     n=10
@@ -81,6 +81,7 @@ if __name__=="__main__":
             elif is_element_exist("CAJ下载"):
                 driver.find_element_by_link_text("CAJ下载").click()
             else:
+                print("未能下载")
                 pass
             time.sleep(0.5)
             driver.close()
@@ -90,4 +91,3 @@ if __name__=="__main__":
         driver.find_element_by_link_text("下一页").click()
         time.sleep(1)
         
-\    
