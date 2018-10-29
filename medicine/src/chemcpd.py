@@ -17,7 +17,7 @@ import time
 import os
 
 
-def getdurg(drugname,p):
+def getdurg(drugname,p,name,password):
     #url='http://www.chemcpd.csdb.cn/cmpref/Tcm_Multi/R_tcd_Comp.asp'
     #headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
     #response=requests.get(url,headers=headers)
@@ -31,9 +31,9 @@ def getdurg(drugname,p):
     
     #下面是模拟登陆的页面
     driver.find_element_by_name('Username').clear()   #清除用户名字
-    driver.find_element_by_name('Username').send_keys('marina')#输入用户名
+    driver.find_element_by_name('Username').send_keys(name)#输入用户名
     driver.find_element_by_name('Password').clear()   #清除用户密码
-    driver.find_element_by_name('Password').send_keys('han#1990@yan')#输入用户密码
+    driver.find_element_by_name('Password').send_keys(password)#输入用户密码
     driver.find_element_by_name('login').click()   #点击登陆
     #文本检索数据信息
     driver.find_element_by_link_text('中药药材检索').click()
@@ -122,6 +122,8 @@ def getdurg(drugname,p):
 if __name__=="__main__":
     print('hello world!')
     herb=input('中药名称(中文)')
+    name=input("输入用户名:")
+    password=input("输入用户密码:")
     #这个是mac的地址
     #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/上海有机/'
     p1=r'D:\project\reptilian\medicine\中药数据\上海有机所1'+'\\'+herb
@@ -132,4 +134,4 @@ if __name__=="__main__":
     #p1=p+herb+'/'+herb+'.xlsx' win下的设计
     p=p1+'\\'+herb+'.xlsx'
     
-    getdurg(herb,p)
+    getdurg(herb,p,name,password)
