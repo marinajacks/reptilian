@@ -262,12 +262,15 @@ path='/Users/macbook/downloads/geckodriver'
 driver = webdriver.Firefox(executable_path =path)
 driver.get("http://mail.163.com/")
 
+name=input("输入用户名:")
+password=input("输入用户密码:")
+
 elem_user = driver.find_element_by_name("username")
 elem_user.clear
-elem_user.send_keys("chenbiaozainan")  
+elem_user.send_keys(name)  
 elem_pwd = driver.find_element_by_name("password")
 elem_pwd.clear
-elem_pwd.send_keys("han#19902yan")  
+elem_pwd.send_keys(password)  
 elem_pwd.send_keys(Keys.RETURN)
 #driver.find_element_by_id("loginBtn").click()
 #driver.find_element_by_id("loginBtn").submit()
