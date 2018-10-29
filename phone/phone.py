@@ -22,7 +22,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-def login():
+def login(name,password):
    # url0='https://login.tmall.com/?spm=875.7931836/B.a2226mz.1.66144265j4tft7&redirectURL=https%3A%2F%2Fwww.tmall.com%2F'
     #url0='https://login.tmall.com/?spm=875.7931836/B.a2226mz.1.661442657Z6VPZ&redirectURL=https%3A%2F%2Fwww.tmall.com%2F'
     url0='https://login.taobao.com/member/login.jhtml?'
@@ -40,8 +40,8 @@ def login():
     userbox=driver.find_element_by_id("TPL_username_1")
     pwdbox=driver.find_element_by_id("TPL_password_1")
     
-    userbox.send_keys('陈纳德二')
-    pwdbox.send_keys('han#1990@yan')
+    userbox.send_keys(name)
+    pwdbox.send_keys(password)
     
     source=driver.find_element_by_xpath("//*[@id='nc_1_n1z']")  
     #定义鼠标拖放动作
