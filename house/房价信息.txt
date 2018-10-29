@@ -1,0 +1,66 @@
+房价信息数据库
+这里使用了链家的数据库信息,从房价数据库中找出了想要的数据,这里根据房价数据只给出想要的数据,现在的数据
+的字段分别为:
+id	int(11),
+city	varchar(100),
+village	varchar(100),
+rooms	varchar(100),
+area	varchar(100),
+orientation	varchar(100),
+lift	varchar(100),
+floor	varchar(200),
+address	varchar(200),
+totalprice	varchar(100),
+unitprice	varchar(100)
+下面根据这个数据建立数据插入模型:
+create table house(
+id	int(11) primary key auto_increment,
+city	varchar(100),
+village	varchar(100),
+rooms	varchar(100),
+area	varchar(100),
+orientation	varchar(100),
+lift	varchar(100),
+floor	varchar(200),
+address	varchar(200),
+totalprice	varchar(100),
+unitprice	varchar(100)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='房价信息表';
+
+数据的插入脚本
+insert into house(city,village,rooms,area,orientation,lift,floor,address,totalprice,unitprice) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+
+
+下面还可以设计一个伪表,用于存储城市的编码信息.然后可以用来进行数据的关联.
+
+
+另外,为了进行hive的使用,这里进行hive的建表语句的开发
+
+create table house(city STRING,village STRING,rooms STRING,area STRING,orientation STRING,lift string,address string,totalprice string,unitprice string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
+
+正常情况下,hive的数据类型都是string,这是由于hive主要是为了进行日志等文本的操作,但是这个实际上是不影响的。然后就是字段的拆分和每行数据的拆分.
+
+下面是数据的加载,注意到这里加载数据的时候是从linux本地的文件加载上去的,主要的目的是为了数据上传的方便.
+
+load data local inpath '/home/hduser/marina/sh.txt' overwrite into TABLE house;
+
+
+有LOCAL表示从本地文件系统加载（文件会被拷贝到HDFS中）
+
+无LOCAL表示从HDFS中加载数据（注意：文件直接被移动！！！而不是拷贝！！！ 并且。。文件名都不带改的。。）
+
+OVERWRITE  表示是否覆盖表中数据（或指定分区的数据）（没有OVERWRITE  会直接APPEND，而不会滤重!）
+
+正常情况下,overwrite是必须要的,要的就是为了覆盖表中的数据。
+
+分隔符的设计:
+正常情况下,例如是csv文件,都是使用逗号作为每个字段的分割符,而实用\n来作为每行的分隔符。常用的指令是:
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
+
+load到指定表的分区
+  实际上,数据是可以被加载到指定的分区的,这个操作就是:
+  load data local inpath ''  overwrite into table tablename PARTITION（pt=’xxxx）  
+ 
+ load数据，hive支持文件夹的方式，将文件夹内的所有文件，都load到指定表中。Hdfs会将文件系统内的某文件夹路径内的文件，分散到不同的实际物理地址中。这样，在数据量很大的时候，hive支持读取多个文件载入，而不需要限定在唯一的文件中。
+
+
