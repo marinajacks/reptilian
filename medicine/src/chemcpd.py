@@ -67,7 +67,6 @@ def getdurg(drugname,p,name,password):
             print(i.text)
         driver.find_element_by_name('next').click()
      '''   
-    
      #下面是另外的一种写法,这种写法可以有效的把开头的数据清理掉，另外,这部分
     drugs=[]
     names=[]
