@@ -17,14 +17,15 @@ import os
 
 
 
-def test():
+def test(name):
+    #这里的name是
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
     url='https://www.ncbi.nlm.nih.gov/'
     driver.get(url)
     driver.find_element_by_name("term").clear()
-    driver.find_element_by_name("term").send_keys("adenomyosis")
+    driver.find_element_by_name("term").send_keys(name)
     driver.find_element_by_id('search').click()
     
     
