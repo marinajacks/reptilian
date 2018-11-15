@@ -27,6 +27,7 @@ import os
     
     s1=driver.find_element_by_id('structureFrame')
     
+    driver.find_element_by_class_name('pdb-row-clickable')
     
     driver.find_element_by_tag_name('tr')
     s1.find_element_by_tag_name('body')
@@ -39,7 +40,7 @@ import os
     
     tbody=s3[0].find_elements_by_xpath('//table/tbody')
     
-    driver.find_elements_by_xpath('//html/body//div/div/table/tbody')
+    s1.find_elements_by_xpath('//div/table/tbody')
     
     
     
@@ -59,5 +60,4 @@ import os
         href=td.find_element_by_tag_name("a").get_attribute("href")
         hrefs.append(href)
     
-    #s1.find_element_by_class_name('main-container')
     
