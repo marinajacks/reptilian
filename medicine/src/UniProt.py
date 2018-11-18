@@ -29,7 +29,7 @@ def sortpdbs(pdbs):
        result=[]
        for i in range(3):
            #判断
-           if('NMR' in pdb[1]):
+           if('X-ray' not in pdb[1]):
                pass
            else:
                if(i==2):
@@ -47,6 +47,7 @@ def sortpdbs(pdbs):
 下面的函数主要是为了定位页面获取到PDB数据
 '''
 def getpdbs(url):
+    url='https://www.uniprot.org/uniprot/P08253'
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
     driver = webdriver.Firefox(executable_path=path)
@@ -68,14 +69,71 @@ def getpdbs(url):
         
     PDB=sortpdbs(pdbs)
     print(PDB)
+    
+    
+    '''
+下面的函数主要是为了定位页面获取到PDB数据
+'''
 
+def PDBS(Uniprots):
+    url1='https://www.uniprot.org/uniprot/'
+    urls=[]
+    for i in Uniprots:
+        urls.append(url1+i)
+    options = webdriver.ChromeOptions()
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'd:\\CNKI'}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\v40\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    driver.get('https://www.uniprot.org')
+    ''' 这里使用的是火狐浏览器的效果，上面的是使用谷歌浏览器的效果
+    path='D:\project\selenium\geckodriver'
+    #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
+    driver = webdriver.Firefox(executable_path=path)
+    driver.get('https://www.uniprot.org')
+    '''
+    time.sleep(1)
+    PDBS1=[]
+    urls=urls[1:20]
+    for url in urls:
+        driver.get(url)
+        time.sleep(1)
+        print(url)
+        #由于页面是iframe嵌套的子页面，所以这里需要选择子页面操作
+        iframe=driver.find_elements_by_tag_name('iframe')
+        if(len(iframe)>0):
+            driver.switch_to_frame('structureFrame')
+            #定位页面中的tbody的位置
+            tbodys=driver.find_element_by_tag_name("tbody")
+            trs=tbodys.find_elements_by_tag_name("tr")
+        
+            pdbs=[]
+            for tr in trs:
+                pdb=[]
+                td=tr.find_elements_by_tag_name("td")
+                for i in td:
+                    pdb.append(i.text.strip())
+                pdbs.append(pdb)
+                
+            PDB=sortpdbs(pdbs)
+            print(PDB)
+            
+            PDBS1.append(PDB[0])
+    
+    driver.quit()
+    return PDBS1
+
+#下面的函数
 
 def main(target):
+    target='NGFR'
     url='https://www.uniprot.org/'   #给定查询页面
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
     driver = webdriver.Firefox(executable_path=path)
    # url='https://www.uniprot.org/uniprot/P03956'
+   
     driver.get(url)
     #下面的操作是为了查询特定靶点的数据
     driver.find_element_by_id('query').clear()
@@ -100,10 +158,26 @@ def main(target):
     return  url
 
 
+def getuniprot():
+    path='D:/MarinaJacks/project/reptilian/medicine/Datas/Uniprot.txt'
+    f=open(path,'r')
+    lines=f.readlines()
+    lists=[]
+    for line in lines:
+        uni=line.strip().split(';')[0]
+        if(len(uni)>0):
+            lists.append(uni)
+    return lists
+        
+    
 if __name__=="__main__":
+    '''
     target='Beta-2 adrenergic receptor'
     url=main(target)
     getpdbs(url)
+    '''
+    Uniprots=getuniprot()
+    PDBS1=PDBS(Uniprots)
 
     
 
