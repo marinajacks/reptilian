@@ -4,7 +4,7 @@
 Created on Fri Jun 15 15:38:22 2018
 
 @author: macbook
-这数据库的数据集来源于tcmsp,这里查询到的所有的成分都是来自于这个
+这数据库的数据集来源于tcmsp,这里查询到a的所有的成分都是来自于这个
 tcmsp数据库,从这个数据库里边获取到的数据是根据药品的名称获取到对
 应的小分子的名称信息,存储到对应的Excel文件夹里边。
 """
@@ -92,7 +92,7 @@ def test2(herb):
 
 
 def test(url):
-    #解析每个页面获取到想要的信息
+    #解析每个页面获取到想要的信息，主要是解析页面吗，并且把页面的数据弄到本地数据库中
     #url='http://lsp.nwu.edu.cn/tcmspsearch.php?qr=Fritillariae%20Thunbrgii%20Bulbus&qsr=herb_en_name&token=77088eff74d45b12d933c73b1ce1a00a'
     #url='http://lsp.nwu.edu.cn/molecule.php?qn=1004'
     headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
@@ -121,7 +121,7 @@ def test(url):
             info.append(trs[i].find('th').getText()+':'+trs[i].find('td').getText())
     return info
 
-
+#这个函数用来进行下载图片到本地，但是实际山这个是不需要的
 def imgsdownloads(folder,chems):
     #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
     folder=folder+'imags/'
