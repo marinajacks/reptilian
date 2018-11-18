@@ -41,14 +41,42 @@ def smiles():
     driver.find_element_by_id('search').click()
     
 #这个函数主要是为了获取到化合物的3D结构并将其下载到本地
-def SDFS():
-    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
-    driver = webdriver.Firefox(executable_path=path)
+#    name='trans-feruloylcampesterol'
+def SDFS(name):
+    options = webdriver.ChromeOptions()
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'd:\\CNKI'}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+
     url='https://www.ncbi.nlm.nih.gov/pccompound/'
     driver.get(url)
     driver.find_element_by_id('term').clear()
-    driver.find_element_by_id('term').send_keys("myristic acid")
+    driver.find_element_by_id('term').send_keys(name)
     driver.find_element_by_id('search').click()
+    
+    #这里默认的是第一个地址就是我们需要的那个药品的成分信息
+    #下面首先需要获取到的就是第一条对应的数据，这里默认的就
+    #是第一条数据作为需要的数据也是合理的。
+    value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
+    value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
+    driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
+    
+    url='https://pubchem.ncbi.nlm.nih.gov/compound/13786591'
+#下面的函数是事先获取到对应的页面的url信息，然后直接进行点击下载操作，便于批量作业
+def SDFS1(url):
+    options = webdriver.ChromeOptions()
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'd:\\CNKI'}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    driver.get(url)
+    time.sleep(2)
+    value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
+    value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
+    driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
     
 #该函数主要是将上述部分信息合并起来,然后再查询的这样一个脚本,这个脚本
 #可以完全进行全部的搜索任务，有一个小点需要注意的就是这里还需要进行进一步
