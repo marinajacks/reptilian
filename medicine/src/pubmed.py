@@ -301,13 +301,17 @@ def geturls(modules):
 if __name__=="__main__":
     #name=input("输入药品成分名字:")
     #mains1(name)
+    #下面的操作主要还是把对应的三种药品的成分数据搞出来，然后存在特定的数据里
     path1='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\薏苡仁\薏苡仁.xlsx'
     path2='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\浙贝母\浙贝母.xlsx'
     path3='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\三七\三七.xlsx'
     paths=[path1,path2,path3]
     modules=[]
     for path in paths:
-        modules.append(module(path))
+        for mole in module(path):
+            modules.append(mole)
+    
+    #这一步主要是存储相关的url信息，把这个药品所有的成分的信息都存起来。
     urls=geturls(modules)
-    #drugs=mains3(name)
-    #mains3(name)
+    #下面利用SFDS2函数将所有的url对应的成分都下载下载存储到对应的文件夹下面
+    SFDS2(urls)
