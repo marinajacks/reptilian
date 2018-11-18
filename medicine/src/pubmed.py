@@ -67,7 +67,8 @@ def SDFS(name):
 #下面的函数是事先获取到对应的页面的url信息，然后直接进行点击下载操作，便于批量作业
 def SDFS1(url):
     options = webdriver.ChromeOptions()
-    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'd:\\CNKI'}
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule'
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
     path='D:\\project\\selenium\\chromedriver.exe'
@@ -77,6 +78,22 @@ def SDFS1(url):
     value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
     value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
     driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
+    
+#这个函数同样是下载药品成分的一串url，对这些给定的url页面进行对应的下载操作
+def SFDS2(urls):
+    options = webdriver.ChromeOptions()
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule'
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    for url in urls:
+        driver.get(url)
+        time.sleep(2)
+        value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
+        value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
+        driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
     
 #该函数主要是将上述部分信息合并起来,然后再查询的这样一个脚本,这个脚本
 #可以完全进行全部的搜索任务，有一个小点需要注意的就是这里还需要进行进一步
@@ -149,10 +166,6 @@ def mains2(name):
 #        pass
     #这里比较有意思的是,不同的数据对应的数据是不一样的,有些成分需要使用rsltcont
     #来进行定位，但是有些成分的获取则需要使用section-content来进行判断
-  
-   
-     
-
 
         #print (u"查找元素异常%s"%msg)
     return smiles
@@ -245,12 +258,56 @@ def module(excel):
     for i in range(len(df[['Molecule name']])):
         module.append(df[['Molecule name']].loc[i].values[0])
     return module
+
+#这个函数用来获取药品成分对应的Url信息，输入的参数是
+def geturls(modules):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    urls=[]
+    for name in modules:
+        print(name)
+        driver.find_element_by_id('term').clear()
+        driver.find_element_by_id('term').send_keys(name)
+        driver.find_element_by_id('search').click()
+        '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
+           下面首先需要获取到的就是第一条对应的数据，这里默认的就
+           是第一条数据作为需要的数据也是合理的。但是这里存在一个
+           问题，就是这里在选择结果的时间，查询结果可能是空的,所以,
+           这里需要进行异常设计.另外,由于问题的种类至少有两种,所以,
+           这里还需要首先判断是不是单一结果,如果是单一的结果,数据
+           需要首先单独的跑出来,然后再继续判断其他的异常.
+        '''
+        try:
+            driver.find_element_by_id('Canonical-SMILES')
+            url1=driver.current_url
+        except NoSuchElementException as msg:
+            value=driver.find_elements_by_class_name('rsltcont')
+            if(len(value)>0):
+                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+            else:
+                pass
+            
+        print(url1)
+        urls.append(url1)
+        url='https://www.ncbi.nlm.nih.gov/pccompound/'
+        driver.get(url)
+        time.sleep(1)
+    driver.quit()
+    return urls
     
 
 if __name__=="__main__":
-    name=input("输入药品成分名字:")
+    #name=input("输入药品成分名字:")
     #mains1(name)
-   # path='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\浙贝母\浙贝母.xlsx'
-   # modules=module(path)
-    drugs=mains3(name)
+    path1='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\薏苡仁\薏苡仁.xlsx'
+    path2='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\浙贝母\浙贝母.xlsx'
+    path3='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\三七\三七.xlsx'
+    paths=[path1,path2,path3]
+    modules=[]
+    for path in paths:
+        modules.append(module(path))
+    urls=geturls(modules)
+    #drugs=mains3(name)
     #mains3(name)
