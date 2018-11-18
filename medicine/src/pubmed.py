@@ -40,6 +40,15 @@ def smiles():
     driver.find_element_by_id('term').send_keys("myristic acid")
     driver.find_element_by_id('search').click()
     
+#这个函数主要是为了获取到化合物的3D结构并将其下载到本地
+def SDFS():
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    driver.find_element_by_id('term').clear()
+    driver.find_element_by_id('term').send_keys("myristic acid")
+    driver.find_element_by_id('search').click()
     
 #该函数主要是将上述部分信息合并起来,然后再查询的这样一个脚本,这个脚本
 #可以完全进行全部的搜索任务，有一个小点需要注意的就是这里还需要进行进一步
