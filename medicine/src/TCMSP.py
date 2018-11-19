@@ -151,7 +151,6 @@ def imgsdownloads(folder,chems):
     print('抓取完成')  
 
 
-
 if __name__=='__main__':
     herb=input('输入药品名称(中文):')
     #ids=input('次数')
