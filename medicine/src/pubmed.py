@@ -40,11 +40,12 @@ def smiles():
     driver.find_element_by_id('term').send_keys("myristic acid")
     driver.find_element_by_id('search').click()
     
-#这个函数主要是为了获取到化合物的3D结构并将其下载到本地
+#这个函数主要是为了获取到化合物的3D结构并将其下载到本地,这里选择下载的都是3D的结构
 #    name='trans-feruloylcampesterol'
 def SDFS(name):
     options = webdriver.ChromeOptions()
-    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'd:\\CNKI'}
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\3D'
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
     path='D:\\project\\selenium\\chromedriver.exe'
@@ -64,10 +65,11 @@ def SDFS(name):
     driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
     
     url='https://pubchem.ncbi.nlm.nih.gov/compound/13786591'
-#下面的函数是事先获取到对应的页面的url信息，然后直接进行点击下载操作，便于批量作业
+#下面的函数是事先获取到对应的页面的url信息，然后直接进行点击下载操作，便于批量作业，
+#这里选择下载的都是3D的结构
 def SDFS1(url):
     options = webdriver.ChromeOptions()
-    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule'
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\3D'
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
@@ -80,9 +82,10 @@ def SDFS1(url):
     driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
     
 #这个函数同样是下载药品成分的一串url，对这些给定的url页面进行对应的下载操作
-def SFDS2(urls):
+#,这里选择下载的都是3D的结构
+def SFDS_3D(urls):
     options = webdriver.ChromeOptions()
-    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule'
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\3D'
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
@@ -90,14 +93,70 @@ def SFDS2(urls):
     driver = webdriver.Chrome(executable_path=path, chrome_options=options)
     for url in urls:
         driver.get(url)
+        print(url)
         time.sleep(2)
-        value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
-        value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
-        driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
-    
-#该函数主要是将上述部分信息合并起来,然后再查询的这样一个脚本,这个脚本
-#可以完全进行全部的搜索任务，有一个小点需要注意的就是这里还需要进行进一步
-#的修改,确保能够实现可以动态输入或者是文本的方式导入对应的数据。
+        test=driver.find_elements_by_id('3D-Conformer')  #这个找到对应的3D的位置,用来判断是不是存在3D结构
+        if(len(test)>0):
+            value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
+            #下面的脚本可以稍作修改
+            value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分 
+            driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
+            print('Success!')
+        else:
+            print('No 3D Conformer')
+            
+#这个函数同样是下载药品成分的一串url，对这些给定的url页面进行对应的下载操作
+#,这里选择下载的都是3D的结构
+def SFDS_3D_TCMID(urls):
+    options = webdriver.ChromeOptions()
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D'
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    for url in urls:
+        driver.get(url)
+        print(url)
+        time.sleep(2)
+        test=driver.find_elements_by_id('3D-Conformer')  #这个找到对应的3D的位置,用来判断是不是存在3D结构
+        if(len(test)>0):
+            value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
+            #下面的脚本可以稍作修改
+            value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分 
+            driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
+            print('Success!')
+        else:
+            print('No 3D Conformer')
+            
+#这个函数同样是下载药品成分的一串url，对这些给定的url页面进行对应的下载操作
+#,这里选择下载的都是3D的结构
+def SFDS_2D(urls):
+    options = webdriver.ChromeOptions()
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\2D'
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    for url in urls:
+        driver.get(url)
+        print(url,end=' ')
+        time.sleep(2)
+        test=driver.find_elements_by_id('2D-Structure')  #这个找到对应的3D的位置,用来判断是不是存在3D结构
+        if(len(test)>0):
+            value=driver.find_element_by_id('2D-Structure')  #这个找到对应的2D的位置
+            value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分
+            driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
+            print('Success!')
+        else:
+             print('No 2D Structure')
+
+'''   
+该函数主要是将上述部分信息合并起来,然后再查询的这样一个脚本,这个脚本
+可以完全进行全部的搜索任务，有一个小点需要注意的就是这里还需要进行进一步
+的修改,确保能够实现可以动态输入或者是文本的方式导入对应的数据。
+'''
 def mains():
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
@@ -279,6 +338,23 @@ def geturls(modules):
            这里还需要首先判断是不是单一结果,如果是单一的结果,数据
            需要首先单独的跑出来,然后再继续判断其他的异常.
         '''
+        time.sleep(1)
+        test=driver.find_elements_by_id('Canonical-SMILES') #确定是不是只有一个页面
+        if(len(test)==1):
+            url1=driver.current_url
+            urls.append(url1)
+            print('唯一页面',url1)
+        else:
+            value=driver.find_elements_by_class_name('rsltcont')
+            if(len(value)>0):
+                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+                urls.append(url1)
+                print('多页面',url1)
+            else:
+                print('无页面')
+                pass
+         
+        '''
         try:
             driver.find_element_by_id('Canonical-SMILES')
             url1=driver.current_url
@@ -288,15 +364,16 @@ def geturls(modules):
                 url1=value[0].find_element_by_tag_name('a').get_attribute("href")
             else:
                 pass
-            
-        print(url1)
-        urls.append(url1)
+        '''
+       #print(url1)
+        #urls.append(url1)
         url='https://www.ncbi.nlm.nih.gov/pccompound/'
         driver.get(url)
         time.sleep(1)
     driver.quit()
     return urls
     
+
 
 if __name__=="__main__":
     #name=input("输入药品成分名字:")
@@ -311,7 +388,18 @@ if __name__=="__main__":
         for mole in module(path):
             modules.append(mole)
     
+    drugs=[]
+    for i in modules:
+        if(i not in drugs):
+            drugs.append(i)
+    
     #这一步主要是存储相关的url信息，把这个药品所有的成分的信息都存起来。
-    urls=geturls(modules)
+    urls=geturls(drugs)
+    urls1=urls
+    urls=[]
+    for url in urls1:
+        if(url not in urls):
+            urls.append(url)
     #下面利用SFDS2函数将所有的url对应的成分都下载下载存储到对应的文件夹下面
-    SFDS2(urls)
+    SFDS_3D_TCMID(urls)
+    SFDS_2D(urls

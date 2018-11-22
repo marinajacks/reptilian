@@ -110,13 +110,10 @@ if __name__=="__main__":
     path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
     file=file_name(path2)
     n=len(file)
-    a=65
+    a=0
     while(a<n):
         print(a,a+5)
-       # try:
         main(a,a+5)
-       # except :
-        #    main(a,a+5)
         print('The project is success!')
         time.sleep(20)
         a=a+5

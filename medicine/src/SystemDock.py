@@ -114,7 +114,7 @@ def dock2(driver,nums):
     driver.find_element_by_partial_link_text('STEP 3').click()
     time.sleep(1)
     driver.find_element_by_id('run-docking').click()
-    email='chenbiaozainan@126.com'
+    email='chenbiaozainan@163.com'
     note='TCMID正式数据第'+nums+'个成分'
     driver.find_element_by_id('mailTextBox').send_keys(email)
     driver.find_element_by_id('noteTextBox').send_keys(note)
@@ -232,11 +232,31 @@ def docks():
     s1=driver.find_element_by_id('executeConfirmDialog').find_element_by_class_name('dijitDialogPaneActionBar')
     s1.find_elements_by_tag_name('button')[1].click()
 
-
-
-#$if __name__=="__main__":
-  #  docks()
+def main(a,b):
+    driver=dock0()
+    time.sleep(60)
     
+    try:
+        driver=dock1(driver)
+    except ConnectionAbortedError:
+        driver=dock1(driver)
+        
+    time.sleep(5)
+    dock4(driver,a,b)
+    
+
+if __name__=="__main__":
+    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
+    file=file_name(path2)
+   # n=len(file)
+    n=10
+    a=0
+    while(a<n):
+        print(a,a+5)
+        main(a,a+5)
+        print('The project is success!')
+        time.sleep(20)
+        a=a+5
     
     
     
