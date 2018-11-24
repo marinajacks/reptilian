@@ -127,26 +127,28 @@ def tables():
             driver.find_element_by_link_text('STEP 4').click()
             time.sleep(10)
          
-        try:
-            a=driver.find_element_by_id('vinaChartImage').get_attribute('src')
-        except ConnectionAbortedError:
-            a=driver.find_element_by_id('vinaChartImage').get_attribute('src')
-            
-            
-        path2='D:\\图片\\'+names[i]+'.jps'
-        urllib.request.urlretrieve(a, path2)
-        time.sleep(5)
-        print('页面下载成功')
-    
-    
-        
-        
-def test():
+
     results=driver.find_elements_by_tag_name('tbody')
-    results1=driver.find_elements_by_class_name('dojoxGridCell ')
-    for i in range(len(results1)):
-        print(results1[i].text,'',i)
     
+    driver.find_element_by_class_name('dojoxGridContent').find_element_by_tag_name('role')
+    
+    
+    
+    value=driver.find_element_by_class_name('dojoxGridContent').find_elements_by_xpath('//div[@role="presentation"]')
+    
+    for v in value:
+        print(v.get_attribute('style'))
+        
+       
+    
+    driver.execute_script('window.scrollTo(0,5000000)')
+    
+    driver.execute_script("window.scrollTo(0,0)")
+    
+    
+    
+    
+
     for tbody in results:
         trs=tbody.find_elements_by_tag_name("tr")
         for tr in trs:
