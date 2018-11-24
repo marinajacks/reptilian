@@ -37,7 +37,6 @@ def geturls(url):
             else:
                 print(j.find('a').string)
     return urls
-    
 
 #这里的操作主要是解析页面对应的文本信息
 def durginfo(url):
