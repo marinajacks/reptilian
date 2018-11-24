@@ -327,10 +327,7 @@ if __name__=="__main__":
     
     endometriosis=[]
     
-    URL1=URL[304:699]
-    URL2=URL1[261:395]
-    URL3=URL2[129:134]
-    for url in URL3:
+    for url in URL:
         if(len(getpdbs(url))>0):
             endometriosis.append(getpdbs(url))
             print('Success!',url)

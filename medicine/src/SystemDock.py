@@ -5,12 +5,12 @@ Created on Tue Nov 20 10:43:27 2018
 @author: hello
 这个是做分子对接的自动化程序
 """
-
 from selenium import webdriver
 import pandas as pd
 import time
 import os
 from selenium.common.exceptions import NoSuchElementException 
+
 
 
 def getdata():

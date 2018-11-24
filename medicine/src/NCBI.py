@@ -6,7 +6,6 @@ Created on Tue Oct 30 15:20:42 2018
 这个是为了获取到NCBI数据库中的靶点数据书写的脚本,可以
 获取到靶点相关的数据,并且将其存储到本地的数据库中
 """
-
 from selenium import webdriver
 import time
 
@@ -49,7 +48,6 @@ def Genes(name):
         gene.append(td[0].text.strip().split('\n')[0])
         gene.append(td[1].text.strip().split('[')[0])
         Genes.append(gene)
-    
     return Genes
 
 #这个函数用来实现给定疾病对应的靶点信息，函数返回该疾病对应的所有人类的靶点的名称,这个函数与上面
@@ -82,7 +80,6 @@ def Genes1(name):
             else:
                 pass
         driver.find_element_by_link_text('Next >').click() #模拟点击进入下一个页面
-        
     #最后一页信息获取
     tbodys=driver.find_element_by_tag_name("tbody")
     trs=tbodys.find_elements_by_tag_name("tr")

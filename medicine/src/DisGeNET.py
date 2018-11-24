@@ -4,15 +4,16 @@ Created on Fri Nov 23 16:49:47 2018
 
 @author: hello
 
-这个程序可以对DisGeNET进行操作,获取到该数据库中的靶点数据并将数据下载到本地，
-下载到本地使用的是
-
+这个程序可以对DisGeNET进行操作,获取到该数据库中的靶点数据并将数据下载到本地，下载
+到本地使用的是excel格式，其实还可以使用其他相关的方式，例如存储到数据库里。
 """
 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 import time
 import os
+
+
 
 def downs(paths):
     if os.path.exists(paths):
@@ -44,8 +45,7 @@ def downs(paths):
         result=k
     return result
     
-    
-        
+
 if __name__=="__main__":
     paths='D:\\apple'
     result=downs(paths)
