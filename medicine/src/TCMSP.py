@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 import os
-
+import pandas as pd
 
 #这个函数用来获取到化合物成分的页面url
 def getdrugurl(herb):
@@ -181,10 +181,12 @@ def imgsdownloads(folder,chems):
 
 
 if __name__=='__main__':
-    drugs=['浙贝母','三七','薏苡仁']
+   # drugs=['浙贝母','三七','薏苡仁']
+    drugs=['鱼腥草','金银花','赤芍','艾叶','薄荷']
     modules=main(drugs)
-    
-    
+    path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\双鱼颗粒成分.xlsx'
+    df=pd.DataFrame(modules,columns={'module'})
+    df.to_excel(path)
     
     '''
     herb=input('输入药品名称(中文):')

@@ -163,7 +163,7 @@ def dock4s(driver,a,b):
     time.sleep(5)
     driver.quit()
 
-
+#下面的是测试函数，用来测试对接的某一个案例
 def docks():
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge.xlsx'
@@ -248,8 +248,7 @@ def main(a,b):
 if __name__=="__main__":
     path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
     file=file_name(path2)
-   # n=len(file)
-    n=10
+    n=len(file)
     a=0
     while(a<n):
         print(a,a+5)

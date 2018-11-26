@@ -104,11 +104,7 @@ def getdurg(drugname,p,name,password):
     
     df.to_excel(p)
     driver.quit()
-    
-def getimage():
-    
-    
-    return 0
+
     
     
     
@@ -148,6 +144,7 @@ def test():
 
 
 if __name__=="__main__":
+    '''
     print('hello world!')
     herb=input('中药名称(中文)')
     name=input("输入用户名:")
@@ -161,5 +158,9 @@ if __name__=="__main__":
         os.makedirs(p1) 
     #p1=p+herb+'/'+herb+'.xlsx' win下的设计
     p=p1+'\\'+herb+'.xlsx'
-    
+    '''
+    herb='浙贝母'
+    name='marina'
+    password='han#1990@yan'
+    p1='d://2.xlsx'
     getdurg(herb,p1,name,password)

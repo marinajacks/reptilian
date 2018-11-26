@@ -15,6 +15,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException 
 import time
 import os
+import pandas as pd
 
 def geturls(url):
     #下面的数据主要是为了获取到页面的药品链接信息
@@ -138,7 +139,10 @@ def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
 if __name__=='__main__':
     drugs=['ZHE BEI MU','SAN QI','YI YI REN']
     modules=main(drugs)
-    
+    path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID成分.xlsx'
+    df=pd.DataFrame(modules,columns={'module'})
+    df.to_excel(path)
+
     
     
     

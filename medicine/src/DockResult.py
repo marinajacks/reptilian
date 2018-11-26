@@ -8,61 +8,23 @@ Created on Wed Nov 21 18:21:01 2018
 import pandas as pd
 from selenium import webdriver
 import time
+import os
 import urllib
+from sqlalchemy import create_engine
 
-def mains():
-#这部分数据是为了进行解析结果数据而得到的 
-    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\对接结果.xlsx'   
-    df=pd.read_excel(path1)
-    urls=[]
-    for i in range(len(df['结果地址'])):
-        urls.append(df['结果地址'].iloc[i])
-
-
-    url1='https://www.uniprot.org/'   #给定查询页面
-    path='D:\project\selenium\geckodriver'
-    #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
-    driver = webdriver.Firefox(executable_path=path)
-    try:
-        driver.get(urls[0])
-    except:
-        driver.get(urls[0])
-      
-    try:
-        driver.find_element_by_link_text('STEP 4').click()
-    except ConnectionAbortedError:
-        driver.find_element_by_link_text('STEP 4').click()
-        
-    '''
-    try:
-        results=driver.find_elements_by_tag_name('tbody')
-        print(len(results))
-    except ConnectionAbortedError:
-        results=driver.find_elements_by_tag_name('tbody')
-        print(len(results))
-    '''
-    
-    #找到图片并下载
-    a=driver.find_element_by_id('vinaChartImage').get_attribute('src')
-    
-    urllib.request.urlretrieve(a, 'D:\\图片\\a.jpg')
-    
-    driver.find_element_by_id('resultTabContainer').find_element_by_id('dojox_grid_EnhancedGrid_0')
-    #页面分析的时候，这里发现的情况是，每次只能定位到25个框子，所以这里要分析到底应该怎么定位所有的框子
+#这个函数是为了下载    
 def downloads(path1):
     #path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID对接结果.xlsx'   
     df=pd.read_excel(path1)
     urls=[]
     names=[]
-
+    
     for i in range(len(df['IP'])):
         urls.append(df['IP'].iloc[i])
         names.append(df['注释'].iloc[i].split('\'')[1].replace('-','_'))
-
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
     driver = webdriver.Firefox(executable_path=path)
-
     for i in range(len(urls)):
         try:
             driver.get(urls[i])
@@ -82,7 +44,6 @@ def downloads(path1):
             a=driver.find_element_by_id('vinaChartImage').get_attribute('src')
         except ConnectionAbortedError:
             a=driver.find_element_by_id('vinaChartImage').get_attribute('src')
-            
             
         path2='D:\\图片\\'+names[i]+'.jpg'
         urllib.request.urlretrieve(a, path2)
@@ -91,6 +52,13 @@ def downloads(path1):
         
         
 def tables():
+    options = webdriver.ChromeOptions()
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'D:\\MarinaJacks\\project\\reptilian\\medicine\\Data'}
+    options.add_experimental_option('prefs', prefs)
+    options.add_argument('disable-infobars')
+    path='D:\\project\\selenium\\v40\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+        
     path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID对接结果.xlsx'  
     df=pd.read_excel(path1)
     urls=[]
@@ -98,66 +66,45 @@ def tables():
 
     for i in range(len(df['IP'])):
         urls.append(df['IP'].iloc[i])
-     
-
-    path='D:\project\selenium\geckodriver'
-    driver = webdriver.Firefox(executable_path=path)
+        
     
-    try:
-        driver.get(urls[0])
-        time.sleep(3)
-    except:
-        driver.get(urls[0])
-        time.sleep(8)
-
-
-
-    for i in range(len(urls)):
+    for url in urls:
         try:
             driver.get(urls[i])
             time.sleep(3)
         except:
             driver.get(urls[i])
             time.sleep(8)
-          
-        try:
-            driver.find_element_by_link_text('STEP 4').click()
-            time.sleep(5)
-        except ConnectionAbortedError:
-            driver.find_element_by_link_text('STEP 4').click()
-            time.sleep(10)
-         
-
-    results=driver.find_elements_by_tag_name('tbody')
-    
-    driver.find_element_by_class_name('dojoxGridContent').find_element_by_tag_name('role')
+            
+        driver.find_element_by_class_name('gear').click()
+        time.sleep(1)
+        driver.find_element_by_link_text('Docking Results Grouped by Proteins').click()
+        time.sleep(5)
     
     
+def getdata():
+    path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\Dock\\'
+    for i,j,k in os.walk(path):
+            file=k       
+    paths=[]
+    for l in file:
+        paths.append(path+l)
+    return paths
     
-    value=driver.find_element_by_class_name('dojoxGridContent').find_elements_by_xpath('//div[@role="presentation"]')
-    
-    for v in value:
-        print(v.get_attribute('style'))
         
-       
-    
-    driver.execute_script('window.scrollTo(0,5000000)')
-    
-    driver.execute_script("window.scrollTo(0,0)")
-    
-    
-    
-    
-
-    for tbody in results:
-        trs=tbody.find_elements_by_tag_name("tr")
-        for tr in trs:
-            td=tr.find_elements_by_tag_name("td")
-            time.sleep(1)
-            for i in td:
-                print(i.text.strip(),end='\t')
-            print('\n')            
+def writebase(paths):
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    con = engine.connect()
+    df1=pd.read_csv(paths[0])
+    for i in range(1,len(paths)):
+        df=pd.read_csv(paths[i])
+        df1=pd.concat([df1,df])#每次做一个
+        df.to_sql(name='result', con=con, if_exists='append', index=False)
+        
     
 if __name__=="__main__":
-    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID对接结果.xlsx' 
-    downloads(path1)
+    #path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID对接结果.xlsx' 
+   # downloads(path1)
+  #  tables()
+    paths=getdata()
+    writebase(paths)

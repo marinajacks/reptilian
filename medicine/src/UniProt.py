@@ -24,28 +24,6 @@ def sortpdbs(pdbs):
     从小到大的方式进行排序，返回排序后的数组，排序后的数组仅选择X-ray，同时仅有三个
     元素，分别是PDB entry、Method、Resolution (Å)。
     '''
-    '''
-    results=[]
-    if(len(pdbs)>1):
-        for pdb in pdbs:
-           result=[]
-           for i in range(3):
-               #判断
-               if('X-ray' not in pdb[1]):
-                   pass
-               else:
-                   if(i==2):
-                       result.append(pdb[i].split(' ')[0])
-                   else:
-                       result.append(pdb[i])
-           if(len(result)>1):
-               results.append(result)
-     
-        results=np.array(results)
-        results=results[np.lexsort(results.T)]
-        result=results.tolist()
-    return  results
-    '''
     results=[]
     for pdb in pdbs:
           result=[]
@@ -65,7 +43,6 @@ def sortpdbs(pdbs):
         results=results[np.lexsort(results.T)]
         result=results.tolist()
     return  results
-
 
 
 '''
@@ -232,7 +209,6 @@ def main(target):
     trs=tbodys.find_elements_by_tag_name("tr")
     #下面是为了获取到第一行查询的结果
     td=trs[0].find_elements_by_tag_name('td')
-    
     #这是第二列的href数据
     url=td[1].find_element_by_tag_name("a").get_attribute("href")
     driver.quit()
@@ -293,14 +269,13 @@ if __name__=="__main__":
 
     name='adenomyosis'
     genes=Genes1(name)
+    
     Gene=[]
     for i in genes:
         Gene.append(i[0])
     urls=main1(Gene)
     pdb=[]
-   # for url in =PDBS1(urls1):
-    urls1=urls
-    urls=urls1[30:103]
+
     for url in urls:
         if(len(getpdbs(url))>0):
             pdb.append(getpdbs(url))
