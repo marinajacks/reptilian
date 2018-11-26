@@ -144,11 +144,12 @@ def test():
 
 
 if __name__=="__main__":
-    '''
+
     print('hello world!')
     herb=input('中药名称(中文)')
     name=input("输入用户名:")
     password=input("输入用户密码:")
+    '''
     #这个是mac的地址
     #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/上海有机/'
     p1=r'D:\project\reptilian\medicine\中药数据\上海有机所1'+'\\'+herb
@@ -160,7 +161,6 @@ if __name__=="__main__":
     p=p1+'\\'+herb+'.xlsx'
     '''
     herb='浙贝母'
-    name='marina'
-    password='han#1990@yan'
+
     p1='d://2.xlsx'
     getdurg(herb,p1,name,password)
