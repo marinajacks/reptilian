@@ -53,7 +53,7 @@ def downloads(path1):
         
 def tables():
     options = webdriver.ChromeOptions()
-    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'D:\\MarinaJacks\\project\\reptilian\\medicine\\Data'}
+    prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\Dock'}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
     path='D:\\project\\selenium\\v40\\chromedriver.exe'
@@ -70,10 +70,10 @@ def tables():
     
     for url in urls:
         try:
-            driver.get(urls[i])
+            driver.get(url)
             time.sleep(3)
         except:
-            driver.get(urls[i])
+            driver.get(url)
             time.sleep(8)
             
         driver.find_element_by_class_name('gear').click()
@@ -96,15 +96,20 @@ def writebase(paths):
     engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
     con = engine.connect()
     df1=pd.read_csv(paths[0])
+    df1.to_sql(name='result', con=con, if_exists='append', index=False)
     for i in range(1,len(paths)):
         df=pd.read_csv(paths[i])
         df1=pd.concat([df1,df])#每次做一个
         df.to_sql(name='result', con=con, if_exists='append', index=False)
+    return df1
         
     
 if __name__=="__main__":
     #path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID对接结果.xlsx' 
    # downloads(path1)
   #  tables()
+    #paths=getdata()
+   # writebase(paths)
+   # tables()
     paths=getdata()
-    writebase(paths)
+    df1=writebase(paths)
