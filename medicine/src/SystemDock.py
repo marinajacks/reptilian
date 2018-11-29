@@ -87,7 +87,7 @@ def dock0():
         driver.find_element_by_link_text('Click here').click()
     except NoSuchElementException:
         driver.find_element_by_link_text('Click here').click()
-    
+        
     name=gettarget(path1)
     driver.find_element_by_link_text('STEP 1').click()
     time.sleep(1)
@@ -150,6 +150,7 @@ def dock4(driver,a,b):
     
 #上传和最后一部分操作都放在一起
 def dock4s(driver,a,b):
+    
     for i in range(a,b):
         try:
             clicks1(driver,i)
@@ -235,6 +236,10 @@ def docks():
 def main(a,b):
     driver=dock0()
     time.sleep(60)
+    #这个可以直接获取到对应的session信息,实际上就是后边的结果信息
+    session=driver.find_elements_by_class_name('header')[1].find_element_by_class_name('right-align').find_elements_by_tag_name('span')[1].text
+    session='http://systemsdock.unit.oist.jp/iddp/preProcess/load/'+session
+    time.sleep(1)
     
     try:
         driver=dock1(driver)
@@ -243,16 +248,18 @@ def main(a,b):
         
     time.sleep(5)
     dock4(driver,a,b)
-    
+    return session
 
 if __name__=="__main__":
     path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
     file=file_name(path2)
     n=len(file)
     a=0
+    sessions=[]
     while(a<n):
         print(a,a+5)
-        main(a,a+5)
+        session=main(a,a+5)
+        sessions.append(session)
         print('The project is success!')
         time.sleep(20)
         a=a+5
