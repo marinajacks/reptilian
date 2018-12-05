@@ -94,8 +94,9 @@ def Genes1(name):
             pass
     
     return Genes
-
+'''
 if __name__=="__main__":
     name='adenomyosis'
     genes=Genes1(name)
     print(genes)
+'''
