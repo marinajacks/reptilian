@@ -15,7 +15,8 @@ import re
 import os
 
 #这个函数仅为了获取到药草成分的名称信息
-def getdurg(drugname,p,name,password):
+def getdurg(drugname,name,password):
+#def getdurg(drugname,p,name,password):
     #url='http://www.chemcpd.csdb.cn/cmpref/Tcm_Multi/R_tcd_Comp.asp'
     #headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
     #response=requests.get(url,headers=headers)
@@ -118,10 +119,11 @@ def getdurg(drugname,p,name,password):
                     if(match is None):
                         mos.append(n.strip())
                         break
-        df=pd.DataFrame(mos)
+       # df=pd.DataFrame(mos)
         
-        df.to_excel(p)
+       # df.to_excel(p)
         driver.quit()
+        return mos
     else:
         print('不存在该药材')
         
@@ -225,18 +227,24 @@ def getdurgs(drugname,p,name,password):
     else:
         print('不存在该药材')
     
-
-
+def wholedurgs(drugs,name,password):
+    drugsinfo=[]
+    for drug in drugs:
+        infos=getdurg(drug,name,password)
+        for i in infos:
+            drugsinfo.append(i)
+    return drugsinfo
 
 
 
 if __name__=="__main__":
 
-    herb=input('中药名称(中文)')
-    name=input("输入用户名:")
-    password=input("输入用户密码:")
+    #herb=input('中药名称(中文)')
+    #name=input("输入用户名:")
+    #password=input("输入用户密码:")
     #这个是mac的地址
     #p='/Users/macbook/documents/project/reptilian/medicine/中药数据/上海有机/'
+    '''
     p1=r'D:\project\reptilian\medicine\中药数据\上海有机所1'+'\\'+herb
     if os.path.exists(p1):
         pass
@@ -244,9 +252,9 @@ if __name__=="__main__":
         os.makedirs(p1) 
     #p1=p+herb+'/'+herb+'.xlsx' win下的设计
     p=p1+'\\'+herb+'.xlsx'
-
-    herb='甘草'
-
-    p1='d://3.xlsx'
-    getdurg(herb,p1,name,password)
+    '''
+    herbs=['半夏','黄连','黄芩','干姜','人参','大枣','甘草']
+    name='marina'
+    password='han#1990@yan'
+    drugsinfo=wholedurgs(herbs,name,password)
 

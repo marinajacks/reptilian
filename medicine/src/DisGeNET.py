@@ -13,6 +13,17 @@ from selenium.webdriver.support.select import Select
 import time
 import os
 
+from selenium.webdriver.common.action_chains import ActionChains
+import win32api
+import win32con
+#右键超链接另存为
+ActionChains(driver).context_click(link).perform()
+#延时2s
+time.sleep(2)
+#按下K键,这里用到了win32api,win32con
+win32api.keybd_event(75,win32con.KEYEVENTF_KEYUP,0)#75的含义就是键盘的K
+
+
 
 
 def downs(paths):
@@ -20,12 +31,16 @@ def downs(paths):
         pass
     else:
         os.makedirs(paths) 
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    '''
     options = webdriver.ChromeOptions()
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': paths}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
     path='D:\\project\\selenium\\v40\\chromedriver.exe'
     driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    '''
     driver.get('http://www.disgenet.org/')
     driver.find_element_by_link_text('Search').click()
     
@@ -41,6 +56,10 @@ def downs(paths):
     time.sleep(5)
     Select(driver.find_element_by_id('fileFormat')).select_by_value('1')
     driver.find_elements_by_class_name('controls')[1].find_element_by_name('download').click()
+    link=driver.find_elements_by_class_name('controls')[1].find_element_by_name('download')
+    ActionChains(driver).context_click(link).perform()
+
+    
     for i,j,k in os.walk(paths):
         result=k
     return result

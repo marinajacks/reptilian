@@ -13,19 +13,30 @@ import pandas as pd
 import pypinyin
 
 if __name__=="__main__":
+    #现在发现的情况是，使用TCMSP数据库的话比较简单，现在只是用tcmsp进行简化操作
     drugs=['浙贝母','三七','薏苡仁']
-    modules=tcmsp.main(drugs)
+    modules1=tcmsp.main(drugs)
 
-    
+    #把中文转成分开,然后在
     drugs1=['ZHE BEI MU','SAN QI','YI YI REN']
-    modules1=tcmid.main(drugs1)
+    modules2=tcmid.main(drugs1)
   
     herbs=['浙贝母','三七','薏苡仁']
     name='marina'
     password='han#1990@yan'
-    drugsinfo=chem.wholedurgs(herbs,name,password)
+    modules3=chem.wholedurgs(herbs,name,password)
+
     
-    import pypinyin
+    modules=[]
+    for i in modules1:
+        modules.append(i)
+    modules.extend(modules2)
+    modules.extend(modules3)
+    module=[]
+    for i in modules:
+        if(i not in module):
+            module.append(i)
+            
  
 # 不带声调的(style=pypinyin.NORMAL)
 def hp(word):
@@ -34,14 +45,6 @@ def hp(word):
         s += ''.join(i)
     return s
  
-# 带声调的(默认)
-def hp2(word):
-    s = ''
-    for i in pypinyin.pinyin(word):
-        s = s + ''.join(i) + " "
-    return s
- 
  
 if __name__ == "__main__":
-    print(hp("中国中央电视台春节联欢晚会"))
-    print(hp2("中国中央电视台春节联欢晚会"))
+    print(hp("中 国 中 央电视台春节联欢晚会"))

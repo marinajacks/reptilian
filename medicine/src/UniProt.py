@@ -1,22 +1,15 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Nov 14 20:12:12 2018
-
 @author: hello
 """
 
-
-
-import requests 
-from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys  
 import pandas as pd
 import time
-import os
 import numpy as np
 from  NCBI import Genes1
-
+from sqlalchemy import create_engine
 
 def sortpdbs(pdbs):
     '''
@@ -53,21 +46,26 @@ def getpdbs(url):
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
     driver = webdriver.Firefox(executable_path=path)
-   # url='https://www.uniprot.org/uniprot/P03956'
     driver.get(url)
-    PDB=[]
+    time.sleep(1)
+    meta=[]
     #由于页面是iframe嵌套的子页面，所以这里需要选择子页面操作
     iframe=driver.find_elements_by_tag_name('iframe')
     if(len(iframe)>0):
         Frame=driver.find_elements_by_id('structureFrame')
         if(len(Frame)>0):
+            uniprotid=url.split('/')[-1]
+            Protein=driver.find_element_by_id('content-protein').text
+            gene=driver.find_element_by_id('content-gene').text
+            meta=[uniprotid,Protein,gene]
             driver.switch_to_frame('structureFrame')
+            time.sleep(1)
             #定位页面中的tbody的位置
             test=driver.find_elements_by_tag_name("tbody")
             if(len(test)>0):
                 tbodys=driver.find_element_by_tag_name("tbody")
                 trs=tbodys.find_elements_by_tag_name("tr")
-            
+                time.sleep(1)
                 pdbs=[]
                 for tr in trs:
                     pdb=[]
@@ -77,15 +75,14 @@ def getpdbs(url):
                     pdbs.append(pdb)
                 
                 if(len(sortpdbs(pdbs))>0):
-                    PDB=sortpdbs(pdbs)[0]
+                    meta.append(sortpdbs(pdbs)[0][0])
                 driver.quit()
         driver.quit()
     else:
         driver.quit()
-    return PDB
-    #print(PDB)
-    
-    
+    return meta
+
+
 '''
 下面的函数主要是为了定位页面获取到PDB数据,这个函数主要是单个条件的数据获取
 '''
@@ -162,6 +159,10 @@ def PDBS1(urls):
         #由于页面是iframe嵌套的子页面，所以这里需要选择子页面操作
         iframe=driver.find_elements_by_tag_name('iframe')
         if(len(iframe)>0):
+            uniprotid=url.split('/')[-1]
+            Protein=driver.find_element_by_id('content-protein').text
+            gene=driver.find_element_by_id('content-gene').text
+            meta=[uniprotid,Protein,gene]
             driver.switch_to_frame('structureFrame')
             #定位页面中的tbody的位置
             time.sleep(1)
@@ -178,10 +179,9 @@ def PDBS1(urls):
                 pdbs.append(pdb)
                 
             PDB=sortpdbs(pdbs)
-
-           # print(PDB)
             if(len(PDB)>0):
-                Pdbs.append(PDB[0])
+                meta.append(PDB[0])
+                Pdbs.append(meta)
     
     driver.quit()
     return Pdbs
@@ -215,7 +215,7 @@ def main(target):
     return  url
 
 #下面的函数可以根据给定基因组，批量完成基因对应相关蛋白质的查找。
-def main1(targets):
+def Uniprots(targets):
     url1='https://www.uniprot.org/'   #给定查询页面
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
@@ -230,6 +230,7 @@ def main1(targets):
         #driver.find_element_by_id('query').send_keys(Keys.ENTER)
         driver.find_element_by_id('search-button').click()
         #这一步是选择Human的筛选
+        time.sleep(1)
         href=driver.find_element_by_id("orgFilter-9606").get_attribute('href')
         driver.get(href)
         time.sleep(1)
@@ -242,9 +243,46 @@ def main1(targets):
         
         #这是第二列的href数据
         url=td[1].find_element_by_tag_name("a").get_attribute("href")
+        time.sleep(3)
         urls.append(url)
+        print('Success!')
     driver.quit()
     return  urls
+
+#下面的方案可以用来进行化简获取基因靶点的操作，它可以根据给定基因组，批量完成基因对应相关蛋白质的查找。
+#但是,下面的程序存在一个问题就是，在进行筛选的时候，页面没有跳转就进行了下一步，导致地址的获取是错误的。
+#比较好的处理方式是每次打开一个页面，否则就会导致出现上述的问题。
+def main2(targets):
+    url1='https://www.uniprot.org/'   #给定查询页面
+    path='D:\project\selenium\geckodriver'
+    #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址    
+    driver = webdriver.Firefox(executable_path=path)
+    driver.get(url1)
+    time.sleep(3)
+    urls=[]
+    for target in targets:
+        #下面的操作是为了查询特定靶点的数据
+        target=target+'\tAND organism:"Homo sapiens (Human) [9606]"' #这里直接限定是Human
+        driver.find_element_by_id('query').clear()
+        driver.find_element_by_id('query').send_keys(target)
+        #driver.find_element_by_id('query').send_keys(Keys.ENTER)
+        driver.find_element_by_id('search-button').click()
+        #下面的是查询的结果
+        time.sleep(1)
+        s=driver.find_element_by_id('resultsArea')
+        tbodys=s.find_element_by_tag_name('tbody')
+        trs=tbodys.find_elements_by_tag_name("tr")
+        #下面是为了获取到第一行查询的结果
+        td=trs[0].find_elements_by_tag_name('td')
+        #这是第二列的href数据
+        url=td[1].find_element_by_tag_name("a").get_attribute("href")
+        urls.append(url)
+        time.sleep(1)
+        
+    driver.quit()
+    return  urls
+
+
 
 def getuniprot():
     path='D://MarinaJacks//project//reptilian//medicine//Data//Uniprot.txt'
@@ -258,42 +296,75 @@ def getuniprot():
     return lists
         
     
-if __name__=="__main__":
-    '''
-    target='Beta-2 adrenergic receptor'
-    url=main(target)
-    getpdbs(url)
-    '''
-    #target='NGFR'
-   # url=main(target)
 
+if __name__=="__main__":
+    #基因获取部分    
     name='adenomyosis'
     genes=Genes1(name)
-    
+    #获取真正的基因细腻
     Gene=[]
     for i in genes:
         Gene.append(i[0])
-    urls=main1(Gene)
+        
+    targets=[]
+    for i in gene0:
+        targets.append(i[0])
+        
+        
+        
+    urls=[]
+    for target in targets:
+        urls.append(main(target))
+        
+        
+        
+        
+    #下面的操作是为了获取到对应的靶点相关信息 
     pdb=[]
-
     for url in urls:
         if(len(getpdbs(url))>0):
             pdb.append(getpdbs(url))
             print('Success!',url)
         else:
             print('There is no PDB')
+    '''       
+    path0='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_pdb.xlsx'
+    df=pd.DataFrame(pdb)
+    df.to_excel(path0)
+    '''
     
-    pdbs1=pdb[6:93]
-    pdbs2=[]
-    for i in pdbs1:
-        pdbs2.append(i.tolist())
-        
-    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\adenomyosis.xlsx'
-    df1=pd.DataFrame(pdbs2)
-    df1.to_excel(path1,header=True,index=False)
-        
-    #上面的都是一个页面的数据，是其中一种疑难杂症，下面的是另外一种病症
+    result=[]
+    for i in range(len(pdb)):
+        if(len(pdb[i])==4):
+            result.append(pdb[i])
+            
     
+    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_pdbs.xlsx'
+
+    df=pd.read_excel(path1)
+    
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    con = engine.connect()
+    df.to_sql(name='Target', con=con, if_exists='append', index=False)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    '''
     Uniprots=getuniprot()
     path='https://www.uniprot.org/uniprot/'
     URL=[]
@@ -335,7 +406,7 @@ if __name__=="__main__":
         target+=merge[i]+','
     target=target+merge[-1]
         
-        
+    '''
         
         
         

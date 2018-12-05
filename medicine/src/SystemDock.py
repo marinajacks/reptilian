@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 20 10:43:27 2018
-
 @author: hello
 这个是做分子对接的自动化程序
 """
+
 from selenium import webdriver
 import pandas as pd
 import time
 import os
 from selenium.common.exceptions import NoSuchElementException 
-
 
 
 def getdata():
@@ -60,7 +59,7 @@ def clicks(driver,file):
         
         
 def clicks1(driver,i):
-        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
+        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D\\'
         file=file_name(path2)
         driver.find_element_by_link_text('Upload File').click()
         #定位上传文件操作
@@ -69,13 +68,15 @@ def clicks1(driver,i):
         #下面的部分实现上传操作
         test1=driver.find_element_by_id('addLigandsByFileDialog').find_elements_by_class_name('dijitDialogPaneActionBar')
         test1[0].find_elements_by_tag_name('button')[1].click()  #定位到对应的页面点击上传操作
-        time.sleep(5)
+        time.sleep(10)
+    
+    
     
     
 #将整个过程拆分成几个部分
 def dock0():
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
-    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge.xlsx'
+    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_pdbs.xlsx'
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
     url='http://systemsdock.unit.oist.jp/iddp/home/index'
@@ -102,6 +103,9 @@ def dock0():
     test0=driver.find_element_by_id('addProteinNamesByIdsDialog').find_element_by_class_name('dijitDialogPaneActionBar')
     test0.find_elements_by_tag_name('button')[1].click()
     return driver
+
+
+
 
 #实现第二部 STEP 2的操作
 def dock1(driver):
@@ -137,10 +141,10 @@ def dock4(driver,a,b):
     for i in range(a,b):
         try:
             clicks1(driver,i)
-            time.sleep(12) #尝试进行8s的停顿
+            time.sleep(15) #尝试进行8s的停顿
         except ConnectionAbortedError: #假如出现异常，那么就延长再一次执行的时间
             clicks1(driver,i)
-            time.sleep(30)
+            time.sleep(40)
     try:
         dock2(driver,'\''+str(a+1)+'-'+str(b)+'\'')
     except ConnectionAbortedError:
@@ -237,7 +241,11 @@ def main(a,b):
     driver=dock0()
     time.sleep(60)
     #这个可以直接获取到对应的session信息,实际上就是后边的结果信息
-    session=driver.find_elements_by_class_name('header')[1].find_element_by_class_name('right-align').find_elements_by_tag_name('span')[1].text
+    try:
+        session=driver.find_elements_by_class_name('header')[1].find_element_by_class_name('right-align').find_elements_by_tag_name('span')[1].text
+    except ConnectionAbortedError:
+        session=driver.find_elements_by_class_name('header')[1].find_element_by_class_name('right-align').find_elements_by_tag_name('span')[1].text
+   
     session='http://systemsdock.unit.oist.jp/iddp/preProcess/load/'+session
     time.sleep(1)
     
@@ -250,11 +258,14 @@ def main(a,b):
     dock4(driver,a,b)
     return session
 
+
+
+
 if __name__=="__main__":
-    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
+    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D\\'
     file=file_name(path2)
     n=len(file)
-    a=0
+    a=105
     sessions=[]
     while(a<n):
         print(a,a+5)

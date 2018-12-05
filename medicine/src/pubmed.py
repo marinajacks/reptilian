@@ -15,6 +15,8 @@ from selenium.common.exceptions import NoSuchElementException
 import pandas as pd
 import time
 import os
+from sqlalchemy import create_engine
+from TCMSP import getbyInChIKey
 
 
 
@@ -109,7 +111,7 @@ def SFDS_3D(urls):
 #,这里选择下载的都是3D的结构
 def SFDS_3D_TCMID(urls):
     options = webdriver.ChromeOptions()
-    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D'
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D'
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
@@ -265,8 +267,8 @@ def mains3(name):
     #来进行定位，但是有些成分的获取则需要使用section-content来进行判断
     return smiles   
 
-#这个脚本主要是为了处理给定的一个list数据，然后
-def mains4(modules):
+#这个脚本主要是为了处理给定的一个list数据，然后得到smiles
+def SMILES(modules):
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
     url='https://www.ncbi.nlm.nih.gov/pccompound/'
@@ -304,11 +306,59 @@ def mains4(modules):
         driver.get(url)
         time.sleep(1)
         
-#        pass
     #这里比较有意思的是,不同的数据对应的数据是不一样的,有些成分需要使用rsltcont
     #来进行定位，但是有些成分的获取则需要使用section-content来进行判断
     return drugs   
-    
+
+def PubChemCIDS(modules):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    Keys=[]
+    for name in modules:
+        Key=[]
+        Key.append(name)
+        print(name)
+        driver.find_element_by_id('term').clear()
+        driver.find_element_by_id('term').send_keys(name)
+        driver.find_element_by_id('search').click()
+        '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
+           下面首先需要获取到的就是第一条对应的数据，这里默认的就
+           是第一条数据作为需要的数据也是合理的。但是这里存在一个
+           问题，就是这里在选择结果的时间，查询结果可能是空的,所以,
+           这里需要进行异常设计.另外,由于问题的种类至少有两种,所以,
+           这里还需要首先判断是不是单一结果,如果是单一的结果,数据
+           需要首先单独的跑出来,然后再继续判断其他的异常.
+        '''
+        time.sleep(1)
+        test=driver.find_elements_by_id('Canonical-SMILES') #确定是不是只有一个页面
+        if(len(test)==1):
+            Key.append(driver.find_element_by_tag_name('tbody').find_element_by_tag_name('td').text)
+            Keys.append(Key)
+            print('单页面')
+        else:
+            value=driver.find_elements_by_class_name('rsltcont')
+            if(len(value)>0):
+                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+                driver.get(url1)
+                time.sleep(2)
+                Key.append(driver.find_element_by_tag_name('tbody').find_element_by_tag_name('td').text)
+                Keys.append(Key)
+                print('多页面')
+            else:
+                print('无页面')
+                pass
+        #Keys.append(Key)
+        url='https://www.ncbi.nlm.nih.gov/pccompound/'
+        driver.get(url)
+        time.sleep(1)
+    driver.quit()
+    return Keys
+
+
+
+  
 
 #该函数主要是为了将数据处理成list格式,方便进行循环读取
 def module(excel):
@@ -373,7 +423,161 @@ def geturls(modules):
     driver.quit()
     return urls
     
+#这个函数同样是下载药品成分的一串url,获取到对应的成分的id信息，可以与成分的名称关联起来
+#这个函数用来获取药品成分对应的Url信息，输入的参数是
+def PubChemID(modules):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    pubchems=[]
+    for name in modules:
+        pubchem=[]
+        pubchem.append(name)
+        print(name)
+        driver.find_element_by_id('term').clear()
+        driver.find_element_by_id('term').send_keys(name)
+        driver.find_element_by_id('search').click()
+        '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
+           下面首先需要获取到的就是第一条对应的数据，这里默认的就
+           是第一条数据作为需要的数据也是合理的。但是这里存在一个
+           问题，就是这里在选择结果的时间，查询结果可能是空的,所以,
+           这里需要进行异常设计.另外,由于问题的种类至少有两种,所以,
+           这里还需要首先判断是不是单一结果,如果是单一的结果,数据
+           需要首先单独的跑出来,然后再继续判断其他的异常.
+        '''
+        time.sleep(1)
+        test=driver.find_elements_by_id('Canonical-SMILES') #确定是不是只有一个页面
+        if(len(test)==1):
+            url1=driver.current_url
+            print('唯一页面',url1)
+            pubchem.append(url1.split('/')[-1])
+        else:
+            value=driver.find_elements_by_class_name('rsltcont')
+            if(len(value)>0):
+                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+                print('多页面',url1)
+                pubchem.append(url1.split('/')[-1])
+            else:
+                print('无页面')
+                pubchem.append([])
+                pass
+        pubchems.append(pubchem)
+        url='https://www.ncbi.nlm.nih.gov/pccompound/'
+        driver.get(url)
+        time.sleep(1)
+    driver.quit()
+    return pubchems
 
+#这个函数同样是下载药品成分的一串url,获取到对应的成分的id信息，可以与成分的名称关联起来
+#这个函数用来获取药品成分对应的Url信息，输入的参数是
+def InChIKeys(modules):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    Keys=[]
+    for name in modules:
+        Key=[]
+        Key.append(name)
+        print(name)
+        driver.find_element_by_id('term').clear()
+        driver.find_element_by_id('term').send_keys(name)
+        driver.find_element_by_id('search').click()
+        '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
+           下面首先需要获取到的就是第一条对应的数据，这里默认的就
+           是第一条数据作为需要的数据也是合理的。但是这里存在一个
+           问题，就是这里在选择结果的时间，查询结果可能是空的,所以,
+           这里需要进行异常设计.另外,由于问题的种类至少有两种,所以,
+           这里还需要首先判断是不是单一结果,如果是单一的结果,数据
+           需要首先单独的跑出来,然后再继续判断其他的异常.
+        '''
+        time.sleep(1)
+        test=driver.find_elements_by_id('InChI-Key') #确定是不是只有一个页面
+        if(len(test)==1):
+            s1=driver.find_element_by_id('InChI-Key')
+            Key.append(s1.find_element_by_class_name('section-content-item').text)
+            Keys.append(Key)
+            print('单页面')
+        else:
+            value=driver.find_elements_by_class_name('rsltcont')
+            if(len(value)>0):
+                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+                driver.get(url1)
+                time.sleep(2)
+                s1=driver.find_element_by_tag_name('tbody').find_elements_by_tag_name('tr')
+                time.sleep(1)
+                for j in range(len(s1)):
+                    tagname=s1[j].find_element_by_tag_name('th').text
+                    #print(tagname)
+                    if('InChI' in tagname):
+                        Tag=j
+                time.sleep(1)
+                Key.append(s1[Tag].find_element_by_tag_name('td').text)
+                Keys.append(Key)
+                print('多页面')
+            else:
+                print('无页面')
+                pass
+        #Keys.append(Key)
+        url='https://www.ncbi.nlm.nih.gov/pccompound/'
+        driver.get(url)
+        time.sleep(1)
+    driver.quit()
+    return Keys
+
+def InChIKey(name):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    Key=[]
+    print(name)
+    driver.find_element_by_id('term').clear()
+    driver.find_element_by_id('term').send_keys(name)
+    driver.find_element_by_id('search').click()
+    '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
+           下面首先需要获取到的就是第一条对应的数据，这里默认的就
+           是第一条数据作为需要的数据也是合理的。但是这里存在一个
+           问题，就是这里在选择结果的时间，查询结果可能是空的,所以,
+           这里需要进行异常设计.另外,由于问题的种类至少有两种,所以,
+           这里还需要首先判断是不是单一结果,如果是单一的结果,数据
+           需要首先单独的跑出来,然后再继续判断其他的异常.
+    '''
+    time.sleep(1)
+    test=driver.find_elements_by_id('InChI-Key') #确定是不是只有一个页面
+    if(len(test)==1):
+        s1=driver.find_element_by_id('InChI-Key')
+        Key=s1.find_element_by_class_name('section-content-item').text
+        print('单页面')
+    else:
+        value=driver.find_elements_by_class_name('rsltcont')
+        if(len(value)>0):
+            url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+            driver.get(url1)
+            time.sleep(1)
+            s1=driver.find_element_by_tag_name('tbody').find_elements_by_tag_name('tr')
+            for j in range(len(s1)):
+                tagname=s1[j].find_element_by_tag_name('th').text
+                if('InChI' in tagname):
+                    Tag=j
+            Key=s1[Tag].find_element_by_tag_name('td').text
+            print('多页面')
+        else:
+            print('无页面')
+            pass
+    driver.quit()
+    return Key
+
+    
+def writebase(table,data):
+    #这里的table是表名称，data是数据，本质上是一个
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    con = engine.connect()
+    df=pd.DataFrame(data)
+    df.to_sql(name=table, con=con, if_exists='append', index=False)
+            
+            
 
 if __name__=="__main__":
     #name=input("输入药品成分名字:")
@@ -382,19 +586,71 @@ if __name__=="__main__":
     path1='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\薏苡仁\薏苡仁.xlsx'
     path2='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\浙贝母\浙贝母.xlsx'
     path3='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\三七\三七.xlsx'
-    paths=[path1,path2,path3]
+    path4='D:\MarinaJacks\project\\reptilian\medicine\龙血竭\龙血竭1.xlsx'
+    paths=[path1,path2,path3,path4]
     modules=[]
     for path in paths:
-        for mole in module(path):
+        for mole in module(path4):
             modules.append(mole)
+            
     
     drugs=[]
     for i in modules:
         if(i not in drugs):
             drugs.append(i)
+            
+    #将数据写入到对应的        
+    IDs=PubChemID(modules)
     
+    Keys=[]
+    for drug in drugs:
+        Keys.append(InChIKey(drug))
+    
+    Keys=InChIKeys(drugs)
+    
+    Key=[]
+    for i in range(len(Keys)):
+        Key.append(Keys[i][1])
+    
+    Compounds=getbyInChIKey(Keys)
+    
+    
+    Compounds=[]
+    for i in Key:
+        Compounds.append(getbyInChIKey(i))
+    
+    longxuejie=[]
+    for i in Compounds:
+        if(len(i)>0):
+            i.append('龙血竭')
+            longxuejie.append(i)
+            
+    df1=pd.DataFrame(longxuejie)      
+    
+    path4='D:\MarinaJacks\project\\reptilian\medicine\Data\龙血竭成分.xlsx'   
+    
+    df1=pd.read_excel(path4)
+    
+    df2=pd.concat([df,df1])
+     
+           
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    con = engine.connect()
+    df2.to_sql(name='Compounds', con=con, if_exists='append', index=False)
+    
+    
+    writebase('druginfo',IDs)
+    path4='D:\MarinaJacks\project\\reptilian\medicine\Data\PubChemID.xlsx'
+    df=pd.DataFrame(data)
+    df=pd.read_excel(path4)
+    df.to_excel(path4)
     #这一步主要是存储相关的url信息，把这个药品所有的成分的信息都存起来。
+    
     urls=geturls(drugs)
+    
+    #在进行操作的时候需要把成分的
+    
+    
     urls1=urls
     urls=[]
     for url in urls1:
@@ -402,4 +658,5 @@ if __name__=="__main__":
             urls.append(url)
     #下面利用SFDS2函数将所有的url对应的成分都下载下载存储到对应的文件夹下面
     SFDS_3D_TCMID(urls)
-    SFDS_2D(urls
+    
+    SFDS_2D(urls)

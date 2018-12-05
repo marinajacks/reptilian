@@ -8,6 +8,7 @@ Created on Tue Oct 30 15:20:42 2018
 """
 from selenium import webdriver
 import time
+import pandas as pd 
 
 
 #这个函数用来实现给定疾病对应的靶点信息，函数返回该疾病对应的所有人类的靶点的名称
@@ -94,9 +95,29 @@ def Genes1(name):
             pass
     
     return Genes
-'''
+
 if __name__=="__main__":
     name='adenomyosis'
     genes=Genes1(name)
     print(genes)
-'''
+    genes1=Genes1('endometriosis')
+    print(genes1)
+    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\adenomyosis_gene.xlsx'
+    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\endometriosis_gene.xlsx'
+    path3='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_gene.xlsx'
+    df1=pd.DataFrame(genes)
+    df2=pd.DataFrame(genes1)
+    df1.to_excel(path1)
+    df2.to_excel(path2)
+    
+    gene0=[]
+    for i in genes:
+        if(i in genes1):
+            gene0.append(i)
+            
+    df3=pd.DataFrame(gene0)
+    df3.to_excel(path3)
+    
+    
+    
+    

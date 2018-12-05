@@ -109,6 +109,7 @@ def main(drugs):
         print(drugname+' is success!')
     return modules
     
+#这个是图片下载的函数，
 def imgsdownloads(folder,chems):#将url对应的页面的图片存储到本地
     #url='lsp.nwu.edu.cn/strctpng/MOL000869.png'
     folder=folder+'imags/'
@@ -142,7 +143,15 @@ if __name__=='__main__':
     path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMID成分.xlsx'
     df=pd.DataFrame(modules,columns={'module'})
     df.to_excel(path)
-
+    
+    
+    
+    drug='ZHE BEI MU'
+    url=getdrug(drug)
+    urls=geturls(url)
+    for url0 in urls:
+        modules.append(durginfo(url0))
+    print(drug+' is success!')
     
     
     
