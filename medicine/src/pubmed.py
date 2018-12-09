@@ -111,31 +111,42 @@ def SFDS_3D(urls):
 #,这里选择下载的都是3D的结构
 def SFDS_3D_TCMID(urls):
     options = webdriver.ChromeOptions()
-    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D'
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_1'
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
     path='D:\\project\\selenium\\chromedriver.exe'
     driver = webdriver.Chrome(executable_path=path, chrome_options=options)
+    #modules=[]
     for url in urls:
         driver.get(url)
         print(url)
-        time.sleep(2)
+        time.sleep(3)
         test=driver.find_elements_by_id('3D-Conformer')  #这个找到对应的3D的位置,用来判断是不是存在3D结构
         if(len(test)>0):
+            ''' 
+            module=[]
+            pubchemcid=driver.find_element_by_tag_name('tbody').find_element_by_tag_name('td').text
+             #下面的脚本可以稍作修改
+            '''
             value=driver.find_element_by_id('3D-Conformer')  #这个找到对应的3D的位置
-            #下面的脚本可以稍作修改
+            time.sleep(2)
             value.find_elements_by_class_name('menu-btn')[1].click()  #这个是点击下载操作部分 
             driver.find_element_by_link_text('Save').click() #这一部分模拟点击下载操作，进行下载
             print('Success!')
+            '''module.append(url[1])
+            module.append(url[2])
+            module.append(pubchemcid)
+            modules.append(module)
+            '''
         else:
             print('No 3D Conformer')
-            
+    #return modules
 #这个函数同样是下载药品成分的一串url，对这些给定的url页面进行对应的下载操作
 #,这里选择下载的都是3D的结构
 def SFDS_2D(urls):
     options = webdriver.ChromeOptions()
-    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\2D'
+    downloads='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_2D_1'
     prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': downloads}
     options.add_experimental_option('prefs', prefs)
     options.add_argument('disable-infobars')
@@ -363,10 +374,10 @@ def PubChemCIDS(modules):
 #该函数主要是为了将数据处理成list格式,方便进行循环读取
 def module(excel):
     df=pd.read_excel(excel)
-    module=[]
+    module0=[]
     for i in range(len(df[['Molecule name']])):
-        module.append(df[['Molecule name']].loc[i].values[0])
-    return module
+        module0.append(df[['Molecule name']].loc[i].values[0])
+    return module0
 
 #这个函数用来获取药品成分对应的Url信息，输入的参数是
 def geturls(modules):
@@ -376,9 +387,9 @@ def geturls(modules):
     driver.get(url)
     urls=[]
     for name in modules:
-        print(name)
+        urls0=[]
         driver.find_element_by_id('term').clear()
-        driver.find_element_by_id('term').send_keys(name)
+        driver.find_element_by_id('term').send_keys(name[0])
         driver.find_element_by_id('search').click()
         '''这里默认的是第一个地址就是我们需要的那个药品的成分信息
            下面首先需要获取到的就是第一条对应的数据，这里默认的就
@@ -392,36 +403,54 @@ def geturls(modules):
         test=driver.find_elements_by_id('Canonical-SMILES') #确定是不是只有一个页面
         if(len(test)==1):
             url1=driver.current_url
-            urls.append(url1)
+            urls0.append(url1)
+            for j in name:
+                urls0.append(j)
+            urls.append(urls0)
             print('唯一页面',url1)
         else:
             value=driver.find_elements_by_class_name('rsltcont')
             if(len(value)>0):
                 url1=value[0].find_element_by_tag_name('a').get_attribute("href")
-                urls.append(url1)
+                urls0.append(url1)
+                for j in name:
+                    urls0.append(j)
+                urls.append(urls0)
                 print('多页面',url1)
             else:
                 print('无页面')
                 pass
-         
-        '''
-        try:
-            driver.find_element_by_id('Canonical-SMILES')
-            url1=driver.current_url
-        except NoSuchElementException as msg:
-            value=driver.find_elements_by_class_name('rsltcont')
-            if(len(value)>0):
-                url1=value[0].find_element_by_tag_name('a').get_attribute("href")
-            else:
-                pass
-        '''
-       #print(url1)
-        #urls.append(url1)
         url='https://www.ncbi.nlm.nih.gov/pccompound/'
         driver.get(url)
         time.sleep(1)
     driver.quit()
     return urls
+
+#单独获取url
+def geturl(module):
+    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    driver = webdriver.Firefox(executable_path=path)
+    url='https://www.ncbi.nlm.nih.gov/pccompound/'
+    driver.get(url)
+    driver.find_element_by_id('term').clear()
+    driver.find_element_by_id('term').send_keys(module)
+    driver.find_element_by_id('search').click()
+    time.sleep(1)
+    test=driver.find_elements_by_id('Canonical-SMILES') #确定是不是只有一个页面
+    url1=[]
+    if(len(test)==1):
+        url1=driver.current_url
+        print('唯一页面',url1)
+    else:
+        value=driver.find_elements_by_class_name('rsltcont')
+        if(len(value)>0):
+            url1=value[0].find_element_by_tag_name('a').get_attribute("href")
+            print('多页面',url1)
+        else:
+            print('无页面')
+            pass
+    driver.quit()
+    return url1
     
 #这个函数同样是下载药品成分的一串url,获取到对应的成分的id信息，可以与成分的名称关联起来
 #这个函数用来获取药品成分对应的Url信息，输入的参数是
@@ -572,7 +601,7 @@ def InChIKey(name):
     
 def writebase(table,data):
     #这里的table是表名称，data是数据，本质上是一个
-    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}?charset=utf8mb4".format('root', '', 'localhost:3306', 'ecnu'))
     con = engine.connect()
     df=pd.DataFrame(data)
     df.to_sql(name=table, con=con, if_exists='append', index=False)
@@ -586,12 +615,15 @@ if __name__=="__main__":
     path1='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\薏苡仁\薏苡仁.xlsx'
     path2='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\浙贝母\浙贝母.xlsx'
     path3='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\三七\三七.xlsx'
-    path4='D:\MarinaJacks\project\\reptilian\medicine\龙血竭\龙血竭1.xlsx'
+    path4='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\龙血竭\龙血竭.xlsx'
     paths=[path1,path2,path3,path4]
     modules=[]
     for path in paths:
-        for mole in module(path4):
-            modules.append(mole)
+        for mole in module(path):
+            value=[]
+            value.append(mole)
+            value.append(path.split('\\')[-2])
+            modules.append(value)
             
     
     drugs=[]
@@ -618,7 +650,6 @@ if __name__=="__main__":
     Compounds=[]
     for i in Key:
         Compounds.append(getbyInChIKey(i))
-    
     longxuejie=[]
     for i in Compounds:
         if(len(i)>0):
@@ -632,31 +663,36 @@ if __name__=="__main__":
     df1=pd.read_excel(path4)
     
     df2=pd.concat([df,df1])
-     
+    
            
-    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
-    con = engine.connect()
-    df2.to_sql(name='Compounds', con=con, if_exists='append', index=False)
+
     
+
+
+    urls=geturls(modules1)
+
+    names=[]
+    for i in urls:
+        name=[]
+        name.append(i[0].split('/')[-1])
+        for j in range(1,len(i)):
+            name.append(i[j])
+        names.append(name)
     
-    writebase('druginfo',IDs)
-    path4='D:\MarinaJacks\project\\reptilian\medicine\Data\PubChemID.xlsx'
-    df=pd.DataFrame(data)
-    df=pd.read_excel(path4)
-    df.to_excel(path4)
-    #这一步主要是存储相关的url信息，把这个药品所有的成分的信息都存起来。
+    path5='D:\MarinaJacks\project\\reptilian\medicine\Data\某种中药成分信息.xlsx'   
+    df=pd.DataFrame(names)
+    df.to_excel(path5)
     
-    urls=geturls(drugs)
+    writebase('druginfos1',names)
     
-    #在进行操作的时候需要把成分的
-    
-    
-    urls1=urls
-    urls=[]
-    for url in urls1:
-        if(url not in urls):
-            urls.append(url)
-    #下面利用SFDS2函数将所有的url对应的成分都下载下载存储到对应的文件夹下面
-    SFDS_3D_TCMID(urls)
+    names=SFDS_3D_TCMID(urls)
     
     SFDS_2D(urls)
+    writebase(table,data)
+    
+    
+
+
+    
+    
+    

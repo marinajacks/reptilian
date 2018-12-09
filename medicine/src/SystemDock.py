@@ -59,7 +59,7 @@ def clicks(driver,file):
         
         
 def clicks1(driver,i):
-        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D\\'
+        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_2D\\'
         file=file_name(path2)
         driver.find_element_by_link_text('Upload File').click()
         #定位上传文件操作
@@ -79,6 +79,8 @@ def dock0():
     path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_pdbs.xlsx'
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
+   # path='D:\\project\\selenium\\chromedriver.exe'
+   # driver = webdriver.Chrome(executable_path=path)#, chrome_options=options)
     url='http://systemsdock.unit.oist.jp/iddp/home/index'
     driver.get(url)
     driver.set_script_timeout(10)
@@ -118,8 +120,8 @@ def dock2(driver,nums):
     driver.find_element_by_partial_link_text('STEP 3').click()
     time.sleep(1)
     driver.find_element_by_id('run-docking').click()
-    email='chenbiaozainan@163.com'
-    note='TCMID正式数据第'+nums+'个成分'
+    email='chenbiaozainan@126.com'
+    note='TCMID的2D正式数据第'+nums+'个成分'
     driver.find_element_by_id('mailTextBox').send_keys(email)
     driver.find_element_by_id('noteTextBox').send_keys(note)
     s1=driver.find_element_by_id('executeConfirmDialog').find_element_by_class_name('dijitDialogPaneActionBar')
@@ -262,12 +264,12 @@ def main(a,b):
 
 
 if __name__=="__main__":
-    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMSP_3D\\'
+    path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_2D\\'
     file=file_name(path2)
     n=len(file)
-    a=105
     sessions=[]
-    while(a<n):
+    a=5
+    while(a<40):
         print(a,a+5)
         session=main(a,a+5)
         sessions.append(session)

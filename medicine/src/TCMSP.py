@@ -150,6 +150,7 @@ def getmodule(modules):
             compounds=[molname,OB,DL,PubchemCid]
             results.append(compounds)
         time.sleep(1)
+    driver.quit()
     return results
         
 #这个函数用来获取到化合物成分的的成分
@@ -184,6 +185,7 @@ def getbyInChIKeys(modules):
             compounds=[molname,OB,DL,PubchemCid]
             results.append(compounds)
         time.sleep(1)
+    driver.quit()
     return results
     
 #这个函数用来获取到化合物成分的的成分
@@ -237,6 +239,7 @@ def moduleurls(compound):
     driver.find_element_by_link_text(compound).click()
     a=driver.find_element_by_tag_name('tbody').find_elements_by_tag_name('td')[1]
     url=a.find_element_by_tag_name('a').get_attribute('href')
+    driver.quit()
     return url
     
 
@@ -256,6 +259,7 @@ def getmodules1(url):
     DL=tds[7].text
     PubchemCid=mol.find_elements_by_tag_name('tr')[7].find_element_by_tag_name('td').text
     compound=[molname,OB,DL,PubchemCid]
+    driver.quit()
     return compound
 
     
@@ -286,6 +290,7 @@ def test2(herb):
     driver.find_element_by_name("q").clear()
     driver.find_element_by_name("q").send_keys(herb)
     driver.find_element_by_id('searchBtTcm').click()
+    driver.quit()
     time.sleep(2)
 
 #获取药品成分的名称信息即可
@@ -350,6 +355,7 @@ def druginfos1(urls):
         PubchemCid=mol.find_elements_by_tag_name('tr')[7].find_element_by_tag_name('td').text
         compound=[molname,OB,DL,PubchemCid]
         infos.append(compound)
+    driver.quit()
     return infos
 
 
@@ -426,12 +432,30 @@ def writebase(paths):
     return df1
         
 
+
 if __name__=='__main__':
     drugs=['浙贝母','三七','薏苡仁']
     #drugs=['鱼腥草','金银花','赤芍','艾叶','薄荷']
     #drugs=['半夏','黄连','黄芩','干姜','人参','大枣','甘草']
     modules=main(drugs)
     df=pd.DataFrame(modules)
+    path4='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\龙血竭\龙血竭.xlsx'
+    df1=pd.read_excel(path4)
+    dragon=[]
+    df1['Molecule name']
+    for i in range(len(df1['Molecule name'])):
+        name=[]
+        name.append(df1['Molecule name'].iloc[i])
+        for j in range(3):
+            name.append('')
+        name.append('龙血竭')
+        dragon.append(name)
+    modules1=modules
+    modules1.extend(dragon)
+    
+    
+
+
 
     engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
     con = engine.connect()
