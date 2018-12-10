@@ -8,7 +8,6 @@ from selenium import webdriver
 import pandas as pd
 import time
 import numpy as np
-from  NCBI import Genes1
 from sqlalchemy import create_engine
 
 def sortpdbs(pdbs):
@@ -220,7 +219,6 @@ def Uniprots(targets):
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
     driver = webdriver.Firefox(executable_path=path)
-    
     driver.get(url1)
     urls=[]
     for target in targets:
@@ -249,6 +247,7 @@ def Uniprots(targets):
         driver.quit()
         driver = webdriver.Firefox(executable_path=path)
         driver.get(url1)
+        time.sleep(3)
         print('Success!')
     driver.quit()
     return  urls
@@ -286,8 +285,7 @@ def main2(targets):
     driver.quit()
     return  urls
     
-def UniProts(genes):
-    
+
 if __name__=="__main__":
     #基因获取部分    
     name='adenomyosis'
@@ -296,6 +294,12 @@ if __name__=="__main__":
     urls=[]
     for gene in genes:
         urls.append(main(gene[0]))
+        
+    gene0=[]
+    for i in genes:
+        gene0.append(i[0])
+    
+    Uniprots(gene0)
         
         
         
