@@ -1,0 +1,181 @@
+18502770
+  -OEChem-12071809312D
+
+ 36 37  0     1  0  0  0  0  0999 V2000
+    3.9245   -1.6208    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.3066   -0.6877    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+    3.3827   -0.3050    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    2.9930   -1.2349    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2304   -0.3050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.5438   -2.5455    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.8492   -2.0016    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.0000    0.6189    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.6131    0.6189    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3827    1.5428    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2304    1.5428    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.3066    1.9254    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0000    0.6189    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9376    2.2499    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.9088   -1.2875    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.5327   -0.3032    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.4208   -0.9961    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7550   -1.8074    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3114   -0.9197    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.8451   -0.3859    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6131   -2.5749    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.4225   -2.2377    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.0853   -1.4283    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.9705   -2.3094    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3077   -3.1187    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.1170   -2.7815    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1050    0.2415    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1050    0.9963    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3018    2.1575    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7680    1.6237    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.3066    2.5455    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.6900    1.1558    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.6900    0.0820    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.3760    1.8115    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.3760    2.6883    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.4991    2.6883    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  4  1  0  0  0  0
+  1  6  1  0  0  0  0
+  1  7  1  0  0  0  0
+  2  3  1  0  0  0  0
+  2  5  1  0  0  0  0
+  2 15  1  6  0  0  0
+  3  4  1  0  0  0  0
+  3  8  1  0  0  0  0
+  3 16  1  1  0  0  0
+  4 17  1  0  0  0  0
+  4 18  1  0  0  0  0
+  5  9  1  0  0  0  0
+  5 19  1  0  0  0  0
+  5 20  1  0  0  0  0
+  6 24  1  0  0  0  0
+  6 25  1  0  0  0  0
+  6 26  1  0  0  0  0
+  7 21  1  0  0  0  0
+  7 22  1  0  0  0  0
+  7 23  1  0  0  0  0
+  8 10  1  0  0  0  0
+  8 13  2  0  0  0  0
+  9 11  1  0  0  0  0
+  9 27  1  0  0  0  0
+  9 28  1  0  0  0  0
+ 10 12  1  0  0  0  0
+ 10 29  1  0  0  0  0
+ 10 30  1  0  0  0  0
+ 11 12  2  0  0  0  0
+ 11 14  1  0  0  0  0
+ 12 31  1  0  0  0  0
+ 13 32  1  0  0  0  0
+ 13 33  1  0  0  0  0
+ 14 34  1  0  0  0  0
+ 14 35  1  0  0  0  0
+ 14 36  1  0  0  0  0
+M  END
+> <PUBCHEM_COMPOUND_CID>
+18502770
+
+> <PUBCHEM_COMPOUND_CANONICALIZED>
+1
+
+> <PUBCHEM_CACTVS_COMPLEXITY>
+280
+
+> <PUBCHEM_CACTVS_HBOND_ACCEPTOR>
+0
+
+> <PUBCHEM_CACTVS_HBOND_DONOR>
+0
+
+> <PUBCHEM_CACTVS_ROTATABLE_BOND>
+0
+
+> <PUBCHEM_CACTVS_SUBSKEYS>
+AAADceBwAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAQAACAAAAAGAAAAAAADwCAAAACAAAAAACAAiBCAAAAAAAgAAAACAAAAAgAAAIAAQAAAAAAgAAIAAMAgMAPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+> <PUBCHEM_IUPAC_OPENEYE_NAME>
+(1R,4Z,8S)-4,10,10-trimethyl-7-methylene-bicyclo[6.2.0]dec-4-ene
+
+> <PUBCHEM_IUPAC_CAS_NAME>
+(1R,4Z,8S)-4,10,10-trimethyl-7-methylenebicyclo[6.2.0]dec-4-ene
+
+> <PUBCHEM_IUPAC_NAME>
+(1R,4Z,8S)-4,10,10-trimethyl-7-methylidenebicyclo[6.2.0]dec-4-ene
+
+> <PUBCHEM_IUPAC_SYSTEMATIC_NAME>
+(1R,4Z,8S)-4,10,10-trimethyl-7-methylidene-bicyclo[6.2.0]dec-4-ene
+
+> <PUBCHEM_IUPAC_TRADITIONAL_NAME>
+(1R,4Z,8S)-4,10,10-trimethyl-7-methylene-bicyclo[6.2.0]dec-4-ene
+
+> <PUBCHEM_IUPAC_INCHI>
+InChI=1S/C14H22/c1-10-5-7-11(2)12-9-14(3,4)13(12)8-6-10/h5,12-13H,2,6-9H2,1,3-4H3/b10-5-/t12-,13-/m1/s1
+
+> <PUBCHEM_IUPAC_INCHIKEY>
+INOSMXBKABLUIL-DCKDXSSCSA-N
+
+> <PUBCHEM_XLOGP3_AA>
+4.1
+
+> <PUBCHEM_EXACT_MASS>
+190.172
+
+> <PUBCHEM_MOLECULAR_FORMULA>
+C14H22
+
+> <PUBCHEM_MOLECULAR_WEIGHT>
+190.33
+
+> <PUBCHEM_OPENEYE_CAN_SMILES>
+CC1=CCC(=C)C2CC(C2CC1)(C)C
+
+> <PUBCHEM_OPENEYE_ISO_SMILES>
+C/C/1=C/CC(=C)[C@H]2CC([C@@H]2CC1)(C)C
+
+> <PUBCHEM_CACTVS_TPSA>
+0
+
+> <PUBCHEM_MONOISOTOPIC_WEIGHT>
+190.172
+
+> <PUBCHEM_TOTAL_CHARGE>
+0
+
+> <PUBCHEM_HEAVY_ATOM_COUNT>
+14
+
+> <PUBCHEM_ATOM_DEF_STEREO_COUNT>
+2
+
+> <PUBCHEM_ATOM_UDEF_STEREO_COUNT>
+0
+
+> <PUBCHEM_BOND_DEF_STEREO_COUNT>
+1
+
+> <PUBCHEM_BOND_UDEF_STEREO_COUNT>
+0
+
+> <PUBCHEM_ISOTOPIC_ATOM_COUNT>
+0
+
+> <PUBCHEM_COMPONENT_COUNT>
+1
+
+> <PUBCHEM_CACTVS_TAUTO_COUNT>
+1
+
+> <PUBCHEM_COORDINATE_TYPE>
+1
+5
+255
+
+> <PUBCHEM_BONDANNOTATIONS>
+2  15  6
+3  16  5
+
+$$$$
