@@ -12,7 +12,7 @@ import pandas as pd
 
 
 #这个函数用来实现给定疾病对应的靶点信息，函数返回该疾病对应的所有人类的靶点的名称
-def Genes(name):
+def Target(name):
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
@@ -25,7 +25,7 @@ def Genes(name):
     #首先确定是人类的基因信息，下面是模拟点击操作
     time.sleep(1)
     driver.find_element_by_partial_link_text('Homo sapiens').click() #点击操作，获取Human的基因
-    time.sleep(1)
+    time.sleep(3)
     n=int(driver.find_element_by_class_name("num").get_attribute('last')) #这样用来获取到页面的个数  
       
     Genes=[]        
@@ -49,12 +49,13 @@ def Genes(name):
         gene.append(td[0].text.strip().split('\n')[0])
         gene.append(td[1].text.strip().split('[')[0])
         Genes.append(gene)
+    driver.quit()
     return Genes
 
 #这个函数用来实现给定疾病对应的靶点信息，函数返回该疾病对应的所有人类的靶点的名称,这个函数与上面
 #的主要区别就是，不进行click操作，利用数据本身的特点，如果基因名称中存在Human保留，否则删去。实际上
 #这个是比较好的方式。
-def Genes1(name):
+def Targets(name):
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
     driver = webdriver.Firefox(executable_path=path)
@@ -93,14 +94,14 @@ def Genes1(name):
             Genes.append(gene)
         else:
             pass
-    
+    driver.quit()
     return Genes
 
 if __name__=="__main__":
     name='adenomyosis'
-    genes=Genes1(name)
+    genes=Target(name)
     print(genes)
-    genes1=Genes1('endometriosis')
+    genes1=Targets('endometriosis')
     print(genes1)
     path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\adenomyosis_gene.xlsx'
     path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\endometriosis_gene.xlsx'

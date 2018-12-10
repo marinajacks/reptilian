@@ -187,7 +187,7 @@ def PDBS1(urls):
     return Pdbs
 
 #下面的函数可以根据给定基因的名称，完成单个的基因的相关蛋白质的查找。
-def main(target):
+def UniProtID(target):
     url='https://www.uniprot.org/'   #给定查询页面
     path='D:\project\selenium\geckodriver'
     #path='/Users/macbook/downloads/geckodriver' #这个对应的mac的驱动的地址
@@ -225,6 +225,7 @@ def Uniprots(targets):
     urls=[]
     for target in targets:
         #下面的操作是为了查询特定靶点的数据
+        
         driver.find_element_by_id('query').clear()
         driver.find_element_by_id('query').send_keys(target)
         #driver.find_element_by_id('query').send_keys(Keys.ENTER)
@@ -245,6 +246,9 @@ def Uniprots(targets):
         url=td[1].find_element_by_tag_name("a").get_attribute("href")
         time.sleep(3)
         urls.append(url)
+        driver.quit()
+        driver = webdriver.Firefox(executable_path=path)
+        driver.get(url1)
         print('Success!')
     driver.quit()
     return  urls
@@ -281,40 +285,17 @@ def main2(targets):
         
     driver.quit()
     return  urls
-
-
-
-def getuniprot():
-    path='D://MarinaJacks//project//reptilian//medicine//Data//Uniprot.txt'
-    f=open(path,'r')
-    lines=f.readlines()
-    lists=[]
-    for line in lines:
-        uni=line.strip().split(';')[0]
-        if(len(uni)>0):
-            lists.append(uni)
-    return lists
-        
     
-
+def UniProts(genes):
+    
 if __name__=="__main__":
     #基因获取部分    
     name='adenomyosis'
     genes=Genes1(name)
-    #获取真正的基因细腻
-    Gene=[]
-    for i in genes:
-        Gene.append(i[0])
-        
-    targets=[]
-    for i in gene0:
-        targets.append(i[0])
-        
-        
-        
+    
     urls=[]
-    for target in targets:
-        urls.append(main(target))
+    for gene in genes:
+        urls.append(main(gene[0]))
         
         
         
