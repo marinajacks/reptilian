@@ -289,7 +289,7 @@ def main2(targets):
 if __name__=="__main__":
     #基因获取部分    
     name='adenomyosis'
-    genes=Genes1(name)
+    genes=gene(name)
     
     urls=[]
     for gene in genes:

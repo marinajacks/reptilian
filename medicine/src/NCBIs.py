@@ -72,6 +72,7 @@ def UniProtID(target):
     #driver.find_element_by_id('query').send_keys(Keys.ENTER)
     driver.find_element_by_id('search-button').click()
     #这一步是选择Human的筛选
+    time.sleep(1)
     href=driver.find_element_by_id("orgFilter-9606").get_attribute('href')
     driver.get(href)
     time.sleep(1)
@@ -86,13 +87,14 @@ def UniProtID(target):
     driver.quit()
     return  url
 
+#查询所有的靶点的UniProtID信息
 def UniProtIDs(targets):
     urls=[]
     for target in targets:
         urls.append(UniProtID(target))
     return urls
-        
-
+      
+#这个是对靶点的PDBID进行排序选择最优的PDBID的脚本  
 def sortpdbs(pdbs):
     results=[]
     for pdb in pdbs:
@@ -114,6 +116,7 @@ def sortpdbs(pdbs):
         result=results.tolist()
     return  results
 
+#这个函数可以拿来进行回去到每个靶点蛋白的全部信息，例如uniprotid、Protein、gene信息。
 def Pdb(url):
     #url='https://www.uniprot.org/uniprot/P08253'
     path='D:\project\selenium\geckodriver'
@@ -155,18 +158,24 @@ def Pdb(url):
         driver.quit()
     return meta
 
+#这个函数可以获取到所有的靶点的信息，把前面的都循环遍历一遍获取到全部信息。
 def Pdbs(urls):
     Proteins=[]
     for url in urls:
         Proteins.append(Pdb(url))
     return Proteins
         
-    
 
+
+    
+#主函数可以得到全部数据。一次性获得全部。
 if __name__=="__main__":
     name='adenomyosis'
     genes=Target(name)
-    urls=UniProtIDs(genes)
+    gene=[]
+    for i in genes:
+        gene.append(i[0])
+    urls=UniProtIDs(gene)
     Proteins=Pdbs(urls)
 
     
