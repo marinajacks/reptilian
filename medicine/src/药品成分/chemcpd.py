@@ -12,7 +12,7 @@ Created on Mon Jun 11 19:54:36 2018
 from selenium import webdriver
 import pandas as pd
 import re
-import os
+import time
 
 #这个函数仅为了获取到药草成分的名称信息
 def getdurg(drugname,name,password):
@@ -27,7 +27,7 @@ def getdurg(drugname,name,password):
     driver = webdriver.Firefox(executable_path =path)
     url1='http://www.chemcpd.csdb.cn/cmpref/main/tcm_introduce.asp?n%20Count=6077992'
     driver.get(url1)
-    
+    time.sleep(1)
     #下面是模拟登陆的页面
     driver.find_element_by_name('Username').clear()   #清除用户名字
     driver.find_element_by_name('Username').send_keys(name)#输入用户名
@@ -254,7 +254,7 @@ if __name__=="__main__":
     p=p1+'\\'+herb+'.xlsx'
     '''
     herbs=['半夏','黄连','黄芩','干姜','人参','大枣','甘草']
-    name='marina'
-    password='han#1990@yan'
+    name='marinas'
+    password='123456'
     drugsinfo=wholedurgs(herbs,name,password)
 

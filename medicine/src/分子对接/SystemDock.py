@@ -75,10 +75,13 @@ def clicks1(driver,i):
     
 #将整个过程拆分成几个部分
 def dock0():
-    path='D:\project\selenium\geckodriver'      #win环境下驱动地址
+    #path='D:\project\selenium\geckodriver'      #win环境下驱动地址
     path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\merge_pdbs.xlsx'
     #path='/Users/macbook/downloads/geckodriver'  #mac环境下驱动地址
-    driver = webdriver.Firefox(executable_path=path)
+    #driver = webdriver.Firefox(executable_path=path)
+    path='D:\\project\\selenium\\v40\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=path)
+
    # path='D:\\project\\selenium\\chromedriver.exe'
    # driver = webdriver.Chrome(executable_path=path)#, chrome_options=options)
     url='http://systemsdock.unit.oist.jp/iddp/home/index'
@@ -269,7 +272,7 @@ if __name__=="__main__":
     n=len(file)
     sessions=[]
     a=5
-    while(a<40):
+    while(a<240):
         print(a,a+5)
         session=main(a,a+5)
         sessions.append(session)
