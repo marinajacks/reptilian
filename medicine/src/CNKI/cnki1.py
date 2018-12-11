@@ -36,14 +36,14 @@ if __name__ == '__main__':
     profile.set_preference('browser.download.folderList', 2)
     profile.set_preference('browser.download.manager.showWhenStarting', False)
     
-    url='http://search.cnki.net/'
+    url='http://nvsm.cnki.net/'
     path='D:\\project\\selenium\\geckodriver'
     driver = webdriver.Firefox(executable_path=path,firefox_profile=profile)
     
     driver.get(url)
-    driver.find_element_by_id("txtSearchKey").clear()
-    driver.find_element_by_id("txtSearchKey").send_keys("浙贝母")
-    driver.find_element_by_id("btntijiao").click()
+    driver.find_element_by_id("txt_SearchText").clear()
+    driver.find_element_by_id("txt_SearchText").send_keys("网络药理学")
+    driver.find_element_by_class_name("search-btn").click()
     driver.current_url
     
     #url = "http://search.cnki.net/Search.aspx?q=浙贝母&rank=relevant&cluster=all&val=&p=0"
