@@ -7,17 +7,14 @@ Created on Mon Jun 18 22:55:08 2018
 这个部分主要是为了进行模拟登陆的操作,然后进行模拟控制的操作
 这个部分的数据主要是TCMID里边的数据,后边的
 """
-
-import requests 
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys  
 from selenium.common.exceptions import NoSuchElementException 
 import time
-import os
 import pandas as pd
 
-#解析获取到文本的
+
+
 def getdrug(drugname):
     #这个是通过模拟人的行为找到对应的药物的网页
     path='D:\project\selenium\geckodriver'
@@ -44,50 +41,43 @@ def getdrug(drugname):
     driver.quit()
     return url1
 
-#解析页面所有的成分url
-def geturls(url):
-    #下面的数据主要是为了获取到页面的药品链接信息
-    #url='http://www.megabionet.org/tcmid/herb/5615/'
-    #url='http://www.megabionet.org/tcmid/herb/2186/'
-    headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
-    response=requests.get(url,headers=headers)
+def Ingredient(url):
+    path='D:\project\selenium\geckodriver'
+    #path='/Users/macbook/downloads/geckodriver'
+    driver = webdriver.Firefox(executable_path=path)
+    driver.get(url[-1])
+    time.sleep(2)
+    trs=driver.find_elements_by_tag_name('tbody')[1].find_elements_by_tag_name('tr')
     urls=[]
-    soup=BeautifulSoup(response.text,'html.parser')
-    drugs=soup.find_all(class_='table table-striped table-bordered table-hover')[1]    
-    for i in drugs.find_all('tr'):
-        j=i.find_all('td')[0]#J
-        if(j.find('a') is None):
-            print(' ')
-        else:
-            if('tcmid' in (j.find('a')['href'])):
-                urls.append('http://'+url.split('/')[2]+j.find('a')['href'])
-            else:
-                print(j.find('a').string)
+    for i in range(1,len(trs)):
+        url0=[]
+        for j in url:
+            url0.append(j)
+        molecule=trs[i].find_element_by_tag_name('td').find_element_by_tag_name('a').text
+        locate=trs[i].find_element_by_tag_name('td').find_element_by_tag_name('a').get_attribute('href')
+        url0.append(molecule)
+        url0.append(locate)
+        urls.append(url0)
+    driver.quit()
     return urls
 
-
-#这里的操作主要是解析页面对应的文本信息，这里主要是成分名称和PubchenCid
-def durginfos(url):
-    #url='http://www.megabionet.org/tcmid/ingredient/31556/'
-    headers = {'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
-    response=requests.get(url,headers=headers)
-    r=response.text
-    soup=BeautifulSoup(r,'html.parser')
-    titles=soup.find(class_='title text-font').string.strip().replace('Ingredient -- ','')
-    pubchemid=soup.find_all(class_='section-text text-font')[2].string.strip()
-    info=[]
-    info.append(titles)
-    info.append(pubchemid)
-    return info
-
-
-
-
-
-
-
-
-
+def molecules(urls):
+    path='D:\project\selenium\geckodriver'
+    #path='/Users/macbook/downloads/geckodriver'
+    driver = webdriver.Firefox(executable_path=path)
+    locates=[]
+    for url in urls:
+        url0=[]
+        for j in url:
+            url0.append(j)
+        driver.get(url[-1])
+        cid=driver.find_element_by_class_name('content').find_element_by_tag_name('a').text
+        locate=driver.find_element_by_class_name('content').find_element_by_tag_name('a').get_attribute('href')
+        url0.append(cid)
+        url0.append(locate)
+        locates.append(url0)
+    driver.quit()
+    return locates
 
 def PubChemUrl(module):
     path='D:\project\selenium\geckodriver'      #win环境下驱动地址
@@ -113,7 +103,6 @@ def PubChemUrl(module):
             pass
     driver.quit()
     return url1
-
 
 #这个函数用来获取药品成分对应的Url信息，输入的参数是
 def PubChemUrls(modules):
@@ -158,7 +147,6 @@ def PubChemUrls(modules):
     driver.quit()
     return urls
 
-
 def main(drugs):
     modules=[]
     for drugname in drugs:
@@ -176,13 +164,18 @@ def main(drugs):
                 print(i)
         for locate in locates:
             modules.append(locate)
-        '''
-        urls=geturls(url)
-        for url0 in locates:
-            modules.append(durginfo(url0))
-        '''
         print(drugname+' is success!')
     return modules
+    
+
+    
+#该函数主要是为了将数据处理成list格式,方便进行循环读取
+def module(excel):
+    df=pd.read_excel(excel)
+    module0=[]
+    for i in range(len(df[['Molecule name']])):
+        module0.append(df[['Molecule name']].loc[i].values[0])
+    return module0
 
 
 if __name__=='__main__':
@@ -220,6 +213,7 @@ if __name__=='__main__':
         else:
             druginfos.append(i)
         
+    writebase('drugs1',druginfos)
     
     urls=[]
     for i in druginfos:
@@ -230,16 +224,7 @@ if __name__=='__main__':
         if(i not in urls0):
             urls0.append(i)
     
-
-
+    SFDS_3D_TCMID(urls0)
+    SFDS_2D(urls0)
     SFDS_2D(address)
-    
-
-    
-    
-
-    
    
-    
-    
-    
