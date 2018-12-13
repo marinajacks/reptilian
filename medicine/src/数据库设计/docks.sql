@@ -134,7 +134,7 @@ FROM
     GROUP BY pubchemcid) a
 WHERE
     pubchemcid IN (101130267)
-    
+    ;
     
     
     
@@ -159,3 +159,18 @@ select a.*,b.* from compounds a
 left join 
 (select pubchemcid,molecule from  moles group by  pubchemcid)b on a.molecule=b.molecule
 where a.pubchemcid in (445638,440832,131900)
+
+
+
+
+#select * from tcmid;
+SELECT 
+    molecule, pubchemcid, GROUP_CONCAT(distinct drug) AS drugs
+FROM
+(select molecule,pubchemcid,case when drug='SAN QI' then '三七'
+when drug='LONG XUE JIE' THEN '龙血竭'
+when drug='YI YI REN' THEN '薏苡仁'
+when drug='ZHE BEI MU' THEN '浙贝母'
+end as drug from 
+    tcmid) as tcmid
+GROUP BY pubchemcid;

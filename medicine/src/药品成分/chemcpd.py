@@ -35,12 +35,14 @@ def getdurg(drugname,name,password):
     driver.find_element_by_name('Password').send_keys(password)#输入用户密码
     driver.find_element_by_name('login').click()   #点击登陆
     #文本检索数据信息
+    time.sleep(1)
     driver.find_element_by_link_text('中药药材检索').click()
     #driver.find_element_by_link_text('中药药材检索').get_attribute("href") 这部分的数据主要是为了
     #获取到中药药材检索对应的href数据,其实不一定是为了获取到这些数据,还可以直接click来跳转到对应的网页
     driver.find_element_by_name('Specname').clear()
     driver.find_element_by_name('Specname').send_keys(drugname)
     driver.find_element_by_id('submit1').click()
+    time.sleep(1)
     #首先需要确定的是存在这样的一个结果,不存在的话就不进行相关的后续操作
     tbodys0=driver.find_elements_by_tag_name('tbody')
     #下面的主要目标是获得精确的药品名称,精确确定,因为一种药草名称对应着很多的药材
@@ -147,12 +149,14 @@ def getdurgs(drugname,p,name,password):
     driver.find_element_by_name('Password').send_keys(password)#输入用户密码
     driver.find_element_by_name('login').click()   #点击登陆
     #文本检索数据信息
+    time.sleep(1)
     driver.find_element_by_link_text('中药药材检索').click()
     #driver.find_element_by_link_text('中药药材检索').get_attribute("href") 这部分的数据主要是为了
     #获取到中药药材检索对应的href数据,其实不一定是为了获取到这些数据,还可以直接click来跳转到对应的网页
     driver.find_element_by_name('Specname').clear()
     driver.find_element_by_name('Specname').send_keys(drugname)
     driver.find_element_by_id('submit1').click()
+    time.sleep(1)
     #首先需要确定的是存在这样的一个结果,不存在的话就不进行相关的后续操作
     tbodys0=driver.find_elements_by_tag_name('tbody')
     #下面的主要目标是获得精确的药品名称,精确确定,因为一种药草名称对应着很多的药材
@@ -254,7 +258,7 @@ if __name__=="__main__":
     p=p1+'\\'+herb+'.xlsx'
     '''
     herbs=['半夏','黄连','黄芩','干姜','人参','大枣','甘草']
-    name='marinas'
-    password='123456'
+    name='marina'
+    password='han#1990@yan'
     drugsinfo=wholedurgs(herbs,name,password)
 

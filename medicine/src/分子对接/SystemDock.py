@@ -271,7 +271,7 @@ if __name__=="__main__":
     file=file_name(path2)
     n=len(file)
     sessions=[]
-    a=5
+    a=0
     while(a<240):
         print(a,a+5)
         session=main(a,a+5)
