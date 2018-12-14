@@ -13,6 +13,8 @@ from selenium import webdriver
 import pandas as pd
 import re
 import time
+from sqlalchemy import create_engine
+
 
 #这个函数仅为了获取到药草成分的名称信息
 def getdurg(drugname,name,password):
@@ -261,4 +263,10 @@ if __name__=="__main__":
     name='marina'
     password='han#1990@yan'
     drugsinfo=wholedurgs(herbs,name,password)
-
+    
+    
+    path1='D:\MarinaJacks\project\\reptilian\medicine\对接数据\TCMID全部成分.xlsx'
+    df=pd.read_excel(path1)
+    engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
+    con = engine.connect()
+    df.to_sql(name='TCMID', con=con, if_exists='append', index=False)

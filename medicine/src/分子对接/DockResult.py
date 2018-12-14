@@ -96,11 +96,11 @@ def writebase(paths):
     engine = create_engine("mysql+pymysql://{}:{}@{}/{}".format('root', '', 'localhost:3306', 'ecnu'))
     con = engine.connect()
     df1=pd.read_csv(paths[0])
-    df1.to_sql(name='result1', con=con, if_exists='append', index=False)
+   # df1.to_sql(name='result1', con=con, if_exists='append', index=False)
     for i in range(1,len(paths)):
         df=pd.read_csv(paths[i])
         df1=pd.concat([df1,df])#每次做一个
-        df.to_sql(name='result1', con=con, if_exists='append', index=False)
+        #df.to_sql(name='result1', con=con, if_exists='append', index=False)
     return df1
         
     

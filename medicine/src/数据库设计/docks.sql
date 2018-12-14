@@ -1,5 +1,41 @@
 use ecnu;
-select * from compounds;
+
+
+select  a.*,b.*,c.*
+ from 
+(
+select * from docked  where scores is not null ORDER BY SCORES  
+)a
+left join target b on a.pdbid =b.pdbid
+
+
+left join 
+(select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid
+)
+/*
+(SELECT 
+    molecule, pubchemcid, GROUP_CONCAT(distinct drug) AS drugs
+FROM
+(
+
+
+select molecule,pubchemcid,case when drug='SAN QI' then '三七'
+when drug='LONG XUE JIE' THEN '龙血竭'
+when drug='YI YI REN' THEN '薏苡仁'
+when drug='ZHE BEI MU' THEN '浙贝母'
+end as drug from 
+    tcmid) as tcmid
+GROUP BY pubchemcid
+
+
+) */
+c on a.pubchemcid=c.pubchemcid
+
+
+where c.pubchemcid is not null;
+
+
+
 
 SELECT 
     molecule,
@@ -38,7 +74,7 @@ GROUP BY molecule) c on a.pubchemcid=c.pubchemcid
 ;
 
 
-SELECT a.* ,b.*#,c.* 
+SELECT a.* ,b.*,c.* 
 from 
 (SELECT 
     PDBID, PUBCHEMCID, SCORES
@@ -79,7 +115,7 @@ WHERE
     (select pubchemcid,molecule,group_concat(drug) as drug from druginfos1 group by  pubchemcid) c on a.pubchemcid=c.pubchemcid
 where c.pubchemcid is null
     )d
-    
+    ;
     
     
     use ecnu;
