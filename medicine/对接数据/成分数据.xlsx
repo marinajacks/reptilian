@@ -1,0 +1,243 @@
+molecule,pubchemcid,drugs
+1-heptadecanol,10015395,三七
+panaxadiol,10072981,三七
+"notoginsenoside l",101130267,三七
+"notoginsenoside m",101130268,三七
+"notoginsenoside r6",101170141,三七
+"dracaenoside I",101340557,龙血竭
+"dracaenogenins A",101389811,龙血竭
+cyclo-(phe-val),101445018,三七
+"notoginsenoside k",101608819,三七
+"notoginsenoside b",101704407,三七
+"notoginsenoside d",101704409,三七
+"notoginsenoside j",101704414,三七
+"quinquenoside ii",101945295,三七
+"quinquenoside iii",101945296,三七
+"quinquenoside v",101945297,三七
+"ent-15β,16-epoxy-kauran-17-ol",101995835,浙贝母
+isoverticine,102063130,浙贝母
+elemicin,10248,三七
+"4,4'-diketo-3-hydroxy-beta-carotene",10303691,三七
+"notoginsenoside g",10350931,三七
+peiminine,10387952,浙贝母
+sandaracopimarinol,10446844,三七
+chaksine,10456429,浙贝母
+glyceride,105563,薏苡仁
+ebeinone,10597859,浙贝母
+"6-o-β-d-glucopyranosyl-20-o-β-d-glucopyra-nosyl-3β,6α,12β,20(s),25-pentahydroxydam-mar-23-ene",10676870,三七
+"quinquenoside iv",10748754,三七
+"n-butyl pyroglutamate",107609,三七
+coixol,10772,薏苡仁
+"3β-o-β-d-glucopyranosyl-20-o-[α-l-arabino-pyranosyl(1→2)-β-d-glucopyranosyl]3β,12β,20(s)-trihydroxydammar-24-ene",10772107,三七
+tridecene,10821329,三七
+panaxydol,10825263,三七
+cuparene,11084908,三七
+thymidine,11085982,浙贝母
+panaxytriol,11108666,三七
+feruloylstigmasterol,11227138,薏苡仁
+20-o-β-d-xylopyranosyl(1→6)-β-d-gluco-pyranosyl-20(s)-protopanaxadiol,11331683,三七
+lysine,11378574,薏苡仁
+cyclo-(phe-tyr),11438306,三七
+encecalin,114703,三七
+thymine,11557282,浙贝母
+leucine,11658330,薏苡仁
+ginsenosiderd,11679800,三七
+valine,11829420,薏苡仁
+friedelin,11870449,薏苡仁
+delta-guaiene,11958028,三七
+tachioside,11962143,龙血竭
+"notoginsenoside r2",11968801,三七
+"notoginsenoside r3",11968802,三七
+"sanchinoside b1",11968918,三七
+isoaloesin,11972379,三七
+delta-elemene,12004383,三七
+"3,4-dimethylbenzoic acid",12073,三七
+cyclo-(ile-val),12086127,三七
+"diterbutyl phthalate",121712,三七
+ginsenosiderg1,122130520,三七
+ginsenosiderc,122173267,三七
+isoarborinol,12305182,薏苡仁
+α-muurolene,12306048,三七
+cyperene,12308843,三七
+20(s)-ginsenosiderh1,123134432,三七
+panaxatriol,12313936,三七
+ethylpalmitate,12366,三七
+n-pentadecane,12391,三七
+heptadecane,12398,三七
+n-nonadecane,12401,三七
+heneicosane,12403,三七
+docosane,12405,三七
+Hexacosane,12407,龙血竭
+hentriacontane,12410,三七
+cyclo-(leu-val),124306166,三七
+20(r)-ginsenoside-rh1,124928670,三七
+"nonadecanoic acid",12591,三七
+ginsenoside-rd,12855925,三七
+"quinquenoside i",131751320,三七
+peumine,131900,浙贝母
+cyclododecanone,13246,三七
+cyclo-(ala-val),13783106,三七
+feruloylcampesterol,13786591,薏苡仁
+cyclo-(leu-ala),13879946,三七
+cyperol,14076601,三七
+tetradecane,14260,三七
+cadmium,14783,薏苡仁
+"2-methoxy-4,4'-dihydroxychalcone",14977366,龙血竭
+mercury,15337,薏苡仁
+cyclo-(leu-tyr),15550385,三七
+eicosane,15600,三七
+methylhexadecanate,159870,三七
+peimisine,161294,浙贝母
+"14-methyl hexadecanoic acid",164860,三七
+verticinone,167691,浙贝母
+"heneicosanic acid",16898,三七
+hexadecane,172416,三七
+"coixan B",17886,薏苡仁
+"palmitic acid",18413781,薏苡仁
+β-caryophyllene,18502770,三七
+zhebeiresinol,192547,浙贝母
+α-copaene,20055075,三七
+bata-caryophyllene,20831623,三七
+notoginsenoside,20841552,三七
+zhebeinine,21121503,浙贝母
+"dracaenoside C",21582652,龙血竭
+α-guriunene,21595259,三七
+7-hydroxy-3'-methoxy-4'-butoxyflavone,21597638,龙血竭
+zhebeirine,21636311,浙贝母
+"ent-16β,17-epoxy-kaurane",21670063,浙贝母
+colchamine,220401,薏苡仁
+"pentadecanoic acid",22169126,三七
+β-sitosterol,222284,"三七,薏苡仁"
+ent-16α-methoxy-kauran-17-ol,23259970,浙贝母
+peiminoside,23304557,浙贝母
+magnesium,23644077,薏苡仁
+baimonidine,2435,浙贝母
+phosphorus,24404,薏苡仁
+mannose,24749,薏苡仁
+calcium,24848135,薏苡仁
+ent-17-norkauran-16-one,24883669,浙贝母
+"l-alpha-amino-beta-oxalylaminopropionic acid",25201828,三七
+"ginsenoside rb1",25203503,三七
+"7,4'-dihydroxy-3'-methoxyflavan",25232840,龙血竭
+solanidine,25244262,浙贝母
+nonanoicacid,275196,三七
+"coixan A",2764,薏苡仁
+manganese,27854,薏苡仁
+"α,α-dimethylbenzene methanol",3016081,三七
+"stearic acid",3033836,薏苡仁
+ent-kaur-15-en-17-ol,3082069,浙贝母
+ginsenoside,3086007,三七
+"2,6-ditertbutyl-4-methyl phenol",31404,三七
+(-)-dicentrine,317843,三七
+zinc,32051,薏苡仁
+"diisocapryl phthalate",33934,三七
+"1,22-docosanediol",347359,三七
+peimine,3727034,浙贝母
+"methyl pyroglutamate",385461,三七
+cyclo-(phe-ala),40579117,三七
+"myristic acid",4075158,薏苡仁
+rhamnose,439710,薏苡仁
+(s)-dencichine,440259,三七
+δ-cadinene,441005,三七
+"1-tridecene-3,5,7,9,11-pentyne",441552,三七
+"pelargonidin-3,5-diglucoside",441772,浙贝母
+"notoginsenoside c",441934,三七
+guaijaverin,44259215,三七
+"4'-methoxy-3',7-dihydroxyflavone",44259961,龙血竭
+picropodophyllin,443013,浙贝母
+resveratrol,445154,龙血竭
+apicidin,44543716,浙贝母
+"octadecenoic acid",445639,薏苡仁
+ginsenoside-rb2,44575879,三七
+engeletin,44584103,三七
+ginsenosidere,44584757,三七
+coprine,4479242,三七
+"7,4'-dihydroxyflavone",45116976,龙血竭
+dauricine,45358120,三七
+"gypenoside xvii",45479307,三七
+"dicapryl phthalate",45489598,三七
+Coixendide,46173943,薏苡仁
+"4-Hydroxybenzoic acid",4649,龙血竭
+quercetin,46906036,三七
+stigmasterol,50930798,"三七,薏苡仁"
+cycloeucalenol,50986194,三七
+campesterol,51051617,薏苡仁
+hexadecanoicacid,520159,三七
+mycosinol,5281153,三七
+glucose,5282499,薏苡仁
+"oleic acid",52914864,薏苡仁
+daucosterol,52940117,三七
+"octadecadienoic acid",5312488,薏苡仁
+"eicosanetetraenoic acid",5312542,三七
+epsilon-cadinene,5315590,三七
+"cochinchinenin A",5315988,龙血竭
+"trans-communicacid methyl ester",5316024,浙贝母
+"2,8-dimethyl-5-acetyl-bicyclo[5,3,0] deca-diene-1,8",5316877,三七
+dithiocyclopentene,5316944,三七
+ziebeimine,5316980,浙贝母
+3-ene-nonanone-2,5317045,三七
+ethyl-p-digallate,5317260,三七
+fritillarizine,5317396,浙贝母
+α-guaiene,5317844,三七
+20-hexadecanoylingenol,5318035,三七
+alpha-cuparenol,5318539,三七
+"6-methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-o-beta-d-glucopyranoside",5319462,浙贝母
+1-methyl-4-isoallyl-cyclohexane,5319687,三七
+"notoginsenoside r4",5320225,三七
+notopterol,5320227,三七
+ebeiensine,5320448,浙贝母
+"1,1,5,5-tetramethyl-4-methano-2,3,4,6,7,10-hexahydronaphthalene",5321892,三七
+"(-)2d,4d,6d,8d-tetramethyl undecanoic acid",5321893,三七
+"2,2,2-triethoxyl-ethanol",5322034,三七
+"5,7,4'-trihydroxyflavone",5322064,龙血竭
+cyclo-(ala-pro),5325711,三七
+"hexadecanoic acid",5326436,三七
+"notoginsenoside r1",53399243,三七
+lead,5352425,薏苡仁
+"2'-methoxy-4,4'-dihydroxychalcone",5355594,龙血竭
+20(s)-ginsenoside-rh2,54580480,三七
+panaxynol,5469789,三七
+adenosine,54732806,浙贝母
+copper,5487843,薏苡仁
+"1,2linoleic acid-3oleic acid- triglyceride",5497163,薏苡仁
+cyclo-(leu-ser),57396597,三七
+cyclo-(leu-thr),57403608,三七
+Galactose,6036,薏苡仁
+adeninenucleoside,60961,浙贝母
+hapepunine,6325327,浙贝母
+zhebeininoside,6325787,浙贝母
+"ent-(16s)-atisan-13,17-oxide",6325926,浙贝母
+"(-)-trifara-9,14-diene",6326198,三七
+gamma-sitosterol,636741,三七
+"4-methyl-7-encholyl alcohol",637516,龙血竭
+Glycosides,637579,龙血竭
+"2',4',4-trihydroxychalcone",638278,龙血竭
+γ-elemene,6432312,三七
+"ethyl pyroglutamate",643508,三七
+α-monolinolein,6436630,薏苡仁
+"Hexadecyl ferulate",6440079,龙血竭
+"notoginsenoside a",6451129,三七
+Arabinose,66308,薏苡仁
+pancratistatin,6713165,三七
+ginsenosiderb2,6917976,三七
+β-elemene,6918391,三七
+cyclo-(pro-val),6992261,三七
+arginine,6995104,薏苡仁
+stigmasterol-beta-d-glucoside,70699355,三七
+cyclo-(ile-ala),71359704,三七
+indene,7219,薏苡仁
+acetophenone,7410,三七
+hydroquinone,785,龙血竭
+"methyl isobutyl ketone",7909,三七
+enanthicacid,8094,三七
+1-tetradecanol,8209,三七
+"Protocatechuic aldehyde",8438,龙血竭
+n-nonanol,8914,三七
+verticine-n-oxide,90478419,浙贝母
+"notoginsenoside fe",90657714,三七
+"beta,beta-dimethylacrylalkannin",91668469,三七
+δ-guaiene,91753506,三七
+cyclo-(leu-ile),92448855,三七
+alpha-guttiferin,9852185,三七
+ginsenosiderb1,9898279,三七
+trans-communol,9965750,浙贝母
