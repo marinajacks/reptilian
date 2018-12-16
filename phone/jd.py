@@ -48,8 +48,13 @@ def login(uname, pwd):
     print ('login success')   
        
 
+<<<<<<< HEAD
+uname='chenbiaozainan@126.com'
+pwd='han#1990@yan'
+=======
 uname=input("输入用户名:")
 pwd=input("输入用户密码:")
+>>>>>>> f9f2841a2420e1d20a4de4f5e871b3d3e0572ac0
 login(uname,pwd)  
 #这里实现登陆的时候需要手动和机动相结合才可以,这是以为在这里,存在着
 #验证码信息是无法获取到的.
@@ -139,4 +144,8 @@ f=open(paths,'w',encoding='utf-8')
 f.write(infos)
 f.close()
 
+<<<<<<< HEAD
+f=open(')
+=======
 f=open()
+>>>>>>> f9f2841a2420e1d20a4de4f5e871b3d3e0572ac0
