@@ -59,7 +59,7 @@ def clicks(driver,file):
         
         
 def clicks1(driver,i):
-        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_2D\\'
+        path2='D:\\MarinaJacks\\project\\reptilian\\medicine\\molecule\\TCMID_3D\\'
         file=file_name(path2)
         driver.find_element_by_link_text('Upload File').click()
         #定位上传文件操作
@@ -124,7 +124,7 @@ def dock2(driver,nums):
     time.sleep(1)
     driver.find_element_by_id('run-docking').click()
     email='chenbiaozainan@126.com'
-    note='TCMID的2D正式数据第'+nums+'个成分'
+    note='TCMID的3D正式数据第'+nums+'个成分'
     driver.find_element_by_id('mailTextBox').send_keys(email)
     driver.find_element_by_id('noteTextBox').send_keys(note)
     s1=driver.find_element_by_id('executeConfirmDialog').find_element_by_class_name('dijitDialogPaneActionBar')
@@ -271,7 +271,7 @@ if __name__=="__main__":
     file=file_name(path2)
     n=len(file)
     sessions=[]
-    a=10
+    a=0
     while(a<240):
         print(a,a+5)
         session=main(a,a+5)
