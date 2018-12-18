@@ -55,3 +55,7 @@ where c.molecule is not null order by a.scores desc
 
 ) a where '龙血竭' in (drug)
 */
+
+
+
+select * from 

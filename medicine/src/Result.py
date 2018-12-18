@@ -6,61 +6,82 @@ Created on Thu Dec 13 20:24:45 2018
 """
 import pandas as pd
 import pymysql
-
-sql='''
-    select  a.*,b.*,c.*
-     from 
-    (
-    select * from docked  where scores is not null ORDER BY SCORES  
-    )a
-    left join target b on a.pdbid =b.pdbid
+    
+    sql='''
+        select  a.*,b.*,c.*
+         from 
+        (
+        select * from docked  where scores is not null ORDER BY SCORES  
+        )a
+        left join target b on a.pdbid =b.pdbid
+        
+        
+        left join 
+        (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid
+        )
+        c on a.pubchemcid=c.pubchemcid
+        where c.pubchemcid is not null
+        '''
+    
+    sql='''
+    
+        select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+        from
+        (select * from docked  where scores is not null ORDER BY SCORES )a
+        left join target b on a.pdbid =b.pdbid
+        left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+        on a.pubchemcid=c.pubchemcid
+        where c.molecule is not null order by a.scores ) a where scores between 4.25 and 5
+        
+        '''
+    
+    sql1='''
+    
+        select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+        from
+        (select * from docked  where scores is not null ORDER BY SCORES )a
+        left join target b on a.pdbid =b.pdbid
+        left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+        on a.pubchemcid=c.pubchemcid
+        where c.molecule is not null order by a.scores ) a where scores between 5 and 7
+        
+        '''
+    
+    sql2='''
+    
+        select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+        from
+        (select * from docked  where scores is not null ORDER BY SCORES )a
+        left join target b on a.pdbid =b.pdbid
+        left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+        on a.pubchemcid=c.pubchemcid
+        where c.molecule is not null order by a.scores ) a where scores>7
+        
+        '''
+    
+    sql3='''
+        select distinct 
+        pubchemcid ,drug,molecule from 
+        (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+        from
+        (select * from docked  where scores is not null ORDER BY SCORES )a
+        left join target b on a.pdbid =b.pdbid
+        left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+        on a.pubchemcid=c.pubchemcid
+        where c.molecule is not null order by a.scores desc
+        
+        
+        ) result
+        
+        '''
+    
+    sql4='''
+        select * from tcmid'''
     
     
-    left join 
-    (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid
-    )
-    c on a.pubchemcid=c.pubchemcid
-    where c.pubchemcid is not null
-    '''
-
-sql='''
-
-    select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-    from
-    (select * from docked  where scores is not null ORDER BY SCORES )a
-    left join target b on a.pdbid =b.pdbid
-    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-    on a.pubchemcid=c.pubchemcid
-    where c.molecule is not null order by a.scores ) a where scores between 4.25 and 5
     
-    '''
-
-sql1='''
-
-    select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-    from
-    (select * from docked  where scores is not null ORDER BY SCORES )a
-    left join target b on a.pdbid =b.pdbid
-    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-    on a.pubchemcid=c.pubchemcid
-    where c.molecule is not null order by a.scores ) a where scores between 5 and 7
-    
-    '''
-
-sql2='''
-
-    select *from (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-    from
-    (select * from docked  where scores is not null ORDER BY SCORES )a
-    left join target b on a.pdbid =b.pdbid
-    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-    on a.pubchemcid=c.pubchemcid
-    where c.molecule is not null order by a.scores ) a where scores>7
-    
-    '''
-
-sql3='''
-    select distinct 
+    sql5='''
+    select * from (select distinct 
     pubchemcid ,drug,molecule from 
     (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
     from
@@ -68,69 +89,48 @@ sql3='''
     left join target b on a.pdbid =b.pdbid
     left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
     on a.pubchemcid=c.pubchemcid
-    where c.molecule is not null order by a.scores desc
-    
-    
-    ) result
-    
+    where c.molecule is not null order by a.scores desc) result) a 
+    where   find_in_set('龙血竭', drug);
     '''
-
-sql4='''
-    select * from tcmid'''
-
-
-
-sql5='''
-select * from (select distinct 
-pubchemcid ,drug,molecule from 
-(select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-from
-(select * from docked  where scores is not null ORDER BY SCORES )a
-left join target b on a.pdbid =b.pdbid
-left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-on a.pubchemcid=c.pubchemcid
-where c.molecule is not null order by a.scores desc) result) a 
-where   find_in_set('龙血竭', drug);
-'''
-
-sql6='''
-select * from (select distinct 
-pubchemcid ,drug,molecule from 
-(select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-from
-(select * from docked  where scores is not null ORDER BY SCORES )a
-left join target b on a.pdbid =b.pdbid
-left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-on a.pubchemcid=c.pubchemcid
-where c.molecule is not null order by a.scores desc) result) a 
-where   find_in_set('浙贝母', drug);
-'''
-
-sql7='''
-select * from (select distinct 
-pubchemcid ,drug,molecule from 
-(select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-from
-(select * from docked  where scores is not null ORDER BY SCORES )a
-left join target b on a.pdbid =b.pdbid
-left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-on a.pubchemcid=c.pubchemcid
-where c.molecule is not null order by a.scores desc) result) a 
-where   find_in_set('三七', drug);
-'''
-
-sql8='''
-select * from (select distinct 
-pubchemcid ,drug,molecule from 
-(select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
-from
-(select * from docked  where scores is not null ORDER BY SCORES )a
-left join target b on a.pdbid =b.pdbid
-left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
-on a.pubchemcid=c.pubchemcid
-where c.molecule is not null order by a.scores desc) result) a 
-where   find_in_set('薏苡仁', drug);
-'''
+    
+    sql6='''
+    select * from (select distinct 
+    pubchemcid ,drug,molecule from 
+    (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+    from
+    (select * from docked  where scores is not null ORDER BY SCORES )a
+    left join target b on a.pdbid =b.pdbid
+    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+    on a.pubchemcid=c.pubchemcid
+    where c.molecule is not null order by a.scores desc) result) a 
+    where   find_in_set('浙贝母', drug);
+    '''
+    
+    sql7='''
+    select * from (select distinct 
+    pubchemcid ,drug,molecule from 
+    (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+    from
+    (select * from docked  where scores is not null ORDER BY SCORES )a
+    left join target b on a.pdbid =b.pdbid
+    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+    on a.pubchemcid=c.pubchemcid
+    where c.molecule is not null order by a.scores desc) result) a 
+    where   find_in_set('三七', drug);
+    '''
+    
+    sql8='''
+    select * from (select distinct 
+    pubchemcid ,drug,molecule from 
+    (select  c.molecule,c.pubchemcid,c.drug,b.uniprotid,b.protein,b.gene,b.pdbid,a.scores #a.*,b.*,c.*
+    from
+    (select * from docked  where scores is not null ORDER BY SCORES )a
+    left join target b on a.pdbid =b.pdbid
+    left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
+    on a.pubchemcid=c.pubchemcid
+    where c.molecule is not null order by a.scores desc) result) a 
+    where   find_in_set('薏苡仁', drug);
+    '''
 
 def test(sql,path):
     conn = pymysql.connect(host='127.0.0.1', 
@@ -140,7 +140,7 @@ def test(sql,path):
     df = pd.read_sql(sql5, con=conn)
     print(df.head())
     
-    path='D:\MarinaJacks\project\reptilian\medicine\对接数据\中药成分数据.xlsx'
+    path='D:\MarinaJacks\project\\reptilian\medicine\对接数据\中药成分数据.xlsx'
     
     df1 = pd.read_sql(sql6, con=conn)
     df2 = pd.read_sql(sql7, con=conn)
@@ -150,7 +150,7 @@ def test(sql,path):
     df.to_excel(excel_writer=writer,sheet_name='龙血竭')
     df1.to_excel(excel_writer=writer,sheet_name='浙贝母')
     df2.to_excel(excel_writer=writer,sheet_name='三七')
-    df3.to_excel(excel_writer=writer,sheet_name='三七')
+    df3.to_excel(excel_writer=writer,sheet_name='薏苡仁')
     writer.save()
     writer.close()
     

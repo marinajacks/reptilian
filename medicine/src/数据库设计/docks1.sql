@@ -1,3 +1,5 @@
+use ecnu;
+
 select 
 *
 from (select distinct 
@@ -9,9 +11,8 @@ left join target b on a.pdbid =b.pdbid
 left join (select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid)c 
 on a.pubchemcid=c.pubchemcid
 where c.molecule is not null order by a.scores desc) result) a 
-
-
-
+where   find_in_set('龙血竭', drug)
+;
 
 
 select  distinct a.pubchemcid
