@@ -7,7 +7,9 @@ Created on Thu Dec 13 20:24:45 2018
 import pandas as pd
 import pymysql
     
-    sql='''
+
+
+    sql0='''
         select  a.*,b.*,c.*
          from 
         (
@@ -75,8 +77,7 @@ import pymysql
         
         '''
     
-    sql4='''
-        select * from tcmid'''
+    sql4='''select * from tcmid;'''
     
     
     
