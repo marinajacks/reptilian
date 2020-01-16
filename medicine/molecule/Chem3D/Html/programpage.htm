@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>Chem3D ActiveX/Plugin - programming</title>
+	</head>
+	<body><table width=800><tr><td>
+		<p><b><font size="5" face="Arial">How to use a script to program the Chem3D ActiveX/Plugin</font></b></p>
+		<p><font face="Arial">Like other ActiveX/Plugin, the Chem3D control can be driven by 
+				a script in a web page or by a separate program .&nbsp; This example shows how 
+				to use a script in a web page to drive the control, but it is also possible to 
+				drive the control from another&nbsp; programming language such as C#, or 
+				VB.&nbsp; This example uses <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/script56/html/js56jsoriJScript.asp">
+					JavaScript</a>, but it is also possible to use <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/script56/html/vtoriVBScript.asp">
+					VBScript</a>. </font>
+		</p>
+		<p><font face="Arial">We will start with the code generated in our previous example:</font></p>
+		<table border width="800">
+			<tr>
+				<td bgcolor="#ccffff"><font face="Arial">&lt;HTML&gt;<br>
+						&lt;HEAD&gt;<br>
+						&lt;TITLE&gt;My First Chem3D Model Page&lt;/TITLE&gt;<br>
+						&lt;script language="javascript" src="/jslib/chem3d.js"&gt;&lt;/script&gt;<br>
+						&lt;/HEAD&gt;<br>
+						&lt;BODY&gt;<br>
+						&lt;script language="javascript"&gt; c3d_insert3d("/chem3d_models/mymodel.c3d", 
+						400, 300, "my3dobj"); &lt;/script&gt;<br>
+						&lt;/BODY&gt;<br>
+						&lt;/HTML&gt;</font></td>
+			</tr>
+		</table>
+		<p><font face="Arial">Here, the model is displayed using the "Cylindrical Bonds" 
+				mode.&nbsp; Adding this code will allow the user to change the display type to 
+				"Sticks" mode:</font></p>
+		<table border width="800">
+			<tr>
+				<td bgcolor="#ccffff">
+					<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+						width="100%" id="AutoNumber1">
+						<tr>
+							<td width="100%"><font face="Arial">&lt;HTML&gt;<br>
+									&lt;HEAD&gt;<br>
+									&lt;TITLE&gt;My First Chem3D Model Page&lt;/TITLE&gt;<br>
+									&lt;script language="javascript" src="/jslib/chem3d.js"&gt;&lt;/script&gt;<br>
+									&lt;/HEAD&gt;<br>
+									&lt;BODY&gt;<br>
+									&lt;script language="javascript"&gt; c3d_insert3d("/chem3d_models/mymodel.c3d", 
+									400, 300, "my3dobj"); &lt;/script&gt;<br>
+									<br>
+									&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td width="100%" bgcolor="#ffffcc"><font face="Arial">&lt;script 
+									language="javascript"&gt;<br>
+									&nbsp;&nbsp; function onShowAsSticks()<br>
+									&nbsp; {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; my3dobj.setDisplayType(1);<br>
+									&nbsp;&nbsp; }<br>
+									&lt;/script&gt;<br>
+									&lt;input type=button value="Show as Sticks" onclick="onShowAsSticks()"&gt;</font></td>
+						</tr>
+						<tr>
+							<td width="100%">
+								<font face="Arial">
+									<br>
+									&lt;/BODY&gt;<br>
+									&lt;/HTML&gt;</font></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<p><font face="Arial">Here, we have created a JavaScript function, <font color="#0000ff">onShowAsSticks()</font>.&nbsp; 
+				The variable "my3dobj" is a reference to the Chem3D ActiveX/Plugin object that 
+				was created above.</font></p>
+		<p><font face="Arial"><b>NOTE:</b> In order to refer to the Chem3D object you create, 
+				you must specify the *id* parameter.</font></p>
+		<p><font face="Arial"><font color="#0000ff">setDisplayType </font>is the method used to 
+				set the display type for the Chem3D ActiveX/Plugin.&nbsp; For this parameter, 
+				the number 1 means *Sticks*.&nbsp; The other values can be found in the <a href="reference.htm#setdisplaytype">
+					documentation</a>.</font></p>
+		<p><font face="Arial">We have created a button so that the user can change the 
+				value.&nbsp; When the user clicks on the button, <font color="#0000ff">onShowAsSticks()</font>
+				is called.&nbsp; This function changes the display mode of the control.</font></p>
+		<p><font face="Arial">Here is a more detailed example that will allow the user to 
+				select from several display modes:</font></p>
+		<table border width="800">
+			<tr>
+				<td bgcolor="#ccffff">
+					<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+						width="100%" id="AutoNumber1">
+						<tr>
+							<td width="100%"><font face="Arial">&lt;HTML&gt;<br>
+									&lt;HEAD&gt;<br>
+									&lt;TITLE&gt;My First Chem3D Model Page&lt;/TITLE&gt;<br>
+									&lt;script language="javascript" src="/jslib/chem3d.js"&gt;&lt;/script&gt;<br>
+									&lt;/HEAD&gt;<br>
+									&lt;BODY&gt;<br>
+									&lt;script language="javascript"&gt; c3d_insert3d("/chem3d_models/mymodel.c3d", 
+									400, 300, "my3dobj"); &lt;/script&gt;<br>
+									<br>
+									&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td width="100%" bgcolor="#ffffcc"><font face="Arial">&lt;script 
+									language="javascript"&gt;<br>
+									&nbsp;&nbsp; function onSelectModelType()<br>
+									&nbsp;&nbsp; {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+									my3dobj.setDisplayType(modeltype.selectedIndex);<br>
+									&nbsp;&nbsp; }<br>
+									&lt;/script&gt;<br>
+									&lt;SELECT id="modeltype" name="modeltype" onchange="onSelectModelType()"&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Wire Frame&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Sticks&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Ball and Sticks&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Cylindrical Bonds&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Space Filling&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Ribbons&lt;/OPTION&gt;<br>
+									&nbsp;&nbsp; &lt;OPTION&gt;Cartoons&lt;/OPTION&gt;<br>
+									&lt;/SELECT&gt;</font></td>
+						</tr>
+						<tr>
+							<td width="100%">
+								<font face="Arial">
+									<br>
+									&lt;/BODY&gt;<br>
+									&lt;/HTML&gt;</font></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<p><font face="Arial">Try some more examples, and have fun!</font></p>
+		</td></tr></table>
+	</body>
+</html>

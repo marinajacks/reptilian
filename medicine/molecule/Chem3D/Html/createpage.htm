@@ -1,0 +1,463 @@
+<html>
+	<head>
+		<title>Chem3D ActiveX/Plugin - Create page</title>
+	</head>
+	<body>
+		<table width="800">
+			<tr>
+				<td>
+					<p><b><font face="Arial" size="5"> Creating web pages using the Chem3D ActiveX/Plugin</font></b></p>
+					<p><font face="Arial">It is easy to create web pages that use the Chem3D
+							ActiveX/Plugin.&nbsp; The control can be embedded in a web page by using the <a href="http://www.w3.org/MarkUp/">
+								HTML</a> <a href="http://www.w3.org/TR/html4/">&lt;OBJECT&gt;</a>&nbsp;and <a href="http://www.w3.org/TR/html4/">
+								&lt;EMBED&gt;</a>&nbsp;tag:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff">
+								<P><font face="Arial">&lt;!-- ActiveX --&gt;<BR>
+										&lt;object classid="clsid:b19a6c27-ce23-4d91-832d-00579fd48859"&gt;<br>
+										&lt;param&nbsp;name=src value="sample.c3xml"&gt;<br>
+										&lt;/object&gt;</font></P>
+								<P><hr>
+								</P>
+								<P><FONT face="Arial"></FONT>&lt;!-- Plugin --&gt;<BR>
+									&lt;embed type="chemical/x-chem3d" name=ax3d width=400 height=300 src=
+									"sample.c3xml" rotation=y1 contextmenu=true&gt;
+								</P>
+							</td>
+						</tr>
+					</table>
+					<p><font face="Arial">There is also a <a href="chem3d.js">JavaScript file</a> that
+							makes it simpler to use the control. The JavaScript file provides two
+							functions:</font></p>
+					<table border width="100%">
+						<tr>
+							<td><font face="Arial"><b>function c3d_insert3d(</b>src, width, height, displaymode,
+									backgroundcolor, name, dataurl, ligandmode, toolbar, rotationbar, contextmenu,
+									backgroundeffect, fittowindow, rotation, mimetype<b>)<br>
+										&nbsp;</b></font><table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+									width="100%">
+									<tr>
+										<td height="35" width="67" bgcolor="#c0c0c0">
+											<font face="Arial">Parameter</font></td>
+										<td height="35" width="70" bgcolor="#c0c0c0">
+											<font face="Arial">R/O</font></td>
+										<td height="35" width="71" bgcolor="#c0c0c0">
+											<font face="Arial">Default value</font></td>
+										<td height="35" width="649" bgcolor="#c0c0c0">
+											<font face="Arial">Meaning</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">src</font></td>
+										<td height="19" width="70">
+											<font color="#ff0000" face="Arial">Required</font></td>
+										<td height="19" width="71"><font face="Arial"></font></td>
+										<td height="19" width="649"><font face="Arial">The data URL that will be displayed in
+												this Chem3D ActiveX/Plugin</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">width</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">200</font></td>
+										<td height="19" width="649"><font face="Arial">The width of the Chem3D ActiveX/Plugin
+												Window</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">height</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">200</font></td>
+										<td height="19" width="649"><font face="Arial">The height of the Chem3D ActiveX/Plugin
+												Window</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">displaymode</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">*</font></td>
+										<td height="19" width="649"><font face="Arial">The display type of model</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">backgroundcolor</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">*</font></td>
+										<td height="19" width="649"><font face="Arial">The background color</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">name</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">N/A</font></td>
+										<td height="19" width="649"><font face="Arial">A name to identify this object in the
+												page.&nbsp; It will be used to refer this Chem3D ActiveX/Plugin when
+												programming it</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font face="Arial" color="#0000ff">dataurl</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">*</font></td>
+										<td height="19" width="649">Similar to the "src" parameter</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff" face="Arial">ligandmode</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">*</font></td>
+										<td height="19" width="649"><font face="Arial">The ligand display mode of
+												macro-molecule</font></td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">toolbar</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71"><font face="Arial">*</font></td>
+										<td height="19" width="649">Where to show toolbar or hide toolbar</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">rotationbar</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">true</td>
+										<td height="19" width="649">Whether to show rotation bars</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">contextmenu</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">true</td>
+										<td height="19" width="649">Whether to show context menu</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">backgroundeffect</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">*</td>
+										<td height="19" width="649">Whether to show background effect</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">fittowindow</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">*</td>
+										<td height="19" width="649">Whether to resize the model to fit the window</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">rotation</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">0</td>
+										<td height="19" width="649">Rotate mode to show a demo</td>
+									</tr>
+									<tr>
+										<td height="19" width="67" bgcolor="#c0c0c0">
+											<font color="#0000ff">mimetype</font></td>
+										<td height="19" width="70"><font face="Arial">Optional</font></td>
+										<td height="19" width="71">*</td>
+										<td height="19" width="649">&nbsp;</td>
+									</tr>
+								</table>
+								<p>
+									<font face="Arial">* Files saved in a Chem3D format will have their own
+										settings.&nbsp; Other file formats will use the default settings.</font></p>
+							</td>
+						</tr>
+					</table>
+					<br>
+					<table border width="100%">
+						<tr>
+							<td><b><font face="Arial">function c3d_insert3dStr(tagStr)</font></b><p>
+									<font face="Arial">This function acts as the previous one, but takes all parameters
+										in one string.&nbsp; Because in this function call the order of parameters is
+										not restricted as the previous one, it gives you more flexibility.&nbsp; We
+										recommend you to use this function all the time.&nbsp; There are several
+										samples below.</font></p>
+							</td>
+						</tr>
+					</table>
+					<p><font face="Arial">SRC specifies the model file that will be displayed in the
+							ActiveX/Plugin window.&nbsp; Any of the file formats listed below can be used:</font></p>
+					<table border="1" align="center">
+						<tr>
+							<td bgColor="#c0c0c0" height="40"><b>File Format Name</b></td>
+							<td bgColor="#c0c0c0" height="40"><b>File Extensions</b></td>
+						</tr>
+						<tr>
+							<td>Chem3D XML</td>
+							<td>.C3XML</td>
+						</tr>
+						<tr>
+							<td>Chem3D 8.0</td>
+							<td>.C3D; .C3T</td>
+						</tr>
+						<tr>
+							<td>Chem3D 3.2</td>
+							<td>.C3D</td>
+						</tr>
+						<tr>
+							<td>Alchemy</td>
+							<td>.ALC; .MOL</td>
+						</tr>
+						<tr>
+							<td>Cart Coords 1</td>
+							<td>.CC1</td>
+						</tr>
+						<tr>
+							<td>Cart Coords 2</td>
+							<td>.CC2</td>
+						</tr>
+						<tr>
+							<td>CCDB</td>
+							<td>.CCD; .DAT</td>
+						</tr>
+						<tr>
+							<td>ChemDraw</td>
+							<td>.CDX; .CHM</td>
+						</tr>
+						<tr>
+							<td>ChemDraw XML</td>
+							<td>.CDXML</td>
+						</tr>
+						<tr>
+							<td>Chemical Markup Language</td>
+							<td>.cml; .xml</td>
+						</tr>
+						<tr>
+							<td>Conn Table</td>
+							<td>.CT; .CON</td>
+						</tr>
+						<tr>
+							<td>Gamess Input</td>
+							<td>.INP</td>
+						</tr>
+						<tr>
+							<td>Gaussian Input</td>
+							<td>.GJC; .GJF</td>
+						</tr>
+						<tr>
+							<td>Gaussian Checkpoint</td>
+							<td>.FCHK; .FCH</td>
+						</tr>
+						<tr>
+							<td>Gaussian Cube</td>
+							<td>.CUB</td>
+						</tr>
+						<tr>
+							<td>Int Coords</td>
+							<td>.INT</td>
+						</tr>
+						<tr>
+							<td>ISIS Sketch</td>
+							<td>.SKC</td>
+						</tr>
+						<tr>
+							<td>ISIS Transportable Graphics</td>
+							<td>.TGF</td>
+						</tr>
+						<tr>
+							<td>MacroModel</td>
+							<td>.MCM; .DAT; .OUT</td>
+						</tr>
+						<tr>
+							<td>MDL MolFile</td>
+							<td>.MOL</td>
+						</tr>
+						<tr>
+							<td>mmCIF</td>
+							<td>.CIF</td>
+						</tr>
+						<tr>
+							<td>MSI ChemNote</td>
+							<td>.MSM</td>
+						</tr>
+						<tr>
+							<td>MOPAC Input</td>
+							<td>.MOP; .DAT; .MPC; .ZMT</td>
+						</tr>
+						<tr>
+							<td>MOPAC Graph</td>
+							<td>.GPT</td>
+						</tr>
+						<tr>
+							<td>Protein Data Bank</td>
+							<td>.PDB; .ENT</td>
+						</tr>
+						<tr>
+							<td>SDFile</td>
+							<td>.SDF</td>
+						</tr>
+						<tr>
+							<td>SMDFile</td>
+							<td>.SMD</td>
+						</tr>
+						<tr>
+							<td>SYBYL</td>
+							<td>.SML</td>
+						</tr>
+						<tr>
+							<td>SYBYL2</td>
+							<td>.MOL2; .SM2; .ML2</td>
+						</tr>
+						<tr>
+							<td>SMILES</td>
+							<td>.SMI</td>
+						</tr>
+					</table>
+					<p><font face="Arial">When using PDBID, the SRC value should look like this:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">src='pdbid:101m[:notcached]'</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial"><u><b>notcached</b></u> keyword is optional.&nbsp; When this is
+							used, the data will not be cached by the browser.</font></p>
+					<p><font face="Arial">When using DATA, the SRC value should look like this:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">src='data:[{mimetype},]{actual data}'</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">All available mime types are listed in the <a href="mimetype.htm">mimetype
+								page</a>.</font></p>
+					<p><font face="Arial">DISPLAYMODE specifies the display type of the model.</font></p>
+					<table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+						align="center" id="AutoNumber1" height="144">
+						<tr>
+							<td height="24" width="50%" bgcolor="#c0c0c0" colspan="3">
+								<font face="Arial"><b>DISPLAYTYPE </b></font>
+							</td>
+							<td height="24" width="50%" bgcolor="#c0c0c0">
+								<font face="Arial"><b>Meaning</b></font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">0</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">WF</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">WireFrame</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Wire Frame</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">1</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">ST</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">Sticks</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Sticks</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">2</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">BS</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">Ball&amp;Sticks</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Ball and Sticks</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">3</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">CB</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">CylindricalBonds</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Cylindrical Bonds</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">4</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">SF</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">SpaceFilling</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Space Filling</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">5</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">RI</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">Ribbons</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Ribbons</font></td>
+						</tr>
+						<tr>
+							<td height="19" width="10%" bgcolor="#ccffcc">
+								<font face="Arial">6</font></td>
+							<td height="19" width="15%" bgcolor="#ccffcc">
+								<font face="Arial">CA</font></td>
+							<td height="19" width="25%" bgcolor="#ccffcc">
+								<font face="Arial">Cartoons</font></td>
+							<td height="19" width="50%" bgcolor="#ffffcc">
+								<font face="Arial">Cartoons</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">BACKGROUNDCOLOR specifies the background color of the
+							window.&nbsp; Like other HTML tags, we support both customized color name and
+							exact color value.&nbsp; All color names supported by Chem3D are listed in <A href="colornames.htm">
+								this page</A>.</font></p>
+					<p><font face="Arial">There are two steps to using the JavaScript file:</font></p>
+					<p><font face="Arial">(1) To include this JavaScript file, the following text must be
+							included in the web page:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript"
+									src="/jslib/chem3d.js"&gt;&lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">The best place for this is between &lt;Head&gt; and
+							&lt;/Head&gt;.</font></p>
+					<p><font face="Arial">(2) To call either of the two functions, use code like this:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript"&gt;
+									c3d_insert3d("/chem3d_models/mymodel.c3d", 'SF'); &lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<br>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript"&gt;
+									c3d_insert3dStr("src='/chem3d_models/mymodel.c3d' displaytype='SpaceFilling'");
+									&lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial"><u><b>NOTE</b></u>: The c3d_insert3dStr() is better to use in
+							most cases because the parameters' order can be changed and it is easier to
+							find the parameters' meaning.&nbsp; Another usage of this function is to
+							simplify the process of <a href="upgradepage.htm">upgrading old Plugin pages to
+								ActiveX/Plugin pages</a>.</font></p>
+					<p><font face="Arial">Here is a complete example page:</font></p>
+					<table border width="100%">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;HTML&gt;<br>
+									&lt;HEAD&gt;<br>
+									&lt;TITLE&gt;My First Chem3D Model Page&lt;/TITLE&gt;<br>
+									&lt;script language="javascript" src="/jslib/chem3d.js"&gt;&lt;/script&gt;<br>
+									&lt;/HEAD&gt;<br>
+									&lt;BODY&gt;<br>
+									&lt;script language="javascript"&gt;
+									c3d_insert3dStr("src='/chem3d_models/mymodel.c3d' width=400 height=300
+									name='my3dobj'"); &lt;/script&gt;<br>
+									&lt;/BODY&gt;<br>
+									&lt;/HTML&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">Be sure that chem3d.js is in <a href="http://yourwebsite/jslib/">http://yourwebsite/jslib/</a>
+							and mymodel.c3d in <a href="http://yourwebsite/chem3d_models/">http://yourwebsite/chem3d_models/</a>.</font></p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

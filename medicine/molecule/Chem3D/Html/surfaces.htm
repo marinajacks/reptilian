@@ -1,0 +1,163 @@
+<HTML>
+	<HEAD>
+		<TITLE>Chem3D ActiveX/Plugin - Show molecular surfaces</TITLE>
+		<script language="javascript" src="chem3d.js"></script>
+		<script language="javascript">
+			function surfdispmode_click(obj, mode)
+			{
+				var o = c3d_getObject(obj);
+				o.Surfaces.Current.DisplayMode = mode;
+			}
+
+			function body_load()
+			{
+				var o = c3d_getObject("mo");
+				var orbs = o.Surfaces.Current.Orbitals;
+				var opts = document.theform.mo_options;
+
+				var i;
+				for (i = 0; i < orbs.Count; ++i)
+				{
+					var orb = orbs.Item(i);
+
+					var opt = document.createElement("OPTION");
+					opts.options.add(opt);
+					opt.text = orb.Label;
+				}
+
+				opts.selectedIndex = o.Surfaces.Current.Orbitals.CurrentIndex;
+			}
+
+			function mo_opt_change()
+			{
+				var o = c3d_getObject("mo");
+				var i = document.theform.mo_options.selectedIndex;
+				o.Surfaces.Current.Orbitals.Current = o.Surfaces.Current.Orbitals.Item(i);
+			}
+
+			function moopts_click(step)
+			{
+				var o = c3d_getObject("mo");
+				var orbs = o.Surfaces.Current.Orbitals;
+				var opts = document.theform.mo_options;
+
+				var i = orbs.CurrentIndex + step;
+				if (i < 0)
+					i = orbs.Count - 1;
+				else if (i >= orbs.Count)
+					i = 0;
+
+				o.Surfaces.Current.Orbitals.Current = o.Surfaces.Current.Orbitals.Item(i);
+				opts.selectedIndex = i;
+			}
+		</script>
+		<script language="javascript" src="jquery-1.9.1.min.js"></script>
+		<!-- Delay body_load() as with "onload" it happens TOO quickly  -->
+        <script language="javascript">  $(document).ready(function () { setTimeout('body_load();', 2000); }); </script>
+        </script>
+	</HEAD>
+	<BODY TEXT="#000000" BGCOLOR="#ffffff" LINK="#0000FF" VLINK="#551A8B" ALINK="#0000FF"> <!-- onload="body_load()" - moved above -->
+		<form name=theform>
+		<table>
+			<tr>
+				<td valign="top">
+					<table ID="Table1">
+						<tr>
+							<td height="89" valign="top"><font face="Arial"><STRONG>Solvent Accessible Surface</STRONG>
+								<BR>
+								<script language="javascript"> c3d_insert3dStr("name=sa src='Models/Ibuprofen_sa.c3xml' width=300 height=220"); </script>
+							</font>
+							</td>
+							<td width="10" height="89"></td>
+							<td valign="top" height="89">
+								<P><font face="Arial"><STRONG>Display Mode</STRONG><BR>
+									<INPUT id="Radio1" type="radio" name="rdosa" onclick="surfdispmode_click('sa', 0)" CHECKED
+										VALUE="Radio1">Solid<BR>
+									<INPUT id="Radio2" type="radio" name="rdosa" onclick="surfdispmode_click('sa', 1)" VALUE="Radio2">Wireframe<BR>
+									<INPUT id="Radio3" type="radio" name="rdosa" onclick="surfdispmode_click('sa', 2)" VALUE="Radio3">Dots<BR>
+									<INPUT id="Radio4" type="radio" name="rdosa" onclick="surfdispmode_click('sa', 3)" VALUE="Radio4">Translucent</font></P>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3"><hr>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top"><font face="Arial"><STRONG>Connolly Surface</STRONG>
+								<BR>
+								<script language="javascript"> c3d_insert3dStr("name=con src='Models/Ibuprofen_co.c3xml' width=300 height=220"); </script>
+							</font>
+							</td>
+							<td width="10"></td>
+							<td valign="top">
+								<P><font face="Arial"><STRONG>Display Mode</STRONG><BR>
+									<INPUT id="Radio17" type="radio" name="rdocon" onclick="surfdispmode_click('con', 0)" CHECKED
+										VALUE="Radio17">Solid<BR>
+									<INPUT id="Radio18" type="radio" name="rdocon" onclick="surfdispmode_click('con', 1)" VALUE="Radio18">Wireframe<BR>
+									<INPUT id="Radio7" type="radio" name="rdocon" onclick="surfdispmode_click('con', 2)" VALUE="Radio7">Dots<BR>
+									<INPUT id="Radio8" type="radio" name="rdocon" onclick="surfdispmode_click('con', 3)" VALUE="Radio8">Translucent</font></P>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="10">
+					<table border="1" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td height="400"></td>
+						</tr>
+					</table>
+				</td>
+				<td valign="top">
+					<table ID="Table2">
+						<tr>
+							<td valign="top"><font face="Arial"><STRONG>Molecular Orbital Surface</STRONG>
+								<BR>
+								<script language="javascript"> c3d_insert3dStr("name=mo src='Models/bezene_mo.c3xml' width=300 height=220"); </script>
+							</font>
+							</td>
+							<td width="10"></td>
+							<td valign="top">
+								<P><font face="Arial"><STRONG>Display Mode</STRONG><BR>
+									<INPUT id="Radio25" type="radio" name="rdomo" onclick="surfdispmode_click('mo', 0)" CHECKED
+										VALUE="Radio25">Solid<BR>
+									<INPUT id="Radio26" type="radio" name="rdomo" onclick="surfdispmode_click('mo', 1)" VALUE="Radio26">Wireframe<BR>
+									<INPUT id="Radio27" type="radio" name="rdomo" onclick="surfdispmode_click('mo', 2)" VALUE="Radio27">Dots<BR>
+									<INPUT id="Radio28" type="radio" name="rdomo" onclick="surfdispmode_click('mo', 3)" VALUE="Radio28">Translucent</font></P>
+								<P><font face="Arial"><STRONG>Molecular Orbital<BR>
+									</STRONG>
+									<SELECT onchange="mo_opt_change()" NAME="mo_options">
+									</SELECT>&nbsp;<INPUT type="button" value="Next" name="nextmo" onclick="moopts_click(1)">
+									<INPUT type="button" value="Previous" name="premo" onclick="moopts_click(-1)"></font></P>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3"><hr>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top"><font face="Arial"><STRONG>Partial Surface<BR>
+								</STRONG>
+								<script language="javascript"> c3d_insert3dStr("name=ps src='Models/1CLA_partialsurface.c3xml' width=300 height=220 ligandmode=SF"); </script>
+							</font>
+							</td>
+							<td width="10"></td>
+							<td valign="top">
+								<font face="Arial">
+<!--
+								<P><STRONG>Surface Display Mode</STRONG><BR>
+									<INPUT id="Radio29" type="radio" name="rdops" onclick="surfdispmode_click('ps', 0)" CHECKED
+										VALUE="Radio29">Solid<BR>
+									<INPUT id="Radio30" type="radio" name="rdops" onclick="surfdispmode_click('ps', 1)" VALUE="Radio30">Wireframe<BR>
+									<INPUT id="Radio31" type="radio" name="rdops" onclick="surfdispmode_click('ps', 2)" VALUE="Radio31">Dots<BR>
+									<INPUT id="Radio32" type="radio" name="rdops" onclick="surfdispmode_click('ps', 3)" VALUE="Radio32">Translucent</P>
+-->
+								</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</BODY>
+</HTML>

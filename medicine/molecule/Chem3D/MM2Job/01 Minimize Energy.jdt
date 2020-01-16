@@ -1,0 +1,12 @@
+MM2 Job Type
+Menu Name: Minimize Energy
+Current Options Tab: 1
+Job Type: Minimize Energy
+Minimum RMS Gradient: 0.010000
+Display Iterations
+Step Interval: 2
+Frame Interval: 10
+Heating Rate: 1.00000
+Target Temperature: 300.00000
+Pi Bond Orders
+Steric Energy Summary

@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Chem3D ActiveX Conctrol - Upgrade pages from Plugin</title>
+	</head>
+	<body>
+		<table width="800">
+			<tr>
+				<td>
+					<p><b><font size="5" face="Arial">How to upgrade old pages that use the Chem3D Browser 
+								Plugin</font></b></p>
+					<p><font face="Arial">The Chem3D ActiveX/Plugin replaces the old browser plugin.&nbsp; 
+							This page describes how to upgrade old pages that use the plugin so that they 
+							use the new ActiveX/Plugin.&nbsp; Before proceeding, it may be useful to review </font>
+						<a href="createpage.htm"><font face="Arial">this page </font></a><font face="Arial">
+							which describes how web pages can use the ActiveX/Plugin.</font></p>
+					<p><font face="Arial">This example will use the JavaScript file, and this function from 
+							that file:</font></p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">function c3d_insert3dStr(tagStr)</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">The old Plugin page uses the &lt;EMBED&gt; tag:</font></p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#c0c0c0"><font face="Arial">&lt;embed src="ethanolsurfaces.c3d" 
+									width="300" height="300" movie_controller_visible="false" 
+									rotation_bars_visible="false"&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">To upgrade to the Chem3D ActiveX/Plugin, put the whole 
+							&lt;EMBED&gt; tag in this function as a parameter.&nbsp; Here is an example:</font></p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript"&gt;<br>
+									c3d_insert3dStr("&lt;embed src=\"ethanolsurfaces.c3d\" width=\"300\" 
+									height=\"300\" movie_controller_visible=\"false\" 
+									rotation_bars_visible=\"false\"&gt;");<br>
+									&lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial"><b>NOTE</b>: Because of the JavaScript syntax, you must put an 
+							extra slash, <FONT color="#ff3333"><STRONG>\</STRONG></FONT> , right before 
+							each double quote, <STRONG><FONT color="#ff0033">"</FONT></STRONG></font></p>
+					<p><font face="Arial">Here are the remaining steps:</font></p>
+					<p><font face="Arial">Include this JavaScript file by putting the following text in 
+							your page:</font></p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript" 
+									src="/jslib/chem3d.js"&gt;&lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">The best place for this is between &lt;Head&gt; and 
+							&lt;/Head&gt;.</font></p>
+					<p><font face="Arial">Now, put the whole &lt;EMBED&gt; tag in this function as a 
+							parameter:</font></p>
+					<table>
+						<tr>
+							<td bgcolor="#c0c0c0"><font face="Arial">&lt;embed src=...&gt;</font></td>
+							<td><font face="Arial">&nbsp; ====&gt;&nbsp; </font>
+							</td>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;script language="javascript"&gt; 
+									c3d_insert3dStr("&lt;embed src=...&gt;"); &lt;/script&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">Here is a complete example:</font></p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#c0c0c0"><font face="Arial">&lt;HTML&gt;<br>
+									&lt;HEAD&gt;<br>
+									&lt;TITLE&gt;My Chem3D Model Page&lt;/TITLE&gt;<br>
+									&lt;/HEAD&gt;<br>
+									&lt;BODY&gt;<br>
+									<u>&lt;embed src="ethanolsurfaces.c3d" width="300" height="300"&gt;</u><br>
+									&lt;/BODY&gt;<br>
+									&lt;/HTML&gt;</font></td>
+						</tr>
+					</table>
+					<p>&nbsp;</p>
+					<table border width="800">
+						<tr>
+							<td bgcolor="#ccffff"><font face="Arial">&lt;HTML&gt;<br>
+									&lt;HEAD&gt;<br>
+									&lt;TITLE&gt;My Chem3D Model Page&lt;/TITLE&gt;<br>
+									<u>
+										<span style="BACKGROUND-COLOR: #ffff00">&lt;script language="javascript" src="/jslib/chem3d.js"&gt;&lt;/script&gt;</span></u><br>
+									&lt;/HEAD&gt;<br>
+									&lt;BODY&gt;<br>
+									<u>
+										<span style="BACKGROUND-COLOR: #ffff00">&lt;script language="javascript"&gt; c3d_insert3dStr("&lt;embed src=\"ethanolsurfaces.c3d\" 
+    width=\"300\" height=\"300\"&gt;"); &lt;/script&gt;</span></u><br>
+									&lt;/BODY&gt;<br>
+									&lt;/HTML&gt;</font></td>
+						</tr>
+					</table>
+					<p><font face="Arial">Also, be sure that chem3d.js is in <a href="http://yourwebsite/jslib/">
+								http://yourwebsite/jslib/</a> .</font></p>
+					<p><font face="Arial">That's it.&nbsp; You're finished!</font></p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

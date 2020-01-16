@@ -1,0 +1,542 @@
+<html>
+	<head>
+		<title>ChemScript 14.0 Tutorial</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body>
+	    <p><b><font size="5"> ChemScript 14.0 Tutorial </font></b></p>
+		<ul>
+			<li>
+				<a href="#create%20mol">Creating a StructureData object</a>
+			<li>
+				<a href="#write%20mol">Writing a StructureData object to a string or a file</a>
+			<li>
+				<a href="#name=structure">Converting names to structures and structures to
+				names</a>
+			<li>
+				<a href="#2d=3d">Converting 2D structures to 3D</a>
+			<li>
+				<a href="#mm2">Minimizing MM2 and energy calculations for 3D structures</a>
+			<li>
+				<a href="#split%20salts">Salt stripping</a>
+			<li>
+				<a href="#structure%20search">Searching structures atom by atom</a><li>
+				<a href="#most%20common%20structure">Finding the largest common substructure</a>
+			<li>
+				<a href="#overly">Overlaying structures</a><li>
+				<a href="#add/remove atoms/bonds">Working with Atom and Bond objects</a>
+			<li>
+				<a href="#topology">Computing molecular topological properties</a>
+			<li>
+				<a href="#reaction">Working with Reaction objects</a>
+			<li>
+				<a href="#sd file">Reading and writing SD files</a></li>
+		</ul>
+		<p><b><font size="4">1. </font> <a name="create mol"><font size="4">
+		Creating a StructureData object</font></a></b></p>
+		<p>(1) LoadData/LoadFile/ReadData/ReadFile</p>
+		<table id="table1" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('C=CCO')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H6O ()&gt;<br>
+							atoms:<br>
+							C(1)<br>
+							C(2)<br>
+							C(3)<br>
+							O(4)<br>
+							bonds:<br>
+							C(1)=C(2)<br>
+							C(2)-C(3)<br>
+							C(3)-O(4)</font></td>
+				</tr>
+			</tbody></table>
+		<table id="table2" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadFile('c:/file01.cdxml')<br>
+						<font color="#008080">Open molecule successfully: text/xml</font></td>
+				</tr>
+			</tbody></table>
+		<table id="table3" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData()<br>
+						&gt;&gt;&gt; m.ReadData('C=CCO')<br>
+						<font color="#008080">'chemical/x-smiles'</font></td>
+				</tr>
+			</tbody></table>
+		<table id="table4" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData()<br>
+						&gt;&gt;&gt; m.ReadFile('c:/file01.cdxml')<br>
+						<font color="#008080">'text/xml'</font></td>
+				</tr>
+			</tbody></table>
+		<p>(2) use mime types</p>
+		<table id="table5" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('C=CCO', 'smiles')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m = StructureData.LoadData('C=CCO', 'chemical/smiles')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m = StructureData.LoadData('C=CCO', 'cdx')<br>
+						<font color="#008080">Cannot open data/file as format: chemical/x-cdx</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">2. </font> <a name="write mol"><font size="4">
+		Writing a StructureData object to a string or a file</font></a></b></p>
+		<table id="table6" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('C=CCO')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.WriteData('cdx', True)<br>
+						<font color="#008080">'VmpDRDAxMDAEAwIBAAAAAAAAAAAAAACAAQAAAAMAOwAAAENTIENEWCBkcml2ZXIgMS45IFtm\r\nb3IgQ2hlbURy<br>
+							YXcgOF0gLyBGZWIgMjMgMDg6NDk6MTQgMjAwNgQCEABbZScAW2UnAJNk7wDy\r\nvn0BAQkIAAAAAAAAAAAAAgkIA<br>
+							KSUZQED7/MBBQgEAAAAHgAAAzIACAD///////8AAAAAAAD/\r\n/wAAAAAAAAAA////////AAAAAP//AAAAAP///////wAA//8BgA<br>
+							IAAAAEAhAAW2UnAFtlJwCT\r\nZO8A8r59AQOAAwAAAASABAAAAAACCAAJGDsAW2UnADsEAQAAPAQBAAA5BAMA<br>
+							AAAwAAAEgAUA\r\nAAAAAggAW2UnAIiDSQA7BAEAADwEAQAAOQQDAAAAMQAABIAGAAAAAAIIAAkYOwC1oWsA<br>
+							OwQB\r\nAAA8BAEAADkEAwAAADIAAASABwAAAAACCABbZScA4r+NADsEAQAAPAQBAAACBAIACAA5BAMA\r\nAA<br>
+							AzBoAIAAAAAAIIAFtlJwDiv40ABAIQAFtlJwDiv40Ak2TvAPK+fQECBwIAAAAABwQAAABP\r\nSAAAAAAFgAkAAAAEBgQA<br>
+							BAAAAAUGBAAFAAAAAAYCAAIAAAAFgAoAAAAEBgQABQAAAAUGBAAG\r\nAAAAAAAFgAsAAAAEBgQABgAAAAU<br>
+							GBAAHAAAAAAAAAAAAAAAAAA==\r\n'</font><br>
+						&gt;&gt;&gt; m.WriteData('smiles')<br>
+						<font color="#008080">'C=CCO'</font><br>
+						&gt;&gt;&gt; m.WriteData('inchi')<br>
+						<font color="#008080">'InChI=1/C3H6O/c1-2-3-4/h2,4H,1,3H2'</font></td>
+				</tr>
+			</tbody></table>
+		<table id="table7" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('C=CCO')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.WriteFile('c:/output.cdx', 'cdx')<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.WriteFile('c:/output.cdx')<br>
+						<font color="#008080">True</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">3. </font> <a name="name=structure"><font size="4">
+		Converting names to structures and structures to names</font></a></b></p>
+		<table id="table8" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('benzene')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-name</font><br>
+						&gt;&gt;&gt; m.WriteData('name')<br>
+						<font color="#008080">'benzene'</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">4. </font> <a name="2d=3d"><font size="4">
+		Converting 2D structures to 3D</font></a></b></p>
+		<table id="table9" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('C=CCO')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.List(True, True, True)<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H6O ()&gt;<br>
+							atoms:<br>
+							C(1) (-8.66025403784, 5.0, 0.0)<br>
+							C(2) (0.0, 0.0, 0.0)<br>
+							C(3) (8.66025403784, 5.0, 0.0)<br>
+							O(4) (17.3205080757, 3.5527136788e-015, 0.0)<br>
+							bonds:<br>
+							C(1)=C(2)<br>
+							C(2)-C(3)<br>
+							C(3)-O(4)</font><br>
+						&gt;&gt;&gt; m.ConvertTo3DStructure()<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.List(True, True, True)<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H6O ()&gt;<br>
+							atoms:<br>
+							C(1) (-8.66025403784, 5.0, 0.0)<br>
+							C(2) (-7.50237807298, 4.3315, 0.0)<br>
+							C(3) (-7.50237807298, 2.8345, 5.81131627557e-017)<br>
+							O(4) (-6.18079470247, 2.36650278335, 3.72685391238e-017)<br>
+							H(5) (-8.66025403784, 6.1, -4.27017227998e-017)<br>
+							H(6) (-9.61288198201, 4.45, 4.27017227998e-017)<br>
+							H(7) (-6.54975012882, 4.8815, -4.27017227998e-017)<br>
+							H(8) (-8.02656934262, 2.46403823741, 0.909258266556)<br>
+							H(9) (-8.02708782008, 2.46367181377, -0.908809736743)<br>
+							H(10) (-6.00912883746, 1.44027666043, 6.23593677306e-017)<br>
+							bonds:<br>
+							C(1)=C(2)<br>
+							C(2)-C(3)<br>
+							C(3)-O(4)<br>
+							C(1)-H(5)<br>
+							C(1)-H(6)<br>
+							C(2)-H(7)<br>
+							C(3)-H(8)<br>
+							C(3)-H(9)<br>
+							O(4)-H(10)</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">5. </font><a name="mm2"><font size="4">Minimizing
+		MM2 and energy calculations for 3D structures</font></a></b></p>
+		<table id="table25" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('Benzene')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-name</font><br>
+						&gt;&gt;&gt; m.Mm2OptimizeGeometry()<br>
+						<font color="#008080">{'Non-VDW': -0.36238292752874862, 'VDW': 3.2242701663233011, 'Stretch': 0.076278352842361744, 'Bend': 4.7921672802862954e-015, 'Charge-Dipole': 0.0, 'Dipole-Dipole': 0.0, 'Total': -2.641834408363088, 'Charge-Charge': 0.0, 'Stretch-Bend': 1.8115237202899158e-016, 'Torsion': -5.5800000000000072}</font><br>
+						&gt;&gt;&gt; m.Mm2Energy()<br>
+						<font color="#008080">Pi System:    2   3   4   5   1   6<br>
+							Warning: Some parameters are guessed (Quality = 1).<br>
+							-2.6328774618720261</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">5. </font> <a name="split salts"><font size="4">
+		Salt stripping</font></a></b></p>
+		<table id="table11" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>
+						&gt;&gt;&gt; m=StructureData.LoadData('C1=CC=CC=C1.[Na+]')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; list = m.SplitSalt()<br>
+						&gt;&gt;&gt; mainStructureData = list[0]<br>
+						&gt;&gt;&gt; saltPart = list[1]<br>
+						&gt;&gt;&gt; print("main StructureData:", mainStructureData.Smiles, " salt:", saltPart.Smiles)<br>
+						<font color="#008080">main StructureData: C1=CC=CC=C1  salt: [Na+]</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">6. </font> <a name="structure search">
+		<font size="4">Searching structures atom by atom</font></a></b></p>
+		<table id="table12" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; target = StructureData.LoadData('C1CCCCC1C')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; query = StructureData.LoadData('C1CCCCC1')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; target.ContainsSubstructure(query)<br>
+						<font color="#008080">True</font></td>
+				</tr>
+			</tbody></table>
+		<table id="table13" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; target = StructureData.LoadData('C1CCCCC1C')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; query= StructureData.LoadData('C1CCCCC1')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; maps = query.AtomByAtomSearch(target)<br>
+						&gt;&gt;&gt; for dict in maps:<br>
+						... print("one dict:")<br>
+						... for aa in dict.keys():<br>
+						... print (aa.Name, ' -&gt; ', dict[aa].Name)<br>
+						...
+						<br>
+						<font color="#008080">one dict:<br>
+							C(2) -&gt; C(2)<br>
+							C(1) -&gt; C(1)<br>
+							C(4) -&gt; C(4)<br>
+							C(3) -&gt; C(3)<br>
+							C(5) -&gt; C(5)<br>
+							C(6) -&gt; C(6)</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">7. </font> <a name="most common structure">
+		<font size="4">Finding the largest common substructure</font></a></b></p>
+		<table id="table14" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m1 = StructureData.LoadData("C1(C)CCCC1CCO")<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m2 = StructureData.LoadData("C1CCCC1C")<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; common = LargestCommonSubstructure.Compute(m1, m2)<br>
+						&gt;&gt;&gt; atommap1 = common.AtomMapM1()<br>
+						&gt;&gt;&gt; bondmap1 = common.BondMapM1()<br>
+						&gt;&gt;&gt; atommap2 = common.AtomMapM2()<br>
+						&gt;&gt;&gt; bondmap2 = common.BondMapM2()<br>
+						&gt;&gt;&gt; for a in atommap1.keys():<br>
+						... print (a.Name, '-&gt;', atommap1[a].Name, '-&gt;',
+						atommap2[a].Name)<br>
+						...
+						<br>
+						<font color="#008080">C(2) -&gt; C(2) -&gt; C(6)<br>
+							C(3) -&gt; C(3) -&gt; C(4)<br>
+							C(4) -&gt; C(4) -&gt; C(3)<br>
+							C(1) -&gt; C(1) -&gt; C(5)<br>
+							C(5) -&gt; C(5) -&gt; C(2)<br>
+							C(6) -&gt; C(6) -&gt; C(1)</font><br>
+						&gt;&gt;&gt; for b in bondmap1.keys():<br>
+						... print (b.Name, '-&gt;', bondmap1[b].Name, '-&gt;',
+						bondmap2[b].Name)<br>
+						...
+						<br>
+						<font color="#008080">C(4)-C(5) -&gt; C(4)-C(5) -&gt; C(2)-C(3)<br>
+							C(1)-C(3) -&gt; C(1)-C(3) -&gt; C(4)-C(5)<br>
+							C(5)-C(6) -&gt; C(5)-C(6) -&gt; C(1)-C(2)<br>
+							C(1)-C(6) -&gt; C(1)-C(6) -&gt; C(1)-C(5)<br>
+							C(1)-C(2) -&gt; C(1)-C(2) -&gt; C(5)-C(6)<br>
+							C(3)-C(4) -&gt; C(3)-C(4) -&gt; C(3)-C(4)</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">8. </font> <a name="overly"><font size="4">
+		Overlaying structures</font></a></b></p>
+		<p>(1) 2D alignment</p>
+		<table id="table15" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadFile('c:/m.cdx')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-cdx</font><br>
+						&gt;&gt;&gt; target = StructureData.LoadFile('c:/target.cdx')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-cdx</font><br>
+						&gt;&gt;&gt; m.Overlay(target)<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.WriteFile('c:/m_output.cdx')<br>
+						<font color="#008080">True</font></td>
+				</tr>
+			</tbody></table>
+		<p>Target:<img src="ChemSc1.gif" border="0" height="85" width="135"></p>
+		<p>m:<img src="ChemSc2.gif" border="0" height="129" width="247"></p>
+		<p>m_output:<img src="ChemSc3.gif" border="0" height="90" width="268"></p>
+		<p>(2) 3D Overlay</p>
+		<table id="table16" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadFile('c:/m.mol')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-cdx</font><br>
+						&gt;&gt;&gt; target = StructureData.LoadFile('c:/target.mol')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-cdx</font><br>
+						&gt;&gt;&gt; m.Overlay(target)<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.WriteFile('c:/m_output.mol')<br>
+						<font color="#008080">True</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">9. </font> <a name="add/remove atoms/bonds">
+		<font size="4">Working with Atom and Bond objects</font></a></b></p>
+		<p>(1) Add Atoms and Bonds</p>
+		<table id="table17" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('CCC')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; a = m.CreateAtom('O')<br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H10O ()&gt;<br>
+							atoms:<br>
+							C(1)
+							<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							O(4)
+							<br>
+							bonds:<br>
+							C(1)-C(2)<br>
+							C(2)-C(3)</font><br>
+						&gt;&gt;&gt; b = m.CreateBond(a, m.atoms[2])<br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H8O ()&gt;<br>
+							atoms:<br>
+							C(1)
+							<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							O(4)
+							<br>
+							bonds:<br>
+							C(1)-C(2)<br>
+							C(2)-C(3)<br>
+							O(4)-C(3)</font></td>
+				</tr>
+			</tbody></table>
+		<p>(2) Remove Atoms</p>
+		<table id="table18" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('CCC(C)C')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						&lt;ChemScript14.StructureData: C5H12 ()&gt;<br>
+						<font color="#008080">atoms:<br>
+							C(1)
+							<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							C(4)
+							<br>
+							C(5)
+							<br>
+							bonds:<br>
+							C(1)-C(2)<br>
+							C(2)-C(3)<br>
+							C(3)-C(4)<br>
+							C(3)-C(5)</font><br>
+						&gt;&gt;&gt; m.RemoveAtom(m.atoms[0])<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						&lt;ChemScript14.StructureData: C4H10 ()&gt;<br>
+						<font color="#008080">atoms:<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							C(4)
+							<br>
+							C(5)
+							<br>
+							bonds:<br>
+							C(2)-C(3)<br>
+							C(3)-C(4)<br>
+							C(3)-C(5)</font></td>
+				</tr>
+			</tbody></table>
+		<p>(3) Remove Bonds</p>
+		<table id="table19" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('CCC(C)C')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C5H12 ()&gt;<br>
+							atoms:<br>
+							C(1)
+							<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							C(4)
+							<br>
+							C(5)
+							<br>
+							bonds:<br>
+							C(1)-C(2)<br>
+							C(2)-C(3)<br>
+							C(3)-C(4)<br>
+							C(3)-C(5)</font><br>
+						&gt;&gt;&gt; m.RemoveBond(m.bonds[0])<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C5H14 ()&gt;<br>
+							atoms:<br>
+							C(1)
+							<br>
+							C(2)
+							<br>
+							C(3)
+							<br>
+							C(4)
+							<br>
+							C(5)
+							<br>
+							bonds:<br>
+							C(2)-C(3)<br>
+							C(3)-C(4)<br>
+							C(3)-C(5)</font><br>
+						&gt;&gt;&gt; m.RemoveBond(m.bonds[0], True)<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m.List()<br>
+						<font color="#008080">&lt;ChemScript14.StructureData: C3H12 ()&gt;<br>
+							atoms:<br>
+							C(1)
+							<br>
+							C(4)
+							<br>
+							C(5)
+							<br>
+							bonds:<br>
+							[No Bonds]</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">10. </font> <a name="topology"><font size="4">
+		Computing molecular topological properties</font></a></b></p>
+		<table id="table20" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; m = StructureData.LoadData('CCC(C)C')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; top = m.Topology<br>
+						&gt;&gt;&gt; print (top.WienerIndex)<br>
+						<font color="#008080">18</font><br>
+						&gt;&gt;&gt; print (top.BalabanIndex_<br>
+						<font color="#008080">712</font><br>
+						&gt;&gt;&gt; print (top.ShapeCoefficient)<br>
+						<font color="#008080">0</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">11. </font> <a name="reaction"><font size="4">
+		Working with Reaction objects</font></a></b></p>
+		<p>(1) Load Reaction from File or Memory Data</p>
+		<table id="table21" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; r = ReactionData.LoadFile('c:/reaction.cdx')<br>
+						<font color="#008080">Open reaction successfully: chemical/x-cdx</font><br>
+						&gt;&gt;&gt; r.Formula()<br>
+						<font color="#008080">'C6H5Cl  [+ HO]  ->  [Cl +]  C6H6O'</font></td>
+				</tr>
+			</tbody></table>
+		<p><b><font size="4">12. </font> <a name="sd file"><font size="4">
+		Reading and writing SD files</font></a></b></p>
+		<p>(1) SDFileReader</p>
+		<table id="table23" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; sd = SDFileReader.OpenFile('c:/input.sdf')<br>
+						&gt;&gt;&gt; m = sd.ReadNext()<br>
+						&gt;&gt;&gt; while (m != None):<br>
+						... print (m.Formula())<br>
+						... items = m.GetDataItems()<br>
+						... for item in items.keys():<br>
+						... print (item, '-&gt;', m[item])<br>
+						... m = sd.ReadNext()<br>
+						...
+						<br>
+						<font color="#008080">C6H6<br>
+							Formula -&gt; C6H6<br>
+							Mol_ID -&gt; 1<br>
+							MolWeight -&gt; 78.1118<br>
+							Molname -&gt; Benzene<br>
+							C6H5Br<br>
+							Formula -&gt; C6H5Br<br>
+							Mol_ID -&gt; 2<br>
+							MolWeight -&gt; 157.008<br>
+							Molname -&gt; Bromobenzene<br>
+							C4H4O<br>
+							Formula -&gt; C4H4O<br>
+							Mol_ID -&gt; 3<br>
+							MolWeight -&gt; 68.074<br>
+							Molname -&gt; Furan<br>
+							...</font></td>
+				</tr>
+			</tbody></table>
+		<p>(2) SDFileWriter</p>
+		<table id="table24" border="1" width="100%">
+			<tbody>
+				<tr>
+					<td>&gt;&gt;&gt; sd = SDFileWriter.OpenFile('c:/out.sdf', False)<br>
+						&gt;&gt;&gt; m = StructureData.LoadData('CCC')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.SetDataItem('atomcount', '3')<br>
+						&gt;&gt;&gt; sd.WriteStructure(m)<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; m = StructureData.LoadData('C1CCCCC1')<br>
+						<font color="#008080">Open molecule successfully: chemical/x-smiles</font><br>
+						&gt;&gt;&gt; m.SetDataItem('atomcount', '6')<br>
+						&gt;&gt;&gt; sd.WriteStructure(m)<br>
+						<font color="#008080">True</font><br>
+						&gt;&gt;&gt; sd.Close()</td>
+				</tr>
+			</tbody></table>
+	</body>
+</html>

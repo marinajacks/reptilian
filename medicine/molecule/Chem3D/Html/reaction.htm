@@ -1,0 +1,107 @@
+<HTML>
+	<HEAD>
+		<TITLE>Chem3D ActiveX/Plugin - Reaction simulation</TITLE>
+		<script language="javascript" src="chem3d.js"></script>
+		<script language="javascript">
+			var n = 0;
+			var d = 0.1;
+			
+			function handletimeout()
+			{
+				var ax3d = c3d_getObject("ax3d");
+				if (!ax3d.IsProgrammable)
+				{
+					alert("You must use the Pro version of the control for this example.");
+					return;
+				}
+				
+				var bond = ax3d.Bonds.Item(0);
+
+				++n;
+				if (n > 10)
+				{
+					n = 0;
+					d = -d;
+				}
+
+				bond.Atom1.XYZ.X -= d;
+				bond.Atom2.XYZ.X += d;
+
+				var f = false;
+				f = d > 0 && n > 5 || d < 0 && n <= 5;
+				bond.Display.Visible = (f ? 0 : 1);
+
+				window.setTimeout("handletimeout()", 200, "javascript");
+			}
+			
+			window.setTimeout("handletimeout()", 200, "javascript");
+		</script>
+	</HEAD>
+	<BODY text="#000000" vLink="#551a8b" aLink="#0000ff" link="#0000ff" bgColor="#ffffff">
+		<P><font face="Arial">With your creativity, you can easily develop many useful programs 
+				with the ActiveX/Plugin control.&nbsp; Here is an example that shows a reaction 
+				simulation!</font></P>
+		<P>
+			<hr>
+		<P></P>
+		<P>
+			<table>
+				<tr>
+					<td vAlign="top"><font face="Arial"><FONT color="#ff0066">This animation is not a movie.<br>
+								It is driven by programming on the right.</FONT><br>
+							<script language="javascript">
+							var s = "data:chemical/x-c3xml,&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&#013;&#010;&lt;C3XML&#013;&#010; version=&quot;10.0&quot;&#013;&#010;&gt;&lt;model&#013;&#010; id=&quot;1&quot;&#013;&#010; showAtomSymbol=&quot;Hide&quot;&#013;&#010; showAtomSerialNumber=&quot;Hide&quot;&#013;&#010; showAtomDots=&quot;Hide&quot;&#013;&#010; objectDisplayMode=&quot;BallAndStick&quot;&#013;&#010; colorByMode=&quot;ColorByElement&quot;&#013;&#010; backgroundColor=&quot;0xffff8000&quot;&#013;&#010; backgroundShape=&quot;10&quot;&#013;&#010; backgroundShapeColor=&quot;0xff000000&quot;&#013;&#010; backgroundPicAlign=&quot;0&quot;&#013;&#010; backgroundPicOffset=&quot;0 0&quot;&#013;&#010; backgroundPicAlpha=&quot;255&quot;&#013;&#010; backgroundPicTransparent=&quot;no&quot;&#013;&#010; backgroundPicTransColor=&quot;0xffffffff&quot;&#013;&#010; selectedColor=&quot;0xff00ffff&quot;&#013;&#010; alphaHelixColor=&quot;0xffff5780&quot;&#013;&#010; betaSheetColor=&quot;0xffc00024&quot;&#013;&#010; coilColor=&quot;0xffff57c0&quot;&#013;&#010; nucleicAcidColor=&quot;0xffc0c000&quot;&#013;&#010; labelFontName=&quot;Times New Roman&quot;&#013;&#010; labelFontSize=&quot;12&quot;&#013;&#010; labelFontColor=&quot;0xff000000&quot;&#013;&#010; sphereSizeBy=&quot;SizeByRadius&quot;&#013;&#010; sphereSizeScale=&quot;25&quot;&#013;&#010; dotsSizeBy=&quot;SizeByRadius&quot;&#013;&#010; dotsDensity=&quot;50&quot;&#013;&#010; buildingAutoRectify=&quot;yes&quot;&#013;&#010; buildingAutoCleanupAtomTypes=&quot;yes&quot;&#013;&#010; buildingAutoApplyStandards=&quot;yes&quot;&#013;&#010; buildingAutoCenter=&quot;yes&quot;&#013;&#010; buildingDetectConjugatedSystems=&quot;yes&quot;&#013;&#010; buildingBondProximatePercent=&quot;10&quot;&#013;&#010; hydrogenAtomDisplayMode=&quot;ShowAllHydrogens&quot;&#013;&#010; hydrogenBondDisplayMode=&quot;HideHydrogenBonds&quot;&#013;&#010; lonePairDisplayMode=&quot;ShowAllLonePairs&quot;&#013;&#010; showResidueLabels=&quot;no&quot;&#013;&#010;&gt;&lt;view&#013;&#010; id=&quot;2&quot;&#013;&#010; viewScaleFactor=&quot;101.512&quot;&#013;&#010; viewWidthPixels=&quot;616&quot;&#013;&#010; viewHeightPixels=&quot;564&quot;&#013;&#010; viewTransform=&quot; 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1&quot;&#013;&#010; fieldOfView=&quot;0.785398&quot;&#013;&#010; stereoMode=&quot;Disabled&quot;&#013;&#010; viewFocusCenter=&quot;2.22045e-016 0 0&quot;&#013;&#010; viewOffset=&quot;0 0 0&quot;&#013;&#010;/&gt;&lt;group&#013;&#010; id=&quot;3&quot;&#013;&#010; isCollapsed=&quot;yes&quot;&#013;&#010; groupName=&quot;Main&quot;&#013;&#010;&gt;&lt;fragment&#013;&#010; id=&quot;4&quot;&#013;&#010; groupName=&quot;Fragment&quot;&#013;&#010; groupID=&quot;1&quot;&#013;&#010;&gt;&lt;atom&#013;&#010; id=&quot;5&quot;&#013;&#010; atType=&quot;Cl&quot;&#013;&#010; symbol=&quot;Cl&quot;&#013;&#010; userNum=&quot;1&quot;&#013;&#010; cartCoords=&quot;-0.99 0 0&quot;&#013;&#010;/&gt;&lt;atom&#013;&#010; id=&quot;6&quot;&#013;&#010; atType=&quot;Cl&quot;&#013;&#010; symbol=&quot;Cl&quot;&#013;&#010; userNum=&quot;2&quot;&#013;&#010; cartCoords=&quot;0.99 0 0&quot;&#013;&#010;/&gt;&lt;bond&#013;&#010; id=&quot;7&quot;&#013;&#010; bondAtom1=&quot;5&quot;&#013;&#010; bondAtom2=&quot;6&quot;&#013;&#010; bondOrderType=&quot;0&quot;&#013;&#010; bondOrder=&quot;1&quot;&#013;&#010;/&gt;&lt;/fragment&gt;&lt;/group&gt;&lt;/model&gt;&lt;/C3XML&gt;";
+							c3d_insert3dStr("name=ax3d src='" + s + "' width=300 height=220 toolbar=false rotationbar=false contextmenu=false");
+							</script>
+						</font>
+					</td>
+					<td width="10"></td>
+					<td vAlign="top"><pre><font face="Arial"><FONT color=#0000ff>var</FONT> ax3d = c3d_getObject("ax3d");
+<FONT color=#0000ff>if</FONT> (!ax3d.IsProgrammable)<BR></font><FONT face=Arial> 
+{
+	<FONT color=#3300ff>alert</FONT>("You must use the Pro version of the control for this example.");
+	<FONT color=#3300ff>return</FONT>;
+}
+
+<FONT color=#3300ff>var</FONT> bond = ax3d.Bonds.Item(0);
+
+++n;
+<FONT color=#3300ff>if</FONT> (n &gt; 10)
+{
+	n = 0;
+	d = -d;
+}
+
+bond.Atom1.XYZ.X -= d;
+bond.Atom2.XYZ.X += d;
+
+<FONT color=#3300ff>var</FONT> f = false;
+f = d &gt; 0 &amp;&amp; n &gt; 5 || d &lt; 0 &amp;&amp; n &lt;= 5;
+bond.Display.Visible = (f ? 0 : 1);</FONT></pre>
+					</td>
+				</tr>
+			</table>
+		</P>
+		<P>
+			<hr>
+			<font face="Arial"><STRONG>Tips:</STRONG> </font>
+			<UL>
+				<li>
+					<font face="Arial">You can turn off the toolbar, rotation bar and context menus by 
+						using the following script:<BR>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#339966">toolbar=false 
+							rotationbar=false contextmenu=false</FONT> </font>
+				<LI>
+					<font face="Arial">Instead of using a file, the input data can come from a string:<BR>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <EM>data:[mimetype],[chemical data]<BR>
+						</EM>For example:&nbsp;<FONT color="#339966">src='data:chemical/x-smiles,ClCl'</FONT>&nbsp;
+					</font>
+				<LI>
+					<font face="Arial">There are two versions of Chem3D ActiveX/Plugin: Pro and 
+						Net.&nbsp; Net is a limited version, which you can use to view chemical 
+						model.&nbsp; The Pro version includes more functionality, such as the ability 
+						to access the model programmatically. </font>
+				</LI>
+			</UL>
+	</BODY>
+</HTML>

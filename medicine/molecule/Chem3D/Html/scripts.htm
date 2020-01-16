@@ -1,0 +1,174 @@
+<HTML>
+	<HEAD>
+		<TITLE>Chem3D ActiveX/Plugin - Rich programming interface</TITLE>
+		<script language="javascript" src="chem3d.js"></script>
+		<script language="javascript">
+			function start_click()
+			{
+				var o = c3d_getObject("ax3d");
+
+				var x1 = eval(document.theform.x1.value);
+				var y1 = eval(document.theform.y1.value);
+				var z1 = eval(document.theform.z1.value);
+				var x2 = eval(document.theform.x2.value);
+				var y2 = eval(document.theform.y2.value);
+				var z2 = eval(document.theform.z2.value);
+				var deg = eval(document.theform.degree.value);
+				
+				o.PlayDemo(x1, y1, z1, x2, y2, z2, deg, 0);
+			}
+			
+			function stop_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Stop();
+			}
+			
+			function bk_click()
+			{
+				var o = c3d_getObject("ax3d");
+				
+				var r = eval(document.theform.bk_r.value);
+				var g = eval(document.theform.bk_g.value);
+				var b = eval(document.theform.bk_b.value);
+				var e = eval(document.theform.bk_eff.selectedIndex);
+				
+				o.Settings.BackgroundColor = r + (g << 8) + (b << 16);
+				o.Settings.BackgroundEffect = e;
+			}
+			
+			function dispmode_change()
+			{
+				var o = c3d_getObject("ax3d");
+				
+				var i = eval(document.theform.dispmode.selectedIndex);
+				o.Display.DisplayMode = i + 1;
+			}
+			
+			function lbl_click()
+			{
+				var o = c3d_getObject("ax3d");
+				
+				var r = eval(document.theform.lbl_r.value);
+				var g = eval(document.theform.lbl_g.value);
+				var b = eval(document.theform.lbl_b.value);
+				
+				o.Settings.AtomLabelColor = r + (g << 8) + (b << 16);
+			}
+			
+			function atomsphere_click()
+			{
+				var o = c3d_getObject("ax3d");
+				
+				var s = eval(document.theform.atomspheresize.value);
+				
+				o.Settings.AtomSphereSize = s;
+			}
+			
+			function depthfading_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Settings.DepthFading = eval(document.theform.depthfading.checked)
+			}
+			
+			function perspective_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Settings.Perspective = eval(document.theform.perspective.checked)
+			}
+			
+			function showhydrogens_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Settings.ShowHydrogen = document.theform.showhydrogens.checked ? 1 : 0;
+			}
+			
+			function showmodelaxis_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Settings.ShowModelAxis = eval(document.theform.showmodelaxis.checked)
+			}
+			
+			function showviewaxis_click()
+			{
+				var o = c3d_getObject("ax3d");
+				o.Settings.ShowViewAxis = eval(document.theform.showviewaxis.checked)
+			}
+		</script>
+	</HEAD>
+	<BODY TEXT="#000000" BGCOLOR="#ffffff" LINK="#0000ff" VLINK="#551a8b" ALINK="#0000ff">
+		<form name="theform">
+			<table>
+				<tr>
+					<td valign="top">
+						<font face="Arial">
+							<script language="javascript"> c3d_insert3dStr("name=ax3d src='Models/circumtrindenedemo.c3xml' width=300 height=220"); </script>
+						</font>
+					</td>
+					<td width="10"></td>
+					<td valign="top"><font face="Arial"><STRONG>Rotate about</STRONG> (X=<INPUT id="x1" type="text" size="1" value="0">, 
+							Y=<INPUT id="y1" type="text" size="1" value="0">, Z=<INPUT id="z1" type="text" size="1" value="0">)-(X=<INPUT id="x2" type="text" size="1" value="0">, 
+							Y=<INPUT id="y2" type="text" size="1" value="1">, Z=<INPUT id="z2" type="text" size="1" value="0">
+							value=0)<BR>
+							<STRONG>Step</STRONG>=<INPUT id="degree" type="text" size="1" value="1">degree<BR>
+							<INPUT id="Button1" type="button" value="Start" onclick="start_click()"><INPUT id="Button2" type="button" value="Stop" onclick="stop_click()"></font><hr>
+						<font face="Arial"><STRONG>Background Color</STRONG> Red=<INPUT id="bk_r" type="text" size="1" value="123">, 
+							Green=<INPUT id="bk_g" type="text" size="1" value="150">, Blue=<INPUT id="bk_b" type="text" size="1" value="155"><BR>
+							<STRONG>Background Effect</STRONG>
+							<SELECT id="bk_eff" name="Select1">
+								<OPTION selected>Solid</OPTION>
+								<OPTION>Sunrise</OPTION>
+								<OPTION>Sunset</OPTION>
+								<OPTION>SunsetOverSea</OPTION>
+								<OPTION>SeaAndSky</OPTION>
+								<OPTION>Left</OPTION>
+								<OPTION>Right</OPTION>
+								<OPTION>Middle</OPTION>
+								<OPTION>DualSides</OPTION>
+								<OPTION>DiagonalUpRight</OPTION>
+								<OPTION>DiagonalDownLeft</OPTION>
+								<OPTION>DiagonalSlash</OPTION>
+								<OPTION>ReversedSlash</OPTION>
+								<OPTION>DiagonalUpLeft</OPTION>
+								<OPTION>DiagonalDownRight</OPTION>
+								<OPTION>Backslash</OPTION>
+								<OPTION>ReversedBackslash</OPTION>
+								<OPTION>DownLeftCorner</OPTION>
+								<OPTION>DownRightCorner</OPTION>
+								<OPTION>UpRightCorner</OPTION>
+								<OPTION>UpLeftCorner</OPTION>
+								<OPTION>Diamond</OPTION>
+								<OPTION>ReversedDiamond</OPTION>
+							</SELECT><BR>
+							<INPUT id="Button3" type="button" value="Set" onclick="bk_click()"></font><hr>
+						<font face="Arial"><STRONG>Display Mode</STRONG>
+							<SELECT id="dispmode" name="Select1" onchange="dispmode_change()">
+								<OPTION>WireFrame</OPTION>
+								<OPTION>Sticks</OPTION>
+								<OPTION selected>BallStick</OPTION>
+								<OPTION>CylindricalBonds</OPTION>
+								<OPTION>SpaceFilling</OPTION>
+								<OPTION>Ribbons</OPTION>
+								<OPTION>Cartoons</OPTION>
+							</SELECT></font><hr>
+						<font face="Arial"><STRONG>Label Color</STRONG> Red=<INPUT id="lbl_r" type="text" size="1" value="255">, 
+							Green=<INPUT id="lbl_g" type="text" size="1" value="0">, Blue=<INPUT id="lbl_b" type="text" size="1" value="0"><BR>
+							<INPUT id="lbl" onclick="lbl_click()" type="button" value="Set"></font><hr>
+						<font face="Arial"><STRONG>Atom Sphere Size</STRONG> <INPUT id="atomspheresize" type="text" size="1" value="0">&nbsp;(0-100)<BR>
+							<INPUT id="atomsphere" onclick="atomsphere_click()" type="button" value="Set"></font><hr>
+						<font face="Arial"><INPUT id="depthfading" type="checkbox" onclick="depthfading_click()">Depth 
+							fading<BR>
+							<INPUT id="perspective" type="checkbox" onclick="perspective_click()">Perspective<BR>
+							<INPUT id="showhydrogens" type="checkbox" onclick="showhydrogens_click()">Show 
+							hydrogen atoms<BR>
+							<INPUT id="showmodelaxis" type="checkbox" onclick="showmodelaxis_click()">Show 
+							model axis<BR>
+							<INPUT id="showviewaxis" type="checkbox" onclick="showviewaxis_click()">Show 
+							view axis</font><hr>
+						<strong><font face="Arial">For more, see </font></strong><font face="Arial"><A href="reference.htm">
+								the Chem3D ActiveX/Plugin reference</A></font></td>
+				</tr>
+			</table>
+		</form>
+	</BODY>
+</HTML>

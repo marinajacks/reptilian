@@ -1,0 +1,3006 @@
+<html>
+	<head>
+		<title>Chem3D ActiveX/Plugin</title></head><body>
+		<table width="800">
+			<tr>
+				<td>
+					<p><strong><a name='objects'>Index</a></strong></p>
+					<ul>
+						<li>
+							<a href='#Chem3D'>Chem3D</a>
+						<li>
+							<a href='#Atom'>Atom</a>
+						<li>
+							<a href='#Atoms'>Atoms</a>
+						<li>
+							<a href='#Bond'>Bond</a>
+						<li>
+							<a href='#Bonds'>Bonds</a>
+						<li>
+							<a href='#DisplyOption'>DisplyOption</a>
+						<li>
+							<a href='#Group'>Group</a>
+						<li>
+							<a href='#Groups'>Groups</a>
+						<li>
+							<a href='#Measurement'>Measurement</a>
+						<li>
+							<a href='#Measurements'>Measurements</a>
+						<li>
+							<a href='#Orbital'>Orbital</a>
+						<li>
+							<a href='#Orbitals'>Orbitals</a>
+						<li>
+							<a href='#OcxPoint3D'>OcxPoint3D</a>
+						<li>
+							<a href='#Selection'>Selection</a>
+						<li>
+							<a href='#Settings'>Settings</a>
+						<li>
+							<a href='#Surface'>Surface</a>
+						<li>
+							<a href='#Surfaces'>Surfaces</a></li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#AxisOptions'>AxisOptions</a> <A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+						<LI>
+							<a href='#BackgroundEffects'>BackgroundEffects</a>
+						<li>
+							<a href='#BondOrders'>BondOrders</a>
+						<li>
+							<a href='#ColorByOptions'>ColorByOptions</a>
+						<LI>
+							<a href='#DemoModeOptions'>DemoModeOptions</a> <A href="#ActiveX"><FONT color="#ff0033">
+									<SUP>[ActiveX]</SUP></FONT></A>
+						<li>
+							<a href='#HydrogenBondOptions'>HydrogenBondOptions</a>
+						<li>
+							<a href='#ModelDisplayModes'>ModelDisplayModes</a>
+						<li>
+							<a href='#OrbitalTypes'>OrbitalTypes</a>
+						<li>
+							<a href='#ShowHydrogenOptions'>ShowHydrogenOptions</a>
+						<li>
+							<a href='#ShowToolbarOptions'>ShowToolbarOptions</a>
+						<li>
+							<a href='#SurfaceDisplayModes'>SurfaceDisplayModes</a>
+						<li>
+							<a href='#SurfaceMappingColor'>SurfaceMappingColor</a>
+						<li>
+							<a href='#Visibility'>Visibility</a></li>
+					</ul>
+					<hr>
+					<p><strong><a name="methods">Propertie &amp; Method Index</a></strong></p>
+					<ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Atom">Atom</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: An Atom object defines a chemical atom, which can be 
+									got from <a href="#Atoms">Atoms</a>, <a href="#Bond">Bond</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Atom::Display">Display</a>
+										<li>
+											<a href="#Atom::Element">Element</a>
+										<li>
+											<a href="#Atom::ParentGroup">ParentGroup</a>
+										<li>
+											<a href="#Atom::Selected">Selected</a>
+										<li>
+											<a href="#Atom::SN">SN</a>
+										<li>
+											<a href="#Atom::XYZ">XYZ</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Atoms">Atoms</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: An Atoms object is a collection of many atoms, which 
+									can be got from <a href="#Chem3D">Chem3D</a>, <a href="#Groups">Groups</a>, <a href="#Selection">
+										Selection</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Atoms::Count">Count</a>
+										<li>
+											<a href="#Atoms::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Bond">Bond</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: A Bond object defines a chemical bond, which can be 
+									get from <a href="#Bonds">Bonds</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Bond::Atom1">Atom1</a>
+										<li>
+											<a href="#Bond::Atom2">Atom2</a>
+										<li>
+											<a href="#Bond::BondLength">BondLength</a>
+										<li>
+											<a href="#Bond::BondOrder">BondOrder</a>
+										<li>
+											<a href="#Bond::Display">Display</a>
+										<li>
+											<a href="#Bond::ParentGroup">ParentGroup</a>
+										<li>
+											<a href="#Bond::Selected">Selected</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Bonds">Bonds</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: A Bonds object is a collection of many bonds, which 
+									can be got from <a href="#Chem3D">Chem3D</a>, <a href="#Groups">Groups</a>, <a href="#Selection">
+										Selection</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Bonds::Count">Count</a>
+										<li>
+											<a href="#Bonds::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Chem3D">Chem3D</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Chem3D ActiveX/Plugin's main object.&nbsp; It's 
+								also a window object.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Chem3D::About">About</a>
+										<li>
+											<a href="#Chem3D::Atoms">Atoms</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::AutoRedraw">AutoRedraw</a>
+										<li>
+											<a href="#Chem3D::Bonds">Bonds</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::Clear">Clear</a>
+										<li>
+											<a href="#Chem3D::Data">Data</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><SUP>&nbsp;</SUP><A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::DataURL">DataURL</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::Display">Display</a>
+										<LI>
+											<a href="#Chem3D::DemoAxis">DemoAxis</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<LI>
+											<a href="#Chem3D::DemoMode">DemoMode</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<LI>
+											<a href="#Chem3D::DemoSpeed">DemoSpeed</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::EncodeData">EncodeData</a>
+										<li>
+											<a href="#Chem3D::FitToWindow">FitToWindow</a>
+										<li>
+											<a href="#Chem3D::FocusView">FocusView</a>
+										<li>
+											<a href="#Chem3D::Fullscreen">Fullscreen</a>
+										<li>
+											<a href="#Chem3D::GetData">GetData</a> <SUP><A href="#Pro"><FONT color="#ff0033">[Pro]</FONT></A></SUP>
+										<li>
+											<a href="#Chem3D::Groups">Groups</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::IsProgrammable">IsProgrammable</a>
+										<li>
+											<a href="#Chem3D::Measurements">Measurements</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::Modified">Modified</a>
+										<li>
+											<a href="#Chem3D::MoveToCenter">MoveToCenter</a>
+										<li>
+											<a href="#Chem3D::PlayDemo">PlayDemo</a>
+										<li>
+											<a href="#Chem3D::PlayMovie">PlayMovie</a>
+										<li>
+											<a href="#Chem3D::Redraw">Redraw</a>
+										<LI>
+											<a href="#Chem3D::RockAmplitude">RockAmplitude</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::Rotation">Rotation</a>
+										<li>
+											<a href="#Chem3D::Selection">Selection</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::SetControlParameter">SetControlParameter</a>
+										<li>
+											<a href="#Chem3D::SetData">SetData</a> <SUP><A href="#Pro"><FONT color="#ff0033">[Pro]</FONT></A></SUP>
+										<li>
+											<a href="#Chem3D::Settings">Settings</a>
+										<li>
+											<a href="#Chem3D::ShowContextMenu">ShowContextMenu</a>
+										<li>
+											<a href="#Chem3D::ShowRotationBar">ShowRotationBar</a>
+										<li>
+											<a href="#Chem3D::ShowToolbar">ShowToolbar</a>
+										<li>
+											<a href="#Chem3D::Spin">Spin</a>
+										<li>
+											<a href="#Chem3D::Stop">Stop</a>
+										<li>
+											<a href="#Chem3D::Surfaces">Surfaces</a> <A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A>
+										<li>
+											<a href="#Chem3D::Version">Version</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="DisplyOption">DisplyOption</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: DisplayOption controls <a href="#Atom">Atom</a>'s, <a href="#Bond">
+										Bond</a>'s, <a href="#Group">Group</a>'s display option, such as color, 
+								display mode, visibility etc.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#DisplyOption::Color">Color</a>
+										<li>
+											<a href="#DisplyOption::DisplayMode">DisplayMode</a>
+										<li>
+											<a href="#DisplyOption::SetDefault">SetDefault</a>
+										<li>
+											<a href="#DisplyOption::ShowAtomDots">ShowAtomDots</a>
+										<li>
+											<a href="#DisplyOption::ShowLabel">ShowLabel</a>
+										<li>
+											<a href="#DisplyOption::ShowSN">ShowSN</a>
+										<li>
+											<a href="#DisplyOption::UseDefaultColor">UseDefaultColor</a>
+										<li>
+											<a href="#DisplyOption::Visible">Visible</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Group">Group</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Chem3D organizes data in a tree-like structure.&nbsp; 
+									Atoms and bonds owned by a group; a group might be owned by another group - 
+									called parent group.&nbsp; Group can be got from <a href="#Groups">Groups</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Group::Atoms">Atoms</a>
+										<li>
+											<a href="#Group::Bonds">Bonds</a>
+										<li>
+											<a href="#Group::Display">Display</a>
+										<li>
+											<a href="#Group::Groups">Groups</a>
+										<li>
+											<a href="#Group::Name">Name</a>
+										<li>
+											<a href="#Group::ParentGroup">ParentGroup</a>
+										<li>
+											<a href="#Group::Selected">Selected</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Groups">Groups</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Groups is a collection of many groups, which can be 
+									got from <a href="#Chem3D">Chem3D</a>, <a href="#Group">Group</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Groups::Count">Count</a>
+										<li>
+											<a href="#Groups::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Measurement">Measurement</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Measurement is a kind of auxiliary element which used 
+									to indicate a distance of two atoms, an angle composed of three atoms or a 
+									dihedral angle composed of four atoms.&nbsp; For a distance, only the Atom1 and 
+									Atom2 are used; for an angle, only Atom1, Atom2 and Atom3 are used.&nbsp; You 
+									can create a measurement from <a href="#Measurements">Measurements</a>.&nbsp; 
+									And you can delete a measurement by call its <a href="#Measurement::Delete">Delete</a>
+								method.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Measurement::Atom1">Atom1</a>
+										<li>
+											<a href="#Measurement::Atom2">Atom2</a>
+										<li>
+											<a href="#Measurement::Atom3">Atom3</a>
+										<li>
+											<a href="#Measurement::Atom4">Atom4</a>
+										<li>
+											<a href="#Measurement::Delete">Delete</a>
+										<li>
+											<a href="#Measurement::Value">Value</a>
+										<li>
+											<a href="#Measurement::Visible">Visible</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Measurements">Measurements</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Measurements is a collection of many <a href="#Measurement">
+										Measurement</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Measurements::Angle">Angle</a>
+										<li>
+											<a href="#Measurements::Clear">Clear</a>
+										<li>
+											<a href="#Measurements::Count">Count</a>
+										<li>
+											<a href="#Measurements::CreateAngle">CreateAngle</a>
+										<li>
+											<a href="#Measurements::CreateDihedral">CreateDihedral</a>
+										<li>
+											<a href="#Measurements::CreateDistance">CreateDistance</a>
+										<li>
+											<a href="#Measurements::Dihedral">Dihedral</a>
+										<li>
+											<a href="#Measurements::Distance">Distance</a>
+										<li>
+											<a href="#Measurements::Find">Find</a>
+										<li>
+											<a href="#Measurements::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Orbital">Orbital</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: For a molecular orbital <a href="#Surface">Surface</a>, 
+								it owns many orbitals.&nbsp; This object define those orbitals.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Orbital::Energy">Energy</a>
+										<li>
+											<a href="#Orbital::Label">Label</a>
+										<li>
+											<a href="#Orbital::Type">Type</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Orbitals">Orbitals</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: An Orbitals is a collection of many orbitals, which 
+									can be got from <a href="#Surface">Surface</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Orbitals::Count">Count</a>
+										<li>
+											<a href="#Orbitals::Current">Current</a>
+										<li>
+											<a href="#Orbitals::CurrentIndex">CurrentIndex</a>
+										<li>
+											<a href="#Orbitals::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="OcxPoint3D">OcxPoint3D</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: An OcxPoint3D is a coordinates of an <a href="#Atom">Atom</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#OcxPoint3D::X">X</a>
+										<li>
+											<a href="#OcxPoint3D::Y">Y</a>
+										<li>
+											<a href="#OcxPoint3D::Z">Z</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Selection">Selection</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: Selection object defines all selected objects.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Selection::Atoms">Atoms</a>
+										<li>
+											<a href="#Selection::Bonds">Bonds</a>
+										<li>
+											<a href="#Selection::Clear">Clear</a>
+										<li>
+											<a href="#Selection::Data">Data</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>
+										<li>
+											<a href="#Selection::GetData">GetData</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Settings">Settings</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: A Settings object defines all model setting.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Settings::AlphaHelixColor">AlphaHelixColor</a>
+										<li>
+											<a href="#Settings::AtomDotsDensity">AtomDotsDensity</a>
+										<li>
+											<a href="#Settings::AtomLabelColor">AtomLabelColor</a>
+										<li>
+											<a href="#Settings::AtomSize">AtomSize</a>
+										<li>
+											<a href="#Settings::BackgroundBrightness">BackgroundBrightness</a>
+										<li>
+											<a href="#Settings::BackgroundColor">BackgroundColor</a>
+										<li>
+											<a href="#Settings::BackgroundColor2">BackgroundColor2</a>
+										<li>
+											<a href="#Settings::BackgroundEffect">BackgroundEffect</a>
+										<li>
+											<a href="#Settings::BetaSheetColor">BetaSheetColor</a>
+										<li>
+											<a href="#Settings::BondSize">BondSize</a>
+										<li>
+											<a href="#Settings::CoilColor">CoilColor</a>
+										<li>
+											<a href="#Settings::ColorBy">ColorBy</a>
+										<li>
+											<a href="#Settings::DepthFading">DepthFading</a>
+										<li>
+											<a href="#Settings::LigandDisplayMode">LigandDisplayMode</a>
+										<li>
+											<a href="#Settings::NucliecAcidColor">NucliecAcidColor</a>
+										<li>
+											<a href="#Settings::Perspective">Perspective</a>
+										<li>
+											<a href="#Settings::PixelsPerAngstram">PixelsPerAngstram</a>
+										<li>
+											<a href="#Settings::ShowHydrogen">ShowHydrogen</a>
+										<li>
+											<a href="#Settings::ShowHydrogenBond">ShowHydrogenBond</a>
+										<li>
+											<a href="#Settings::ShowLonePair">ShowLonePair</a>
+										<li>
+											<a href="#Settings::ShowModelAxis">ShowModelAxis</a>
+										<li>
+											<a href="#Settings::ShowRedBlue">ShowRedBlue</a>
+										<li>
+											<a href="#Settings::ShowStereoPair">ShowStereoPair</a>
+										<li>
+											<a href="#Settings::ShowViewAxis">ShowViewAxis</a>
+										<li>
+											<a href="#Settings::SolventDisplayMode">SolventDisplayMode</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Surface">Surface</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: A Surface object defines a molecular surface.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Surface::Color">Color</a>
+										<li>
+											<a href="#Surface::Color2">Color2</a>
+										<li>
+											<a href="#Surface::DisplayMode">DisplayMode</a>
+										<li>
+											<a href="#Surface::MappingColor">MappingColor</a>
+										<li>
+											<a href="#Surface::Orbitals">Orbitals</a>
+										<li>
+											<a href="#Surface::Radius">Radius</a>
+										<li>
+											<a href="#Surface::Resolution">Resolution</a>
+										<li>
+											<a href="#Surface::Visible">Visible</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						<li>
+							<a href="#objects">[Index]</a> <a name="Surfaces">Surfaces</a>
+							<ul>
+								<li>
+									<strong>Remark</strong>: A collection of many <a href="#Surface">Surface</a>.
+								<li>
+									<strong>Members</strong>
+									<ul>
+										<li>
+											<a href="#Surfaces::Count">Count</a>
+										<li>
+											<a href="#Surfaces::Current">Current</a>
+										<li>
+											<a href="#Surfaces::Item">Item</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<hr>
+					<strong><a name='details'>Propertie &amp; Method Details</a></strong>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::Display'><strong>Display</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get atom's display setting object, with which you 
+								can change atom's visibility, color, display mode etc.
+								<li>
+									<strong>Return</strong>: [ <a href='#DisplyOption'>DisplyOption</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::Element'><strong>Element</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get atom's element symbol.
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::ParentGroup'><strong>ParentGroup</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get atom's parent group, with which you can access 
+								group properties.
+								<li>
+									<strong>Return</strong>: [ <a href='#Group'>Group</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::Selected'><strong>Selected</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate wheather the atom is selected by users.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::SN'><strong>SN</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get atom's serial number.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atom'>Atom</a>::<a name='Atom::XYZ'><strong>XYZ</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get atom's coordinates.
+								<li>
+									<strong>Return</strong>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atoms'>Atoms</a>::<a name='Atoms::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get atom count in this collection.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Atoms'>Atoms</a>::<a name='Atoms::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an atom by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::Atom1'><strong>Atom1</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the first atom connected to this bond.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::Atom2'><strong>Atom2</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the second atom connected to this bond.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::BondLength'><strong>BondLength</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the bond length.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::BondOrder'><strong>BondOrder</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the bond order.
+								<li>
+									<strong>Return</strong>: [ <a href='#BondOrders'>BondOrders</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::Display'><strong>Display</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get bond's display setting object, with which you 
+								can change bond's visibility, color, display mode etc.
+								<li>
+									<strong>Return</strong>: [ <a href='#DisplyOption'>DisplyOption</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::ParentGroup'><strong>ParentGroup</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get bond's parent group with which you can access 
+								group properties.
+								<li>
+									<strong>Return</strong>: [ <a href='#Group'>Group</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bond'>Bond</a>::<a name='Bond::Selected'><strong>Selected</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether the bond is selected by users.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bonds'>Bonds</a>::<a name='Bonds::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the bond count of the bond collection.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Bonds'>Bonds</a>::<a name='Bonds::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a bond by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Bond'>Bond</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::About'><strong>About</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Show about box.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Atoms'><strong>Atoms&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Atoms"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an atom collection which includes all atoms.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atoms'>Atoms</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::AutoRedraw'><strong>AutoRedraw</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether Chem3D ActiveX/Plugin works in 
+									AutoRedraw mode.&nbsp; If working in AutoRedraw mode, when programatically 
+									change something about this model, the control automatically redraw 
+									itself.&nbsp; If working&nbsp;in non-AutoRedraw mode, you have to manually call <a href="#Chem3D::Redraw">
+										Redraw</a> methods to redraw the control.<br>
+									AutoRedraw is set to true by default.<br>
+									In order to improve the code effeciency, you can turn this flag off and 
+									manually call <a href="#Chem3D::Redraw">Redraw</a>.&nbsp; This is espcially 
+								useful when you want to call several control motheds at one time to avoid some 
+								flickers.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::Redraw">Redraw</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Bonds'><strong>Bonds&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Bonds"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a bond collection which includes all bonds.
+								<li>
+									<strong>Return</strong>: [ <a href='#Bonds'>Bonds</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Clear'><strong>Clear</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Clear everything in the control.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Data'><strong>Data</strong></a>&nbsp;<A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></A>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A href="#Pro"></FONT></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get or set model data from or into this control.&nbsp; 
+									The data's format is controled the the parameter, mimetype.<br>
+									If the format is a binary data, e.g. chemical/x-chem3d, image/bmp, the data can 
+									be BASE64 encrypted.&nbsp; This is controled by <a href="#Chem3D::EncodeData">EncodeData</a>.
+									<br>
+									<a href="mimetype.htm">Here is all available mimetypes in Chem3D</a>.
+								<li>
+									<strong>Return</strong>: [ VARIANT ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>mimetype</em>: [ string ]</li>
+									</ul>
+								<li>
+									<b>See Also</b>: <a href="#Selection::Data">Selection::Data</a>, <a href="#Chem3D::DataURL">
+										DataURL</a>, <a href="#Chem3D::EncodeData">EncodeData</a>, <a href="#Chem3D::GetData">
+										Chem3D::GetData</a>, <a href="#Chem3D::SetData">Chem3D::SetData</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::DataURL'><strong>DataURL&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::DataURL"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Load a data file into the control.&nbsp; You also 
+									can&nbsp;use a direct data by following format:<br>
+									<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data:[{mimetype},]{data}</em><br>
+									{mimetype} is the data's mimetype; {data} is the actual data.&nbsp; For 
+									example:<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<em>data:chemical/x-smiles,CCCCCC</em><br>
+									If the control's <a href="#Chem3D::MimeType">MimeType</a> property is set, you 
+									can ignore {mimetype} here.&nbsp; For example:<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<em>data:CCCCCC</em>
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::Data">Data</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Display'><strong>Display</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a display object with which you can control 
+								the display setting of the whole model.
+								<li>
+									<strong>Return</strong>: [ <a href='#DisplyOption'>DisplyOption</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::DemoAxis'><strong>DemoAxis</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="Chem3D::DemoAxis"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Specify the axis of Spin or Rock. This is designed 
+								for Chem3D Embed, which can be used only in design mode.
+								<li>
+									<strong>Return</strong>: [ <a href='#AxixOptions'>AxixOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+							<b>See Also</b>: <a href="#Chem3D::DemoMode">DemoMode</a>, <a href="#Chem3D::DemoSpeed">
+								DemoSpeed</a>, <a href="#Chem3D::RockAmplitude">RockAmplitude</a></li></ul>
+					<UL>
+					</UL>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::DemoMode'><strong>DemoMode</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="Chem3D::DemoMode"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Specify Demo mode. Static means not animated. This 
+								is designed for Chem3D Embed, which can be used only in design mode.
+								<li>
+									<strong>Return</strong>: [ <a href='#DemoModeOptions'>DemoModeOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+							<b>See Also</b>: <a href="#Chem3D::DemoAxis">DemoAxis</a>, <a href="#Chem3D::DemoSpeed">
+								DemoSpeed</a>, <a href="#Chem3D::RockAmplitude">RockAmplitude</a></li></ul>
+					<UL>
+					</UL>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::DemoSpeed'><strong>DemoSpeed</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="Chem3D::DemoSpeed"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Specify Demo speed. This is designed for Chem3D 
+								Embed, which can be used only in design mode.
+								<li>
+									<strong>Return</strong>: double
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+							<b>See Also</b>: <a href="#Chem3D::DemoAxis">DemoAxis</a>, <a href="#Chem3D::DemoMode">
+								DemoMode</a>, <a href="#Chem3D::RockAmplitude">RockAmplitude</a></li></ul>
+					<UL>
+					</UL>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::EncodeData'><strong>EncodeData</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether encrypted binary data with 
+									BASE64.&nbsp; See <a href="#Chem3D::Data">Data</a>
+								property.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::Data">Data</a>, <a href="#Selection::Data">Selection::Data</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::FitToWindow'><strong>FitToWindow</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Resize the whole model to fit the control window.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::FocusView">FocusView</a>, <a href="#Chem3D::MoveToCenter">
+										MoveToCenter</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::FocusView'><strong>FocusView</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Focus the viewport to the whole model.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::FitToWindow">FitToWindow</a>, <a href="#Chem3D::MoveToCenter">
+										MoveToCenter</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Fullscreen'><strong>Fullscreen</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Switch display&nbsp;between fullscreen mode and 
+								normal window mode.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::GetData'><strong>GetData</strong></a>&nbsp;<A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong> : Same as <a href="#Chem3D::Data">Chem3D::Data</a>
+								<li>
+									<strong>Return</strong>: [ VARIANT ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>mimetype</em>: [ string ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Groups'><strong>Groups&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Groups"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the root-level groups in a group 
+								colloection.&nbsp; Chem3D organizes data in a tree structure.&nbsp; Each node 
+								is a group.&nbsp; Atoms and bonds can locate at any group.
+								<li>
+									<strong>Return</strong>: [ <a href='#Groups'>Groups</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::IsProgrammable'><strong>IsProgrammable</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Chem3D ActiveX/Plugin has two version Pro and 
+								Net.&nbsp; With&nbsp;Net version, you can only change model's display 
+								setting.&nbsp; Pro is the full feature version.&nbsp; Pro returns true for this 
+								property and Net returns false.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::Version">Version</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Measurements'><strong>Measurements&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Measurements"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a measurement collections.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurements'>Measurements</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Modified'><strong>Modified</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether the model is changed by users.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::MoveToCenter'><strong>MoveToCenter</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Move the whole model to axis center, point (0, 0, 
+								0).
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::FitToWindow">FitToWindow</a>, <a href="#Chem3D::FocusView">
+										FocusView</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::PlayDemo'><strong>PlayDemo</strong></a>
+							(double axis_x1, double axis_y1, double axis_z1, double axis_x2, double 
+							axis_y2, double axis_z2, int degree, int amplitude)<ul>
+								<li>
+									<strong>Remark</strong>: Playing a demo means rotate the model around an 
+								axis defined by (x1, y1, z1)-(x2, y2, z2).&nbsp; Rotating speed is controlled 
+								by degree.&nbsp; A negative degree means rotating at the other direct. If 
+								amplitude is 0, it does spin, or does swing with the amplitude.<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>axis_x1</em>: [ double ]
+										<li>
+											<em>axis_y1</em>: [ double ]
+										<li>
+											<em>axis_z1</em>: [ double ]
+										<li>
+											<em>axis_x2</em>: [ double ]
+										<li>
+											<em>axis_y2</em>: [ double ]
+										<li>
+											<em>axis_z2</em>: [ double ]
+										<li>
+											<em>degree</em>: [ double ]
+										<li>
+											<i>amplitude</i>: [ double ]</li>
+									</ul>
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::PlayMovie">PlayMovie</a>, <a href="#Chem3D::Spin">
+										Spin</a>, <a href="#Chem3D::Rotation">Rotaion</a>, <a href="#Chem3D::Stop">Stop</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::PlayMovie'><strong>PlayMovie</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: A Chem3D model might be saved in multiple 
+								frames.&nbsp; We call this kind model a movie.&nbsp; You can play it back by 
+								call this method.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::PlayDemo">PlayDemo</a>, <a href="#Chem3D::Spin">Spin</a>,
+									<a href="#Chem3D::Stop">Stop</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Redraw'><strong>Redraw</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Redraw control window.&nbsp;
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::AutoRedraw">AutoRedraw</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::RockAmplitude'><strong>RockAmplitude</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="Chem3D::RockAmplitude"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Specify the amplitude of Rock. It's ignored if in 
+								Spin mode. This is designed for Chem3D Embed, which can be used only in design 
+								mode.
+								<li>
+									<strong>Return</strong>: double
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+							<b>See Also</b>: <a href="#Chem3D::DemoAxis">DemoAxis</a>, <a href="#Chem3D::DemoMode">
+								DemoMode</a>, <a href="#Chem3D::DemoSpeed">DemoSpeed</a></li></ul>
+					<UL>
+					</UL>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Rotation'><strong>Rotation</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: This is a design-time property.&nbsp; At runtime it 
+									does nothing.&nbsp; It works like PlayDemo.&nbsp; You can combine "x", "y", "z" 
+									and two numbers together for this property.&nbsp; It call <a href="#Chem3D::PlayDemo">
+										PlayDemo</a> at this format:<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>PlayDemo(0, 0, 0, x, y, z, 
+										degree, 0)</em><br>
+									The first number is for degree, and the second for amplitude.&nbsp; You can 
+									ignore any parameter.&nbsp; "x", "y", "z" default to 0, degree default to 1.0, 
+									amplitude default to 0.&nbsp;If amplitude is 0, it does spin, or swing with the 
+									amplitude. For example, "x5" means PlayDemo(0, 0, 0, 1, 0, 0, 5, 0); "x0.5 30" 
+									means PlayDemo(0, 0, 0, 1, 0, 0, 0.5, 30); "xz" means PlayDemo(0, 0, 0, 1, 0, 
+									1, 1, 0); "10" means PlayDemo(0, 0, 0, 0, 1, 0, 10, 0);<br>
+								You can even use "true" or "false".&nbsp; "true" means PlayDemo(0, 0, 0, 0, 1, 
+								0, 1).
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::PlayDemo">PlayDemo</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Selection'><strong>Selection&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Selection"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a selection object with which you can access 
+								all selected atoms and bonds.
+								<li>
+									<strong>Return</strong>: [ <a href='#Selection'>Selection</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::SetControlParameter'><strong>SetControlParameter</strong></a>
+							(string pParamName, string pParamStringVal, long paramIntVal)<ul>
+								<li>
+									<strong>Remark</strong>: CambridgeSoft reserved.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>pParamName</em>: [ string ]
+										<li>
+											<em>pParamStringVal</em>: [ string ]
+										<li>
+											<em>paramIntVal</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::SetData'><strong>SetData</strong></a>&nbsp;<A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong> : Same as <a href="#Chem3D::Data">Chem3D::Data</a>
+								<li>
+									<strong>Return</strong>: [ VARIANT ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>mimetype</em>: [ string ]</li>
+									</ul>
+								<li>
+									<b>See Also</b>: <a href="#Selection::Data">Selection::Data</a>, <a href="#Chem3D::DataURL">
+										DataURL</a>, <a href="#Chem3D::EncodeData">EncodeData</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Settings'><strong>Settings</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a Settings object with which you can change 
+								something like background color, label color, perspective mode etc.
+								<li>
+									<strong>Return</strong>: [ <a href='#Settings'>Settings</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::ShowContextMenu'><strong>ShowContextMenu</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether allow users right-click to access 
+								context menu.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::ShowRotationBar'><strong>ShowRotationBar</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show rotation bar.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::ShowToolbar'><strong>ShowToolbar</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate where to show toolbar or hide toolbar.
+								<li>
+									<strong>Return</strong>: [ <a href='#ShowToolbarOptions'>ShowToolbarOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Spin'><strong>Spin</strong></a>
+							(double axis_x1, double axis_y1, double axis_z1, double axis_x2, double 
+							axis_y2, double axis_z2, int degree)<ul>
+								<li>
+									<strong>Remark</strong>: Spin the model around axis (x1, y1, z1)-(x2, y2, 
+								z2) to make a movie.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>axis_x1</em>: [ double ]
+										<li>
+											<em>axis_y1</em>: [ double ]
+										<li>
+											<em>axis_z1</em>: [ double ]
+										<li>
+											<em>axis_x2</em>: [ double ]
+										<li>
+											<em>axis_y2</em>: [ double ]
+										<li>
+											<em>axis_z2</em>: [ double ]
+										<li>
+											<em>degree</em>: [ double ]</li>
+									</ul>
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::PlayMovie">PlayMovie</a>, <a href="#Chem3D::PlayDemo">
+										PlayDemo</a>, <a href="#Chem3D::Stop">Stop</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Stop'><strong>Stop</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Stop a movie or demo playing.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::PlayMovie">PlayMovie</a>, <a href="#Chem3D::PlayDemo">
+										PlayDemo</a>, <a href="#Chem3D::Spin">Spin</a>, <a href="#Chem3D::Rotation">Rotaion</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Surfaces'><strong>Surfaces&nbsp;</a><A href="#Pro"><FONT color="#ff0033"><SUP>[Pro]</SUP></FONT></A><A name="Chem3D::Surfaces"></STRONG></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a surface collection.
+								<li>
+									<strong>Return</strong>: [ <a href='#Surfaces'>Surfaces</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Chem3D'>Chem3D</a>::<a name='Chem3D::Version'><strong>Version</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the control's version string.&nbsp; For 
+								example: "Chem3D Pro Control 10.0".
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None
+								<li>
+									<b>See Also</b>: <a href="#Chem3D::IsProgrammable">IsProgrammable</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::Color'><strong>Color</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Object's RGB color.&nbsp; It's an integer.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::DisplayMode'><strong>DisplayMode</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Object's display mode.
+								<li>
+									<strong>Return</strong>: [ <a href='#ModelDisplayModes'>ModelDisplayModes</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::SetDefault'><strong>SetDefault</strong></a>
+							(boolean recursive)<ul>
+								<li>
+									<strong>Remark</strong>: Set all display setting to the default value.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>recursive</em>: [ boolean ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::ShowAtomDots'><strong>ShowAtomDots</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show atom dots.
+								<li>
+									<strong>Return</strong>: [ <a href='#Visibility'>Visibility</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::ShowLabel'><strong>ShowLabel</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show atom label.
+								<li>
+									<strong>Return</strong>: [ <a href='#Visibility'>Visibility</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::ShowSN'><strong>ShowSN</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show atom serial number.
+								<li>
+									<strong>Return</strong>: [ <a href='#Visibility'>Visibility</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::UseDefaultColor'><strong>UseDefaultColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate not to use the color defined in Color 
+								property, but use object's parent color.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#DisplyOption'>DisplyOption</a>::<a name='DisplyOption::Visible'><strong>Visible</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate object's visibility.
+								<li>
+									<strong>Return</strong>: [ <a href='#Visibility'>Visibility</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Atoms'><strong>Atoms</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an atom collection owned by this group.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atoms'>Atoms</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Bonds'><strong>Bonds</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a bond collection owned by this group.
+								<li>
+									<strong>Return</strong>: [ <a href='#Bonds'>Bonds</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Display'><strong>Display</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a display object with which you can change the 
+								group's display option.
+								<li>
+									<strong>Return</strong>: [ <a href='#DisplyOption'>DisplyOption</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Groups'><strong>Groups</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a child group collection owned by this group.
+								<li>
+									<strong>Return</strong>: [ <a href='#Groups'>Groups</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Name'><strong>Name</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the group's name.
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::ParentGroup'><strong>ParentGroup</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the parent group.
+								<li>
+									<strong>Return</strong>: [ <a href='#Group'>Group</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Group'>Group</a>::<a name='Group::Selected'><strong>Selected</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether this group is selected.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Groups'>Groups</a>::<a name='Groups::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the group count.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Groups'>Groups</a>::<a name='Groups::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a group by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Group'>Group</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Atom1'><strong>Atom1</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: The first atom composes the measurement.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Atom2'><strong>Atom2</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: The second atom composes the measurement.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Atom3'><strong>Atom3</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: The third atom composes the measurement.&nbsp; For 
+								a distance composed of two atoms, this property always return null.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Atom4'><strong>Atom4</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: The fourth atom composes the measurement.&nbsp; 
+								For a distance composed of two atoms and an angle composed of three atoms, this 
+								property always return null.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atom'>Atom</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Delete'><strong>Delete</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Delete this measurement.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Value'><strong>Value</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get the actual measured value: a distance, an 
+								angle or a dihedral angle.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurement'>Measurement</a>::<a name='Measurement::Visible'><strong>Visible</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate the visibility.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Angle'><strong>Angle</strong></a>
+							(<a href='#OcxPoint3D'>OcxPoint3D</a> p1, <a href='#OcxPoint3D'>OcxPoint3D</a> p0,
+							<a href='#OcxPoint3D'>OcxPoint3D</a> p2)<ul>
+								<li>
+									<strong>Remark</strong>: Measure the angle of three 3D points.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>p1</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>p0</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>p2</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Clear'><strong>Clear</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Clear all measurements defined in the model.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the measurement count.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::CreateAngle'><strong>CreateAngle</strong></a>
+							(<a href='#Atom'>Atom</a> angle1, <a href='#Atom'>Atom</a> apex, <a href='#Atom'>Atom</a>
+							angle2)<ul>
+								<li>
+									<strong>Remark</strong>: Create an angle measrement.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurement'>Measurement</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>angle1</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>apex</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>angle2</em>: [ <a href='#Atom'>Atom</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::CreateDihedral'><strong>CreateDihedral</strong></a>
+							(<a href='#Atom'>Atom</a> diheral1, <a href='#Atom'>Atom</a> axis1, <a href='#Atom'>
+								Atom</a> axis2, <a href='#Atom'>Atom</a> diheral2)<ul>
+								<li>
+									<strong>Remark</strong>: Create a dihedral measrement.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurement'>Measurement</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>diheral1</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>axis1</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>axis2</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>diheral2</em>: [ <a href='#Atom'>Atom</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::CreateDistance'><strong>CreateDistance</strong></a>
+							(<a href='#Atom'>Atom</a> atom1, <a href='#Atom'>Atom</a> atom2)<ul>
+								<li>
+									<strong>Remark</strong>: Create an distance measrement.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurement'>Measurement</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>atom1</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>atom2</em>: [ <a href='#Atom'>Atom</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Dihedral'><strong>Dihedral</strong></a>
+							(<a href='#OcxPoint3D'>OcxPoint3D</a> p1, <a href='#OcxPoint3D'>OcxPoint3D</a> axis_p1,
+							<a href='#OcxPoint3D'>OcxPoint3D</a> axis_p2, <a href='#OcxPoint3D'>OcxPoint3D</a>
+							p2)<ul>
+								<li>
+									<strong>Remark</strong>: Measure the dihedral angle of four 3D points.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>p1</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>axis_p1</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>axis_p2</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>p2</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Distance'><strong>Distance</strong></a>
+							(<a href='#OcxPoint3D'>OcxPoint3D</a> p1, <a href='#OcxPoint3D'>OcxPoint3D</a> p2)<ul>
+								<li>
+									<strong>Remark</strong>: Measure the distance of two 3D points.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>p1</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a>
+										]
+										<li>
+											<em>p2</em>: [ <a href='#OcxPoint3D'>OcxPoint3D</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Find'><strong>Find</strong></a>
+							(<a href='#Atom'>Atom</a> a1, <a href='#Atom'>Atom</a> a2, <a href='#Atom'>Atom</a>
+							a3, <a href='#Atom'>Atom</a> a4)<ul>
+								<li>
+									<strong>Remark</strong>: Find whether a measurement is defined in the 
+								model.&nbsp; To search distance or angle measurement, set a3 and a4 to null 
+								accordingly.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurement'>Measurement</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>a1</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>a2</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>a3</em>: [ <a href='#Atom'>Atom</a>
+										]
+										<li>
+											<em>a4</em>: [ <a href='#Atom'>Atom</a> ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Measurements'>Measurements</a>::<a name='Measurements::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a measurement by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Measurement'>Measurement</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbital'>Orbital</a>::<a name='Orbital::Energy'><strong>Energy</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the energy of a molecular orbital.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbital'>Orbital</a>::<a name='Orbital::Label'><strong>Label</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the lable of a molecular orbital.
+								<li>
+									<strong>Return</strong>: [ string ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbital'>Orbital</a>::<a name='Orbital::Type'><strong>Type</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the type of a molecular orbital.&nbsp; It 
+								could be HOMO, LUMO or unknown.
+								<li>
+									<strong>Return</strong>: [ <a href='#OrbitalTypes'>OrbitalTypes</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbitals'>Orbitals</a>::<a name='Orbitals::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the orbital count.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbitals'>Orbitals</a>::<a name='Orbitals::Current'><strong>Current</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get the current molecular orbital.
+								<li>
+									<strong>Return</strong>: [ <a href='#Orbital'>Orbital</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbitals'>Orbitals</a>::<a name='Orbitals::CurrentIndex'><strong>CurrentIndex</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the current molecular orbital index.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Orbitals'>Orbitals</a>::<a name='Orbitals::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an orbital by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Orbital'>Orbital</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#OcxPoint3D'>OcxPoint3D</a>::<a name='OcxPoint3D::X'><strong>X</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: X coordinate.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#OcxPoint3D'>OcxPoint3D</a>::<a name='OcxPoint3D::Y'><strong>Y</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Y coordinate.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#OcxPoint3D'>OcxPoint3D</a>::<a name='OcxPoint3D::Z'><strong>Z</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Z coordinate.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Selection'>Selection</a>::<a name='Selection::Atoms'><strong>Atoms</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an atom collection which include all selected 
+								atoms.
+								<li>
+									<strong>Return</strong>: [ <a href='#Atoms'>Atoms</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Selection'>Selection</a>::<a name='Selection::Bonds'><strong>Bonds</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a bond collection which include all selected 
+								bonds.
+								<li>
+									<strong>Return</strong>: [ <a href='#Bonds'>Bonds</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Selection'>Selection</a>::<a name='Selection::Clear'><strong>Clear</strong></a>
+							()<ul>
+								<li>
+									<strong>Remark</strong>: Clear all selected objects.
+								<li>
+									<strong>Return</strong>: None
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Selection'>Selection</a>::<a name='Selection::Data'><STRONG>Data&nbsp;</STRONG></a><A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="Selection::Data"></A><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Same thing as <a href="#Chem3D::Data">Chem3D::Data</a>, 
+								but returning data only for selection.
+								<li>
+									<strong>Return</strong>: [ VARIANT ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>mimetype</em>: [ string ]</li>
+									</ul>
+								<li>
+									<b>See Also</b>: <a href="#Selection::GetData">Selection::GetData</a></li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Selection'>Selection</a>::<a name='Selection::GetData'><strong>GetData</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong> : Same as <a href="#Selection::Data">Selection::Data</a>
+								<li>
+									<strong>Return</strong>: [ VARIANT ]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>mimetype</em>: [ string ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::AlphaHelixColor'><strong>AlphaHelixColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set alpha helix color for biological 
+									molecules. This is used only when <a href="#DisplyOption::DisplayMode">DisplayMode</a>
+								set to Ribbons or Cartoons.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::AtomDotsDensity'><strong>AtomDotsDensity</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set atom dots density size.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::AtomLabelColor'><strong>AtomLabelColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set atom labels' color.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::AtomSize'><strong>AtomSize</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set atoms' size.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BackgroundBrightness'><strong>BackgroundBrightness</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set background brightness.&nbsp; This is used 
+									only when <a href="#Settings::BackgroundEffect">BackgroundEffect</a>
+								is not set to solid.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BackgroundColor'><strong>BackgroundColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set background color.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BackgroundColor2'><strong>BackgroundColor2</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set the second background color. This is used 
+									only when <a href="#Settings::BackgroundEffect">BackgroundEffect</a>
+								is not set to solid.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BackgroundEffect'><strong>BackgroundEffect</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set background effect.
+								<li>
+									<strong>Return</strong>: [ <a href='#BackgroundEffects'>BackgroundEffects</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BetaSheetColor'><strong>BetaSheetColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set beta sheet color for biological molecules. 
+									This is used only when <a href="#DisplyOption::DisplayMode">DisplayMode</a>
+								set to Ribbons or Cartoons.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::BondSize'><strong>BondSize</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set bonds' size.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::CoilColor'><strong>CoilColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set coil color for biological molecules. This 
+									is used only when <a href="#DisplyOption::DisplayMode">DisplayMode</a>
+								set to Ribbons or Cartoons.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ColorBy'><strong>ColorBy</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set color by model.
+								<li>
+									<strong>Return</strong>: [ <a href='#ColorByOptions'>ColorByOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::DepthFading'><strong>DepthFading</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show model in depth-fading mode.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::LigandDisplayMode'><strong>LigandDisplayMode</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set ligands' display model for biological 
+								molecules.
+								<li>
+									<strong>Return</strong>: [ <a href='#ModelDisplayModes'>ModelDisplayModes</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::NucliecAcidColor'><strong>NucliecAcidColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set nucliec acid color for biological 
+									molecules. This is used only when <a href="#DisplyOption::DisplayMode">DisplayMode</a>
+								set to Ribbons or Cartoons.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::Perspective'><strong>Perspective</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show model in perspective mode.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::PixelsPerAngstram'><strong>PixelsPerAngstram</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: This property controls the model's displaying 
+								size.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowHydrogen'><strong>ShowHydrogen</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show hydrogen atoms.
+								<li>
+									<strong>Return</strong>: [ <a href='#ShowHydrogenOptions'>ShowHydrogenOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowHydrogenBond'><strong>ShowHydrogenBond</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show hydrogen bonds.
+								<li>
+									<strong>Return</strong>: [ <a href='#HydrogenBondOptions'>HydrogenBondOptions</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowLonePair'><strong>ShowLonePair</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show long pairs.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowModelAxis'><strong>ShowModelAxis</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show model axis.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowRedBlue'><strong>ShowRedBlue</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show model in red-blue mode.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowStereoPair'><strong>ShowStereoPair</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show in stereo pair mode.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::ShowViewAxis'><strong>ShowViewAxis</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate whether show view axis.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Settings'>Settings</a>::<a name='Settings::SolventDisplayMode'><strong>SolventDisplayMode</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set solvent display mode for biological 
+								molecules.
+								<li>
+									<strong>Return</strong>: [ <a href='#ModelDisplayModes'>ModelDisplayModes</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Color'><strong>Color</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set surface's color.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Color2'><strong>Color2</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set surface's second color. When a surface has 
+									two sections, e.g. a molecular surface has positive and negative parts, <a href="#Surface::Color">
+										Color</a>
+								and Color2 are both used to specify the surface's color.
+								<li>
+									<strong>Return</strong>: [ ColorRGB ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::DisplayMode'><strong>DisplayMode</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set surface's displaying mode.
+								<li>
+									<strong>Return</strong>: [ <a href='#SurfaceDisplayModes'>SurfaceDisplayModes</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::MappingColor'><strong>MappingColor</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set surface's mapping color.
+								<li>
+									<strong>Return</strong>: [ <a href='#SurfaceMappingColor'>SurfaceMappingColor</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Orbitals'><strong>Orbitals</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get an orbital collection including all molecular 
+								orbitals.
+								<li>
+									<strong>Return</strong>: [ <a href='#Orbitals'>Orbitals</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Radius'><strong>Radius</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set the detecting probe's radius to 
+								producing the surface.
+								<li>
+									<strong>Return</strong>: [ double ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Resolution'><strong>Resolution</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Get and set the surface's resolution.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surface'>Surface</a>::<a name='Surface::Visible'><strong>Visible</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read/Write
+								<li>
+									<strong>Remark</strong>: Indicate the surface's visibility.
+								<li>
+									<strong>Return</strong>: [ boolean ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surfaces'>Surfaces</a>::<a name='Surfaces::Count'><strong>Count</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the surface count.
+								<li>
+									<strong>Return</strong>: [ int ]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surfaces'>Surfaces</a>::<a name='Surfaces::Current'><strong>Current</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get the current visible surface.
+								<li>
+									<strong>Return</strong>: [ <a href='#Surface'>Surface</a>
+								]
+								<li>
+									<strong>Parameters</strong>: None</li></ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a href='#Surfaces'>Surfaces</a>::<a name='Surfaces::Item'><strong>Item</strong></a><ul>
+								<li>
+									<strong>Property</strong>: Read Only
+								<li>
+									<strong>Remark</strong>: Get a surface by an index.
+								<li>
+									<strong>Return</strong>: [ <a href='#Surface'>Surface</a>
+								]
+								<li>
+									<strong>Parameters</strong><ul>
+										<li>
+											<em>Index</em>: [ long ]</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<hr>
+					<p><strong><a name='enum'>Chem3D ActiveX/Plugin Customized Type</a></strong></p>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='AxisOptions'>AxisOptions</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A>&nbsp;<ul>
+								<li>
+								AxisX
+								<li>
+								AxisY
+								<li>
+									AxisZ</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='BackgroundEffects'>BackgroundEffects</a><ul>
+								<li>
+								Solid
+								<li>
+								Sunrise
+								<li>
+								Sunset
+								<li>
+								SunsetOverSea
+								<li>
+								SeaAndSky
+								<li>
+								Left
+								<li>
+								Right
+								<li>
+								Middle
+								<li>
+								DualSides
+								<li>
+								DiagonalUpRight
+								<li>
+								DiagonalDownLeft
+								<li>
+								DiagonalSlash
+								<li>
+								ReversedSlash
+								<li>
+								DiagonalUpLeft
+								<li>
+								DiagonalDownRight
+								<li>
+								Backslash
+								<li>
+								ReversedBackslash
+								<li>
+								DownLeftCorner
+								<li>
+								DownRightCorner
+								<li>
+								UpRightCorner
+								<li>
+								UpLeftCorner
+								<li>
+								Diamond
+								<li>
+									ReversedDiamond</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='BondOrders'>BondOrders</a><ul>
+								<li>
+								SingleBond = 1
+								<li>
+								DoubleBond
+								<li>
+									TripleBond</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='ColorByOptions'>ColorByOptions</a><ul>
+								<li>
+								Monochrome
+								<li>
+								ByElement
+								<li>
+								ByGroup
+								<li>
+								ByDepth
+								<li>
+								ByChain
+								<li>
+									ByPartialCharge</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='DemoModeOptions'>DemoModeOptions</a>&nbsp;<A href="#ActiveX"><FONT color="#ff0033"><SUP>[ActiveX]</SUP></FONT></A><A name="DemoModeOptions">
+							</A>
+							<ul>
+								<li>
+								DemoStatic
+								<li>
+								DemoSpin
+								<li>
+									DemoRock</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='HydrogenBondOptions'>HydrogenBondOptions</a><ul>
+								<li>
+								HideHydrogenBond
+								<li>
+								ShowIntermolecular
+								<li>
+									ShowAllHydrogenBond</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='ModelDisplayModes'>ModelDisplayModes</a><ul>
+								<li>
+								DefaultMode
+								<li>
+								WireFrame
+								<li>
+								Sticks
+								<li>
+								BallStick
+								<li>
+								CylindricalBonds
+								<li>
+								SpaceFilling
+								<li>
+								Ribbons
+								<li>
+									Cartoons</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='OrbitalTypes'>OrbitalTypes</a><ul>
+								<li>
+								OrbitalUnknown
+								<li>
+								OrbitalHOMO
+								<li>
+									OrbitalLUMO</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='ShowHydrogenOptions'>ShowHydrogenOptions</a><ul>
+								<li>
+								HideHydrogen
+								<li>
+								ShowAllHydrogen
+								<li>
+									ShowPolarHydrogen</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='ShowToolbarOptions'>ShowToolbarOptions</a><ul>
+								<li>
+								HideToolbar
+								<li>
+								ShowToolbarLeft
+								<li>
+								ShowToolbarTop
+								<li>
+								ShowToolbarRight
+								<li>
+									ShowToolbarBottom</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='SurfaceDisplayModes'>SurfaceDisplayModes</a><ul>
+								<li>
+								SolidSurface
+								<li>
+								WireMeshSurface
+								<li>
+								DotsSurface
+								<li>
+									TranslucentSurface</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href='#objects'>[Index]</a> <a name='SurfaceMappingColor'>SurfaceMappingColor</a><ul>
+								<li>
+								MapMonochrome
+								<li>
+								MapAtomColor
+								<li>
+								MapElementColor
+								<li>
+								MapGroupColor
+								<li>
+								MapHydrophobicColor
+								<li>
+								MapPartialChargeColor
+								<li>
+								MapPotentialColor
+								<li>
+								MapSpinDensityColor
+								<li>
+									MapOrbitalColor</li>
+							</ul>
+						</li>
+					</ul>
+					<UL>
+						<LI>
+							<a href='#objects'>[Index]</a> <a name='Visibility'>Visibility</a>
+							<UL>
+								<li>
+								Invisible
+								<li>
+								Visible
+								<li>
+									Default</li></UL>
+						</LI>
+					</UL>
+					<hr>
+					<P><A name="Pro"><FONT color="#ff0033"><SUP><U>[Pro]</U></SUP></FONT></A>&nbsp;means 
+						this property or methods is only available for Chem3D Pro ActiveX/Plugin.&nbsp; 
+						You can programmatically detect this by calling <A href="#Chem3D::IsProgrammable">Chem3D::IsProgrammable</A>.</P>
+					<P>&nbsp;<A name="ActiveX"><FONT color="#ff0033"><SUP><U>[ActiveX]</U></SUP></FONT></A>&nbsp;Means 
+						this property or methods is only available for Chem3D ActiveX control, not for 
+						Plugin.</P>
+					<P>Return to <A href="#objects">[Index]</A>
+					</P>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

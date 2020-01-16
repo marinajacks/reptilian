@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<classes>
+	<class value="ReactionStep">
+		<method>
+			<OldMethodName value="Formula"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Formula"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="balanceReaction" type="bool"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="balanceReaction" type="bool"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="balanceReaction" type="bool"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="Reactants"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Reactants"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionStep.Reactants is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="FormulaHTML"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="FormulaHTML"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionStep.FormulaHTML is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Products"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Products"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionStep.Products is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+	<class value="Atom">
+		<method>
+			<OldMethodName value="CdxIdAsReadFromFile"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="CdxIdAsReadFromFile"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.CdxIdAsReadFromFile is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="CdxIdAsWrittenToFile"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="CdxIdAsWrittenToFile"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.CdxIdAsWrittenToFile is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="DisplayName"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Name"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.DisplayName is changed to Property Atom.Name"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetCartesian"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GetCartesian"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetElement"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Element"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.GetElement is changed to Property Element"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetRadical"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Radical"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.GetRadical is changed to Property Radical"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetFormalCharge"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="FormalCharge"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.GetFormalCharge is changed to Property FormalCharge"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="ID"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ID"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.ID is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="SetElement"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SetElement"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Atom.SetElement is changed to Property Element"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="element" type="Element"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="element" type="Element"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="element" type="Element"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="SetCartesian"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SetCartesian"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="p" type="point"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="p" type="point"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="p" type="point"/>
+			</OldMethodArgsForDotnet>
+		</method>
+	</class>
+	
+	<class value="CombiChem">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+	-->
+		<method>
+			<OldMethodName value="NumberOfPermutations"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumberOfPermutations"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="CombiChem.NumberOfPermutations is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+	
+	<class value="Bond">
+		<method>
+			<OldMethodName value="Atom1"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Atom1"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.Atom1 is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Atom2"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Atom2"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.Atom2 is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="DisplayName"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Name"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.DisplayName is changed to Property Name"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="ExchangeAtoms"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ExchangeAtoms"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetBondOrder"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Order"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.GetBondOrder is changed to Property Order"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="SetBondOrder"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Order"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.SetBondOrder is changed to Property Order"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="order" type="BondOrder"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="order" type="BondOrder"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="order" type="BondOrder"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="GetGStereo"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GStereo"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.GetGStereo is changed to Property GStereo"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="SetGStereo"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GStereo"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.SetGStereo is changed to Property GStereo"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="gStereo" type="BondGStereo"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="gStereo" type="BondGStereo"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="gStereo" type="BondGStereo"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="GetReactionStatus"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ReactionStatus"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.GetReactionStatus is changed to Property ReactionStatus"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="OtherAtom"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="OtherAtom"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value=""/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+	
+		
+	<class value="Isotope">
+		<method>
+			<OldMethodName value="AbundancePercent"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="AbundancePercent"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Isotope.AbundancePercent is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Mass"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Mass"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Isotope.Mass is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="MassNumber"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="MassNumber"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Isotope.MassNumber is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Symbol"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Symbol"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Isotope.Symbol is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+	
+	<class value="PeriodicTable">
+	<!--
+		Nothing changed in this class
+		Do nothing here
+	-->
+	</class>
+
+	<class value="Point">
+	<!--
+		two method added.
+		static double Angle(const Point& p1, const Point& p0, const Point& p2);
+		static double DihedralAngle(const Point& p1, const Point& axis1, const Point& axis2, const Point& p2);
+		
+		other method remains the same.
+	-->
+	</class>
+
+	<class value="LargestCommonSubstructure">
+	<!--
+		Nothing changed in this class
+		Do nothing here
+	-->
+	</class>
+
+	<class value="RDFileReader">
+	<!--
+		only changed api listed here.
+	-->
+		<method>
+			<OldMethodName value="Count"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Count"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="RDFileReader.Count is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetNumberOfRecordsRead"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GetNumberOfRecordsRead"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="RDFileReader.GetNumberOfRecordsRead is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetPercentComplete"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="PercentComplete"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="RDFileReader.GetPercentComplete is changed to Property PercentComplete"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="RDFileWriter">
+	<!--
+		one method added.
+		OpenFile
+		
+		other method remains the same.
+		
+		default constructor deprecated
+	-->
+		<method>
+			<OldMethodName value="RDFileWriter"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="RDFileWriter.OpenFile"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="RDFileWriter's constructor is disabled, use RDFileWriter.OpenFile() instead."/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="filename" type="std::string"/>
+				<arg name="append" type="bool"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="filename" type="string"/>
+				<arg name="append" type="bool"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="filename" type="string"/>
+				<arg name="append" type="bool"/>
+			</OldMethodArgsForDotnet>
+		</method>
+	
+	</class>
+
+	<class value="Element">
+		<method>
+			<OldMethodName value="AtomicNumber"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="AtomicNumber"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.AtomicNumber is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="AverageMass"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="AverageMass"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.AverageMass is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="BP"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="BP"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.BP is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="CommonIsotope"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="CommonIsotope"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.CommonIsotope is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Density"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Density"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.Density is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="DiscoveredBy"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="DiscoveredBy"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.DiscoveredBy is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Eneg"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Eneg"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.Eneg is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="ExactMass"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ExactMass"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.ExactMass is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="FullName"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="FullName"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.FullName is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="IP"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="IP"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.IP is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="IsotopeMassNumber"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="IsotopeMassNumber"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.IsotopeMassNumber is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="MP"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="MP"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.MP is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Radius"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Radius"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.Radius is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Symbol"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Symbol"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Element.Symbol is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Isotopes"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Isotopes"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value=""/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp>
+				<arg name="inputFilePath" type="std::string"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="inputFilePath" type="string"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="inputFilePath" type="string"/>
+			</OldMethodArgsForDotnet>
+		</method>
+	</class>
+
+	<class value="ReactionData">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+		
+		new api, 4 methods added.
+		LoadFile
+		ReadFile
+		ReadData
+		ReactionBondMap
+
+	-->
+		<method>
+			<OldMethodName value="AtomByAtomMapReaction"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ReactionAtomMap"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.AtomByAtomMapReaction is changed to ReactionAtomMap"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Components"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Components"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.Components is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Intermediates"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Intermediates"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.Intermediates is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Products"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Products"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.Products is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Reactants"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Reactants"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.Reactants is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Steps"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Steps"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="ReactionData.Steps is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="Ring">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+	-->
+		<method>
+			<OldMethodName value="List"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="List"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="WARNING: Ring.List deleted in ChemScript 13."/>
+			<MethodNotProcessComment value="If this List is not a member of Ring object, please ignore this warning."/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="RingInfo">
+	<!--
+		Nothing changed in this class
+		Do nothing here
+	-->
+	</class>
+
+	<class value="SaltTable">
+	<!--
+		Nothing changed in this class
+		Do nothing here
+	-->
+	</class>
+
+	<class value="SDFileReader">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+		
+		1 method added
+		static SDFileReader OpenFile(filename)
+	-->
+		<method>
+			<OldMethodName value="SDFileReader"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SDFileReader.OpenFile"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="WARNING: SDFileReader constructor is deprecated."/>
+			<MethodNotProcessComment value="Please use SDFileReader.OpenFile(f) instead."/>
+			<OldMethodArgsForCpp>
+				<arg name="inputFilePath" type="std::string"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="inputFilePath" type="string"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="inputFilePath" type="string"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="SDFileReader"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SDFileReader"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value="WARNING: SDFileReader constructor is deprecated."/>
+			<MethodNotProcessComment value="Please use SDFileReader.OpenFile(f) instead."/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Count"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Count"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="SDFileReader.Count is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetNumberOfRecordsRead"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumberOfRecordsRead"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="SDFileReader.GetNumberOfRecordsRead is changed to Property NumberOfRecordsRead"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetPercentComplete"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GetPercentComplete"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="SDFileReader.GetPercentComplete is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="SDFileWriter">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+		
+		1 method added
+		static SDFileWriter OpenFile(filename, isAppend)
+	-->
+		<method>
+			<OldMethodName value="SDFileWriter"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SDFileWriter.OpenFile"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="WARNING: SDFileWriter constructor is deprecated."/>
+			<MethodNotProcessComment value="Please use SDFileWriter.OpenFile(f) instead."/>
+			<OldMethodArgsForCpp>
+				<arg name="inputFilePath" type="std::string"/>
+				<arg name="isAppend" type="bool"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="inputFilePath" type="string"/>
+				<arg name="isAppend" type="bool"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="inputFilePath" type="string"/>
+				<arg name="isAppend" type="bool"/>
+			</OldMethodArgsForDotnet>
+		</method>
+		<method>
+			<OldMethodName value="SDFileWriter"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SDFileWriter"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="0"/>
+			<MethodNotProcessReason value="WARNING: SDFileWriter constructor is deprecated."/>
+			<MethodNotProcessComment value="Please use SDFileWriter.OpenFile(f) instead."/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="SearchQuery">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+	-->
+		<method>
+			<OldMethodName value="GetAtomMapCount"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="AtomMapCount"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="SearchQuery.GetAtomMapCount is changed to Property AtomMapCount"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="Vector">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+	-->
+		<method>
+			<OldMethodName value="Length"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Length"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="SearchQuery.Length is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="Topology">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+		
+		1 method added: 
+		GetAtomIndex
+
+	-->
+		<method>
+			<OldMethodName value="BalabanIndex"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="BalabanIndex"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.BalabanIndex is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="CyclomaticNumber"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="CyclomaticNumber"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.CyclomaticNumber is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Diameter"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Diameter"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.Diameter is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="NumOfChainBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumOfChainBonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.NumOfChainBonds is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="NumOfLinkingChainBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumOfLinkingChainBonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.NumOfLinkingChainBonds is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="NumOfRingBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumOfRingBonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.NumOfRingBonds is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="NumOfRotatableBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumOfRotatableBonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.NumOfRotatableBonds is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="NumOfTerminalBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="NumOfTerminalBonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.NumOfTerminalBonds is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="PolarSurfaceArea"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="PolarSurfaceArea"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.PolarSurfaceArea is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="Radius"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Radius"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.Radius is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="ShapeCoefficient"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ShapeCoefficient"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.ShapeCoefficient is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="SumOfDegrees"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SumOfDegrees"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.SumOfDegrees is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="SumOfValenceDegrees"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="SumOfValenceDegrees"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.SumOfValenceDegrees is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="TopologicalIndex"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="TopologicalIndex"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.TopologicalIndex is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="TotalConnectivity"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="TotalConnectivity"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.TotalConnectivity is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="TotalValenceConnectivity"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="TotalValenceConnectivity"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.TotalValenceConnectivity is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="WienerIndex"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="WienerIndex"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Topology.WienerIndex is changed to Property"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+
+	<class value="StructureData">
+	<!--
+		This class is not complete all functions.
+		Only changed functions are generated.
+		
+		!!!!!NOT FINISHED!!!!!
+	-->
+		<method>
+			<OldMethodName value="GetBonds"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Bonds"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="StructureData.GetBonds is changed to Property Bonds"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetAtoms"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Atoms"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="StructureData.GetAtoms is changed to Property Atoms"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GetReactionStatus"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ReactionStatus"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="Bond.GetReactionStatus is changed to Property ReactionStatus"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="ReadFile"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="ReadFromFile"/>
+			<NewMethodType value="1"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="3 params"/>
+			<MethodNotProcessComment value="instead."/>
+			<OldMethodArgsForCpp>
+				<arg name="inputFilePath" type="std::string"/>
+				<arg name="inputFilePath1" type="std::string"/>
+				<arg name="inputFilePath3" type="std::string"/>
+			</OldMethodArgsForCpp>
+			<OldMethodArgsForPython>
+				<arg name="inputFilePath" type="string"/>
+				<arg name="inputFilePath1" type="std::string"/>
+				<arg name="inputFilePath3" type="std::string"/>
+			</OldMethodArgsForPython>
+			<OldMethodArgsForDotnet>
+				<arg name="inputFilePath" type="string"/>
+				<arg name="inputFilePath1" type="std::string"/>
+				<arg name="inputFilePath3" type="std::string"/>
+			</OldMethodArgsForDotnet>
+		</method>
+	</class>
+	<class value="BondOrder">
+		<method>
+			<OldMethodName value="Name"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Name"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="BondOrder.Name is changed to Property Name"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="BondSymbol"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="BondSymbol"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="BondOrder.BondSymbol is changed to Property BondSymbol"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+	<class value="BondGStereo">
+		<method>
+			<OldMethodName value="Name"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="Name"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="BondGStereo.Name is changed to Property Name"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+		<method>
+			<OldMethodName value="GStereoCode"/>
+			<OldMethodType value="1"/>
+			<NewMethodName value="GStereoCode"/>
+			<NewMethodType value="2"/>
+			<MethodMd5 value=""/>
+			<BMethodTobeProcced value="1"/>
+			<MethodNotProcessReason value="BondGStereo.GStereoCode is changed to Property GStereoCode"/>
+			<MethodNotProcessComment value=""/>
+			<OldMethodArgsForCpp />
+			<OldMethodArgsForPython />
+			<OldMethodArgsForDotnet />
+		</method>
+	</class>
+</classes>

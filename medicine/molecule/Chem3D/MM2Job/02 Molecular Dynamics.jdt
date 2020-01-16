@@ -1,0 +1,12 @@
+MM2 Job Type
+Menu Name: Molecular Dynamics
+Current Options Tab: 2
+Job Type: Molecular Dynamics
+Minimum RMS Gradient: 0.00000
+Step Interval: 2.00003
+Frame Interval: 10
+Has Terminate Dynamics
+Terminate Steps: 10000
+Is Heating
+Heating Rate: 1.00002
+Target Temperature: 300

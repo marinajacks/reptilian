@@ -1,0 +1,360 @@
+<html>
+    <head>
+        <title>CS ChemScript 14 Getting Started</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    </head>
+
+<body>
+<h2><font color="#336699" face="Arial" size="6">CS ChemScript 14</font></h2>
+<p>&nbsp;</p>
+<p><b><font face="Arial" size="6">Introduction</font></b></p>
+<p><font face="Arial">ChemScript is a chemical programming environment that
+extends the Python scripting language (also available for .NET).&nbsp; ChemScript takes many of the
+CambridgeSoft “chemical intelligence” algorithms that are available throughout
+our products, and makes them available to users through an object model in an
+easy to use scripting language.&nbsp; This enables users to create their own chemistry
+business rules and execute those rules on their data in a batch mode.</font></p>
+<p><b><font face="Arial" size="4">ChemScript Functionality</font></b></p>
+<p><font face="Arial">Functionality in ChemScript Enterprise is divided into two
+levels.&nbsp; At one level, ChemScript provides access to a chemistry object model
+that includes the objects and attributes shown below in Table 1.</font></p>
+<table id="table5" border="1" bordercolor="#000000" cellpadding="3" cellspacing="0" width="82%">
+	<tr>
+		<td bgcolor="#c0c0c0" width="215"><b><font face="Arial">Object Class</font></b></td>
+		<td bgcolor="#c0c0c0"><b><font face="Arial">Functionality and Attributes</font></b></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Atom</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Chemical element, charge, bonds
+		to neighboring atoms, drawing coordinates, 3D coordinates (if
+		available), stereochemistry, etc.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Bond</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Bonded atoms, bond order, etc.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">StructureData</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">A chemical connection table
+		which can represent one or more molecular fragments.&nbsp; This class
+		also includes file I/O capabilities and other advanced chemistry
+		functionality such as stereochemistry.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">ReactionData</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">A chemical reaction with one or
+		more steps.</font></td>
+	</tr>
+</table>
+<p><b><font face="Arial" size="2">Table 1: Basic object classes in the chemistry object
+model<br>
+&nbsp;</font></b></p>
+<p><font face="Arial">These objects provide an easy-to-use interface to chemical
+data for programmatic manipulation. The higher-level functionality of ChemScript
+is composed of various functions and algorithms that are built on top of the
+basic object model.&nbsp; ChemScript provides a core set of high-level features
+that
+will be further developed in future versions of the product, based
+on the needs of our customers. Some examples of higher level functionality are
+included in Table 2.</font></p>
+<table id="table6" border="1" bordercolor="#000000" cellpadding="3" cellspacing="0" width="80%">
+	<tr>
+		<td bgcolor="#c0c0c0" width="215"><b><font face="Arial">Functionality</font></b></td>
+		<td bgcolor="#c0c0c0"><b><font face="Arial">Description</font></b></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Template Based
+		Normalization</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Enforce standard
+		representations of functional group structures in chemical data.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Template Based
+		Product Generation</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Automatic generation of
+		products from a set of reactants and a generically defined reaction.&nbsp;
+		For example, reactions like those between amines and carboxylates.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Substructure
+		Identification and Mapping</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Atom by atom comparison of a
+		molecule with a substructure. Positive matching provides an atom-by-atom
+		map of the substructure atoms to those in the molecule.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Salt Stripping</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Removal of salts from a
+		reaction based on a pre-defined list of salt fragments.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Structure
+		Orientation</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Enforce standard orientation of
+		structures based on the established orientation of a common scaffold.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">2D Structure
+		Generation and Cleanup</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Use ChemDraw-based algorithms
+		to provide structure diagram generation from scratch or after
+		programmatic modification of chemical data</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Canonical Codes</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Generation of unique
+		identifying codes from a chemical structure.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">File Format
+		Conversion</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Reading and writing of file
+		data using all CambridgeSoft supported file formats (CDX, CDXML, MOL,
+		CHM, SKC, SMILES, etc.)</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Name and
+		Structure Conversion</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Generation of a chemical
+		structure from a chemical name, and generation of a chemical name from a
+		chemical structure. *</font></td>
+	</tr>
+	<tr>
+		<td bgcolor="#99ccff" width="215"><font face="Arial">Molecular
+		Mechanics</font></td>
+		<td bgcolor="#99ccff"><font face="Arial">Optimize molecular structures
+		using the MM2 force-field.</font></td>
+	</tr>
+</table>
+<p><font face="Arial" size="1">* Premium functionality which may be licensed at
+a higher price-point</font></p>
+<p><b><font face="Arial" size="2">Table 2: Examples of the higher level functionality
+available from ChemScript<br>
+</font></b><font face="Arial"><br>
+<br>
+In addition to using pre-built higher level functionality, ChemScript users can create their own higher level functions and algorithms on
+top of the basic object module.</font></p>
+<p><b><font face="Arial" size="4">About Python</font></b></p>
+<p><font face="Arial">Python is a nonproprietary and widely used language that provides
+clear syntax, object-oriented programming, dynamic data typing, and high
+performance across a broad range of systems including Windows and popular
+versions of UNIX and Linux.&nbsp; The initial release of ChemScript is designed for the
+Windows platform.&nbsp; However, future
+versions of ChemScript will be available for UNIX and Linux. CambridgeSoft will
+be continually evaluating the needs of its customers and future versions of
+ChemScript will include customer-requested enhancements.</font></p>
+<p><font face="Arial">At this time, ChemScript is compatible with Python version
+2.5, 2.6, 3.1, and 3.2.&nbsp; CambridgeSoft provides the latest compatible version of
+Python along with ChemScript.&nbsp; It is also possible to install ChemScript onto an
+already existing installation of Python, providing that the version Python is
+compatible with ChemScript.&nbsp; </font></p>
+<p><font face="Arial">The Python community has developed a rich set of
+extensions to Python, freely available at the Python home website.&nbsp; These extensions provide
+database connectivity, server-side web functionality, numeric processing,
+language interop, GUI features, and just about anything else that is needed for
+rapid development of modern software.</font></p>
+<p><font face="Arial">You can find more information on Python at:&nbsp; <a href="http://www.python.org">
+http://www.python.org</a>.&nbsp; In addition, there are many good books about the
+Python language, including <i>Learning Python</i> and <i>Python in a Nutshell</i>,
+both of which are available from O'Reilly Press.</font></p>
+<p><b><font face="Arial" size="4">Learning ChemScript</font></b></p>
+<p><font face="Arial">This documentation provides a basic introduction to
+ChemScript.&nbsp; A later part of this document offers several examples of ChemScript programs
+that perform simple but useful tasks.&nbsp; Each example includes a brief
+explanation and the ChemScript functionality that is used.&nbsp; So, to write more sophisticated programs with
+ChemScript, you may find it necessary to study the language in moderate
+detail.&nbsp; </font></p>
+<p><font face="Arial">The last part of the documentation references the
+ChemScript API guide.&nbsp; This guide describes all of the classes, attributes, and methods
+that are
+available in ChemScript.</font></p>
+<p>&nbsp;</p>
+<p><b><font face="Arial" size="6">Getting Up and Running</font></b></p>
+<p><b><font face="Arial" size="4">Installing ChemScript and Python</font></b></p>
+<p><font face="Arial">To install ChemScript on your computer, double-click to execute the ChemScript installer that
+has been provided in the
+distribution.&nbsp; Once installed, ChemScript will place a folder underneath the Windows Start
+menu.&nbsp; This folder contains
+a variety of documents and example files.</font></p>
+<p><b><font face="Arial" size="4">Creating and Running a Script</font></b></p>
+<p><font face="Arial">You can create ChemScript programs using any text editor.&nbsp;
+The Windows version of Python provides an Integrated Development Environment
+called &quot;IDLE&quot;, an easy-to-use system that you can use to edit,
+execute, and debug&nbsp; Python programs.&nbsp; Using IDLE is an effective way to develop
+ChemScript programs.&nbsp; Other development environments are also
+available for Python, including <i>
+<a href="http://www.activestate.com/Products/ActivePython/">ActivePython</a>, </i>
+which provides more advanced functionality than the standard Python
+distribution.&nbsp; You can even develop simple Python programs using
+an editor such as Windows NotePad.&nbsp; Once created, Python programs can be launched from
+the command line, or by double-clicking on the script's Windows icon.<br><br>
+For the .NET version the library <font face="Courier">"CambridgeSoft.ChemScript14.dll" </font><font face="Arial">
+must be referenced in the project.
+&nbsp;This library is located in the </font>
+<font face="Courier">.NET</font><font face="Arial"> directory inside of the ChemScript
+installation directory.&nbsp; For a default installation, this directory may be
+found at:</font></p>
+<p><font face="Arial" size="2">For Windows 32-bit system:</font><br>
+<b><font face="Arial" size="2">C:\Program Files\CambridgeSoft\ChemOffice2014\ChemScript\Lib
+</font></b></p>
+<p><font face="Arial" size="2">For Windows 64-bit system:</font><br>
+<b><font face="Arial" size="2">C:\Program Files (x86)\CambridgeSoft\ChemOffice2014\ChemScript\Lib
+</font></b></p>
+<p>
+<b>Note:</b> When writing your own ChemScript .NET programs, it is highly recommended to call Dispose on disposable classes such as StructureData and collections of StructureData class where large number of structures are involved. Some examples that process large number of structures demonstrate the use of Dispose method to release unmanaged memory resources. Disposing memory can keep down the memory usage and can also improve script performance.
+</p>
+<p><b><font face="Arial" size="4">Running in Interactive Mode</font></b></p>
+<p><font face="Arial">You can also use Python in an interactive mode, similar to
+mathematical programs such as Maple or Mathematica.&nbsp; In interactive mode,
+you can type and execute statements one by one, and the results of the
+statements can then be examined by the user.&nbsp; You can start the interactive mode by
+double-clicking the Python.exe file in the Python distribution.&nbsp; This file is
+also available in the IDLE development environment.</font></p>
+<p>&nbsp;</p>
+<p><b><font face="Arial" size="6">ChemScript Examples</font></b></p>
+<p><font face="Arial">The ChemScript distribution includes a small set of simple
+example files that demonstrate some of the features of ChemScript.&nbsp; These files are located in the </font>
+<font face="Courier">Samples</font><font face="Arial"> directory inside of the ChemScript
+installation directory.&nbsp; For a default installation, this directory may be
+found at:</font></p>
+<p><font face="Arial" size="2">For Windows XP:</font><br>
+<b><font face="Arial" size="2">C:\Documents and Settings\All Users\Application Data\CambridgeSoft\ChemOffice2014\ChemScript\Examples
+</font></b></p>
+<p><font face="Arial" size="2">For Windows 7:</font><br>
+<b><font face="Arial" size="2">C:\ProgramData\CambridgeSoft\ChemOffice2014\ChemScript\Examples
+</font></b></p>
+
+<p><b><font face="Arial" size="2"></font></b></p>
+
+
+<p><font face="Arial">For .NET, the solution </font><font face="Courier">
+Samples.sln</font><font face="Arial"> with all the samples can be found in this folder.
+<br>Each example is completely contained in its own directory.&nbsp;
+The first example is located in the directory </font><font face="Courier">
+Example.001</font><font face="Arial">.&nbsp; The .NET project is located in the </font><font face="Courier">
+Example.001\NET</font><font face="Arial">&nbsp; folder.&nbsp; For each Python example, the script file
+is named </font><font face="Courier">script.py</font>
+<font face="Arial">.&nbsp;<br> Typically, inputdata is located in the &quot;Input&quot;
+directory underneath the example directory, and the script will create it's own output directory.</font></p>
+<p><font face="Arial">This section provides a brief explanation of what each
+example does.&nbsp; Follow the procedure to learn about the example files:</font></p>
+<ol>
+	<li><font face="Arial">Open the corresponding script file for examination. Python
+	scripts can be opened with a text editor.</font></li>
+	<li><font face="Arial">Read the explanations in this section while examining
+	the code.</font></li>
+	<li><font face="Arial">Examine the input files either in a text editor or in
+	a program such as ChemDraw or ChemFinder where the chemical structures may
+	be visually represented.</font></li>
+	<li><font face="Arial">Execute the script file.</font></li>
+	<li><font face="Arial">Examine the output files.</font></li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 1: Read a list of
+files, perform structure cleanup, write a list of files</span></p>
+<p><font face="Arial">This program introduces basic file I/O using the CDXML
+format.&nbsp; It also demonstrates the structure cleanup functionality that is
+available in ChemScript.&nbsp; The program reads a list of structure
+files, performs a structure cleanup, and writes the structures out as new files.&nbsp;
+For simplicity, the filenames are contained in an array.&nbsp; The program also
+deals with possible error conditions including non-existent files and bad data.&nbsp;
+When the program is executed these errors are intentionally triggered.</font></p>
+<p><font face="Arial">It is also possible to read and write chemical data using
+many other formats such as the MDL MOL format.&nbsp; This example illustrates
+how ChemScript can automatically figure out which data format is present by
+reading the input file and automatically interpreting the data
+format for writing by examining the filename extension.&nbsp; Although not
+present in this example, It is also possible to be more explicit and force
+ChemScript to use a particular data format for reading and writing chemical
+data.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 2: Read a list of
+files, write an SD file</span></p>
+<p><font face="Arial">This program demonstrates how to write an SD file using
+ChemScript.&nbsp;
+It also shows exception-based error handling, which must be explicitly enabled.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 3: Read an SD
+file, write a list of CDXML files</span></p>
+<p><font face="Arial">This program is essentially the reverse of example 2.&nbsp;
+It demonstrates the ability to read an SD file.&nbsp; In this example, the MIME
+type for data output is explicitly set to 'text/xml', which forces the
+generation of CDXML data in the output.&nbsp; The MIME types for other supported
+data formats are listed in the reference documentation.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 4: Read an SD
+file, filter based on substructure, write two SD files</span></p>
+<p><font face="Arial">This example demonstrates a simple application of the
+&quot;atom-by-atom&quot; substructure search in ChemScript.&nbsp; The program reads an SD file and filters structures into one of two output SD files based on
+whether the structure contains a phenyl group.&nbsp; It also shows the
+ability to read chemical data formatted as a SMILES string.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 5: Read two SD
+files, check for duplicates using canonical codes, write a single SD file</span></p>
+<p><font face="Arial">This example introduces the ability to compute the
+canonical code for a molecular structure.&nbsp; The canonical code does not vary
+with different representations of the same chemical structure, so it can be used
+to determine if two structures are chemically equivalent.</font></p>
+<p><font face="Arial">This example also introduces the Python Dictionary, which
+is an associative array.&nbsp; The dictionary maps a key to a value.</font></p>
+<p><font face="Arial">The program reads two SD files, and writes a single
+output SD file.&nbsp; The input files contain some duplicate structures.&nbsp;
+The program merges the files and eliminates any duplicate
+structures.&nbsp;In this case, the key is a canonical
+code, and the dictionary is used to determine if a canonical code has been
+encountered previously.&nbsp; Note that this example uses an alternate looping
+construct for reading an SD file.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 6: Read an SD file
+and scaffold, align scaffold, write an SD file</span></p>
+<p><font face="Arial">This program introduces the structure overlay feature in
+ChemScript.&nbsp; Structure overlay allows for two chemically similar structures
+to be superimposed.&nbsp; In this example, the the
+program processes a set of structures that contain a common scaffold
+substructure, and
+aligns these structures so that they have the same orientation with respect to
+the scaffold.&nbsp; (Although not shown in this example, the overlay
+functionality can also be used to align three dimensional structures.)&nbsp;
+</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 7: Read an SD
+file, perform a reaction transformation (nitro group), write an SD file</span></p>
+<p><font face="Arial">This example demonstrates a basic usage of the reaction
+transformation functionality in ChemScript.&nbsp; A chemical transformation
+which is drawn as a reaction can be applied to an input structure, resulting in
+modified output structure.&nbsp; In this case, the reaction transformation
+specifies the conversion of a particular representation of the nitro group into
+a different representation.&nbsp; The reaction transformation is contained in
+the file </font><font face="Courier">transform1.cdxml</font><font face="Arial">
+in the input directory.&nbsp; Note that some of the structures in the input file
+will remain unaffected by the transformation because they do not contain the
+appropriately represented nitro group.</font></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 8: Basic salt
+stripping</span></p>
+<p><span style="font-family: Arial">This example shows a basic usage of the salt
+stripping functionality in ChemScript.&nbsp; The program reads an SD File,
+identifies and removes salt components (if any are present), and outputs two SD files.&nbsp; Not
+all of the input structures contain a salt component.&nbsp; The output
+&quot;structures&quot; file contains the original structures without the salt component, and
+the output &quot;salt&quot; file contains the salt components that were stripped, along with a
+reference to the ID of the original structure.</span></p>
+<p><span style="font-family: Arial">Although not shown in this example, you can
+also define a customized salt table that enables the programmer to
+designate which chemicals are considered salts.&nbsp; This example uses a
+default set of salts provided by CambridgeSoft.&nbsp; There is a rich set of
+options associated with the salt stripping functionality.&nbsp; There is also a
+convenience function which will protonate a charged structure.</span></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 9: Scaffold cleanup
+algorithm</span></p>
+<p><span style="font-family: Arial">This method can be used to exert precise control over the atom
+positioning within a scaffold subset of a chemical structure.&nbsp; The ScaffoldCleanup is a
+three-step procedure:&nbsp;</span></p>
+<p><span style="font-family: Arial">1. An overlay of the structure is performed onto the scaffold.&nbsp;
+<br>2. Atoms in the structure are given the coordinates of the corresponding atoms in the scaffold
+structure.&nbsp;<br>3. A structure-cleanup algorithm is applied to the remaining atoms in the
+structure which do not correspond to atoms in the scaffold.</span></p>
+<p><span style="font-family: Arial; font-weight: 700;">Example 10: Correct wedge bond direction
+</span></p>
+<p><span style="font-family: Arial">This example detects "incorrect" wedge bonds and correct them.
+&nbsp; <br>Wedged bonds may be considered incorrect if they are pointing away from the stereocenter.&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><b><font face="Arial" size="6">ChemScript Reference</font></b></p>
+<p><font face="Arial">For information on the ChemScript API, see the <a href="html/index.html">reference guide</a>.</font></p>
+
+</body>
+</html>
