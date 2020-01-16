@@ -61,5 +61,5 @@ def downs(paths,disease):
 
 if __name__=="__main__":
     paths='D:\\apple'
-    result=downs(paths,'Atherosclerosis')
+    result=downs(paths,'endometriosis')
     

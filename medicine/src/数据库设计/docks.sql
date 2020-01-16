@@ -186,8 +186,7 @@ select
 	replace(replace(pubchemcid,'\'',''),',','') as pubchemcid
 from names);
 
-select pubchemcid,molecule,group_concat(drug) as drug from druginfos group by  pubchemcid
-;
+
 
 
 
@@ -195,7 +194,7 @@ select a.*,b.* from compounds a
 left join 
 (select pubchemcid,molecule from  moles group by  pubchemcid)b on a.molecule=b.molecule
 where a.pubchemcid in (445638,440832,131900)
-
+;
 
 
 

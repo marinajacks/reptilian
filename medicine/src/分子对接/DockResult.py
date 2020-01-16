@@ -59,7 +59,7 @@ def tables():
     path='D:\\project\\selenium\\v40\\chromedriver.exe'
     driver = webdriver.Chrome(executable_path=path, chrome_options=options)
         
-    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMSP对接IPs.xlsx'  
+    path1='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\TCMSP对接IPs1.xlsx'  
     df=pd.read_excel(path1)
     urls=[]
 
@@ -83,7 +83,7 @@ def tables():
     
     
 def getdata():
-    path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\Dock1\\'
+    path='D:\\MarinaJacks\\project\\reptilian\\medicine\\Data\\Dock2\\'
     for i,j,k in os.walk(path):
             file=k       
     paths=[]
@@ -100,7 +100,7 @@ def writebase(paths):
     for i in range(1,len(paths)):
         df=pd.read_csv(paths[i])
         df1=pd.concat([df1,df])#每次做一个
-        #df.to_sql(name='result1', con=con, if_exists='append', index=False)
+        df1.to_sql(name='druginfos', con=con, if_exists='append', index=False)
     return df1
         
     

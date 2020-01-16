@@ -367,6 +367,8 @@ if __name__=='__main__':
     #drugs=['鱼腥草','金银花','赤芍','艾叶','薄荷']
     #drugs=['半夏','黄连','黄芩','干姜','人参','大枣','甘草']
     modules=main(drugs)
+    
+    
     '''
     df=pd.DataFrame(modules)
     path4='D:\MarinaJacks\project\\reptilian\medicine\中药数据\TCMSP\龙血竭\龙血竭.xlsx'

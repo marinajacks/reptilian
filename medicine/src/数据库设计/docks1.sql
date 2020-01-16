@@ -1,5 +1,5 @@
 use ecnu;
-
+#这部分的脚本主要是成分对应的信息，数据的来源主要是对应的druginfos这张表的信息与数据。
 select 
 *
 from (select distinct 
@@ -33,5 +33,5 @@ select distinct pubchemcid from docked
 
 */
 
-
-select pubchemcid,molecule,group_concat(distinct drug) as drug from druginfos group by pubchemcid
+#这个命令主要是为了获取到
+select molecule,pubchemcid,group_concat(distinct drug) as drug from druginfos group by pubchemcid;
