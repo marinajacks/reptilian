@@ -120,12 +120,51 @@ def nameed():
 
 def main(driver):
     names=nameed()
-    for name in names[300:]:
+    for name in names[200:]:
         driver=mols1(driver,name[0])
         time.sleep(10)
     
+    
+def getvalues(b):
+    bss=[]
+    for i in b:
+        bb=[]
+        if('有' in i):
+            bb.append(i.replace('有',''))
+            bb.append('有')
+            bss.append(bb)
+        elif('无' in i):
+            bb.append(i.replace('无',''))
+            bb.append('无')
+            bss.append(bb)
+    bss1=pd.DataFrame(bss)
+    return bss1
+        
+def getdowns(b):
+    bss=[]
+    for i in b:
+        if('有' in i or '无' in i):
+            pass
+        else:
+            bss.append(i)
+    bss1=pd.DataFrame(bss)
+    return bss1
+    
+def reads(p):
+    f=open(p,'r',encoding='UTF-8')
+    lines=f.readlines()
+    values=[]
+    for i in lines:
+        values.append(i.strip())
+    return values
+
 
 if  __name__=="__main__":
     driver=tests()
     main(driver)
-
+    p='d://test1.txt'
+    p1='d://2.xls'
+    b=reads(p)
+    b1=getvalues(b)
+    b2=getdowns(b)
+    b2.to_excel(p1)
